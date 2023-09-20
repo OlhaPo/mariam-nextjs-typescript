@@ -12,8 +12,9 @@ const navLinks = [
 
 export default function Navigation() {
   const pathname = usePathname();
+  const isHome = pathname === "/";
   return (
-    <div className="nav">
+    <div className={(isHome ? "text-white" : "text-black-300") + " nav"}>
       <div className="uppercase">
         <Link href={"/"}>Maryna Kambur</Link>
       </div>{" "}
