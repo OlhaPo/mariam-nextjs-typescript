@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 .main {
-  @apply h-screen bg-[url('/background.png')] mt-[-60px] bg-cover bg-no-repeat flex flex-col gap-16 justify-center items-center text-white;
+  @apply h-screen bg-[url('/background.png')] mt-[-80px] bg-cover bg-no-repeat flex flex-col gap-16 justify-center items-center text-3xl md:text-5xl text-white;
 }
 
 .nav {
-  @apply w-full h-[60px] absolute top-0 px-[40px] flex flex-row items-center justify-between z-[1000] text-2xl;
+  @apply w-full h-[80px] absolute top-0 px-[50px] flex flex-row items-center justify-between z-[1000] text-2xl;
 }

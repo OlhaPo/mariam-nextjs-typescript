@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
         <Navigation />
-        <div className="mt-[60px]">{children}</div>
+        <div className="mt-[80px]">{children}</div>
       </body>
     </html>
   );
