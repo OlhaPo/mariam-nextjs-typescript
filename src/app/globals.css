@@ -7,5 +7,13 @@
 }
 
 .nav {
-  @apply w-full h-[80px] absolute top-0 px-[50px] flex flex-row items-center justify-between z-[1000] text-2xl;
+  @apply w-full h-[80px] absolute top-0 px-[50px] flex flex-row items-center justify-between z-[1000] text-xl;
+}
+
+p {
+  @apply py-3 text-left leading-8;
+}
+
+.btn-nav {
+  @apply border-2 border-primary rounded-md px-5 py-4 bg-primary text-white shadow-lg;
 }
