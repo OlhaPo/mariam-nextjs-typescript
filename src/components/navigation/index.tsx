@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks } from "./constants";
-import { twMerge } from "tailwind-merge";
 import clsx from "clsx";
 
 export default function Navigation() {

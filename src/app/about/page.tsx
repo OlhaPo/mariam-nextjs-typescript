@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import HeroImage from "public/hero.jpg";
+import LinkBtn from "@/components/LinkBtn";
 
 export default function About() {
   return (
@@ -33,9 +33,7 @@ export default function About() {
               waiting for buying.
             </p>
             <div className="py-5">
-              <Link href={"/shop"} className="btn-nav">
-                Welcome to Shop
-              </Link>
+              <LinkBtn title="Welcome to Shop" pathName="/shop" />
             </div>
           </div>
           <div>
@@ -45,9 +43,7 @@ export default function About() {
               honored to create something beautiful and unique just for you.
             </p>
             <div className="py-5">
-              <Link href={"/#collections"} className="btn-nav">
-                View all Collections
-              </Link>
+              <LinkBtn title="View all Collections" pathName="/#collections" />
             </div>
           </div>
         </div>
