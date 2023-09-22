@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import HeroImage from "public/hero.jpg";
 
 export default function About() {
   return (
-    <section className="max-w-[1040px] m-auto py-16">
-      <div className="grid grid-cols-2 items-center">
+    <section className="max-w-[1040px] m-auto py-16 px-6 lg:px-0">
+      <div className="grid grid-cols-2 items-center md:gap-8">
         <div>
           <Image
-            src="/hero.jpg"
+            src={HeroImage}
             width={450}
             height={350}
             alt="Picture of the brand owner"

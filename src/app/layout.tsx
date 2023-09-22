@@ -1,7 +1,7 @@
-import Navigation from "@/components/Navigation";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import Navigation from "@/components/navigation/index";
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["300"] });
 
@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${roboto.className} + bg-[#948D85]/30`}>
         <Navigation />
-        <div className="mt-[80px] text-[16px] md:text-[18px]">{children}</div>
+        <div className="mt-20 text-base md:text-lg">{children}</div>
       </body>
     </html>
   );
