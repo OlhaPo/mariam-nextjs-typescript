@@ -17,3 +17,12 @@ p {
 .btn-nav {
   @apply border-2 border-primary rounded-md px-5 py-4 bg-primary text-white shadow-lg;
 }
+
+.collection-cover {
+  @layer shadow-secondary-900;
+  @apply my-5 rounded-md shadow-2xl hover:scale-110 cursor-pointer ease-in duration-200 text-primary;
+}
+
+h2 {
+  @apply text-2xl;
+}

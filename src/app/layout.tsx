@@ -18,9 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} + bg-[#948D85]/30`}>
+      <body className={`${roboto.className} + bg-secondary/30`}>
         <Navigation />
-        <div className="mt-20 text-base md:text-lg">{children}</div>
+        <div className="mt-20 text-base md:text-xl">{children}</div>
       </body>
     </html>
   );

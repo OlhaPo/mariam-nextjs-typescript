@@ -17,7 +17,7 @@ export default function About() {
         </div>
         <div>
           <div>
-            <h2 className="text-2xl">Hi there, dearest!</h2>
+            <h2>Hi there, dearest!</h2>
             <p>
               My name is Maryna Kambur. I'm the designer and owner of the brand{" "}
               <span className="font-bold text-primary">
