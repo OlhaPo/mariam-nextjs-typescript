@@ -48,6 +48,7 @@ export default function Navigation() {
             <Link
               className={clsx({
                 "font-semibold": isActive,
+                "text-primary": isActive,
                 "font-normal": !isActive,
               })}
               href={link.href}

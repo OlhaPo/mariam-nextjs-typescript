@@ -4,15 +4,15 @@ import LinkBtn from "@/components/LinkBtn";
 
 export default function About() {
   return (
-    <section className="max-w-[1040px] m-auto py-16 px-6 lg:px-0">
-      <div className="grid grid-cols-2 items-center md:gap-8">
+    <section className="max-w-[1040px] m-auto py-4 md:py-16 px-6 lg:px-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-5 md:gap-8 ">
         <div>
           <Image
             src={HeroImage}
             width={450}
             height={350}
             alt="Picture of the brand owner"
-            className="border-1 rounded-md"
+            className="border-1 rounded-md mt-5 md:mt-0"
           />
         </div>
         <div>
@@ -32,7 +32,7 @@ export default function About() {
               the handmade jewelry and clothing peaces that are ready and
               waiting for buying.
             </p>
-            <div className="py-5">
+            <div className="py-5 text-center md:text-left">
               <LinkBtn title="Welcome to Shop" pathName="/shop" />
             </div>
           </div>
@@ -42,7 +42,7 @@ export default function About() {
               where everything is available for pre-order. Also, I would be
               honored to create something beautiful and unique just for you.
             </p>
-            <div className="py-5">
+            <div className="py-5 text-center md:text-left">
               <LinkBtn title="View all Collections" pathName="/#collections" />
             </div>
           </div>
