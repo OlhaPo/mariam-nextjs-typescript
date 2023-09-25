@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main {
+  @apply min-h-screen bg-[url('/background.png')] -mt-20 bg-cover bg-no-repeat flex flex-col gap-16 justify-center items-center text-3xl md:text-5xl text-white;
+}
+
+.nav {
+  @apply w-full h-20 absolute top-0 md:px-6 lg:px-12 flex flex-row items-center justify-between z-[1000] text-xl;
+}
+
+p {
+  @apply md:py-1 lg:py-3 text-left leading-8;
+}
+
+.btn-nav {
+  @apply border-2 border-primary rounded-md px-5 py-4 bg-primary text-white shadow-lg;
+}
