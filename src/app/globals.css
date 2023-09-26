@@ -20,9 +20,17 @@ p {
 
 .collection-cover {
   @layer shadow-secondary-900;
-  @apply my-5 rounded-md shadow-2xl hover:scale-110 cursor-pointer ease-in duration-200 text-primary;
+  @apply my-5 rounded-md shadow-2xl hover:scale-110 cursor-pointer ease-in duration-200 text-primary object-cover;
+}
+
+.collection-navLink {
+  @apply md:basis-1/4 lg:basis-1/5;
 }
 
 h2 {
   @apply text-2xl;
+}
+
+h3 {
+  @apply text-center text-xl;
 }
