@@ -124,10 +124,10 @@ export default function Home() {
         </div>
       </div>
       <div id="contact" className="contacts">
-        <div className="contacts-section basis-1/2 justify-center">
+        <div className="contacts-section basis-full lg:basis-1/2 justify-items-center">
           <p>
             <span
-              className={`${fredoka.className} font-medium text-2xl text-primary`}
+              className={`${fredoka.className} font-medium text-lg md:text-2xl text-primary`}
             >
               mariam crochet jewelry
             </span>{" "}
@@ -139,34 +139,34 @@ export default function Home() {
           <span className="contacts-subheader">Menu</span>
           <Link href={"/about"}>About</Link>
           <Link href={"/shop"}>Shop</Link>
-          <Link href={"/order"}>Orders and delivery</Link>
+          <Link href={"/orders-info"}>Orders and delivery</Link>
         </div>
         <div className="contacts-section">
           <span className="contacts-subheader">Contacts</span>
-          <div className="flex flex-row gap-3">
+          <div className="flex flex-row gap-4">
             <a
               href="https://www.instagram.com/mariam_crochet_jewelry/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaInstagram size={22} />
+              <FaInstagram size={20} />
             </a>
             <a
               href="https://t.me/+380678354246"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaTelegramPlane size={22} />
+              <FaTelegramPlane size={20} />
             </a>
             <a
               href="https://www.facebook.com/mariam.corner/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaFacebookF size={22} />
+              <FaFacebookF size={20} />
             </a>
           </div>
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-1 md:gap-4">
             <a href="tel:+380678354246">+380678354246</a>
             <a href="mailto:mariam_jewelry@gmail.com">
               mariam_jewelry@gmail.com

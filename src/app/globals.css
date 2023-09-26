@@ -7,7 +7,7 @@
 }
 
 .nav {
-  @apply w-full h-20 absolute top-0 px-6 lg:px-12 flex flex-row items-center justify-between z-[100] text-xl;
+  @apply w-full h-20 absolute top-0 px-10 lg:px-12 flex flex-row items-center justify-between z-[100] text-xl;
 }
 
 p {
@@ -36,11 +36,11 @@ h3 {
 }
 
 .contacts {
-  @apply max-w-screen-2xl border border-t-slate-400 flex flex-row px-10 lg:px-12 py-8 text-xl gap-28;
+  @apply max-w-full border border-t-slate-400 flex flex-wrap flex-row md:justify-evenly px-10 lg:px-12 py-4 md:py-8 md:text-lg lg:text-xl gap-6 md:gap-8 lg:gap-28;
 }
 
 .contacts-section {
-  @apply flex flex-col gap-3;
+  @apply flex flex-col gap-1 md:gap-3;
 }
 
 .contacts-subheader {
