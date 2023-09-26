@@ -1,8 +1,9 @@
 import { Fredoka } from "next/font/google";
 import Link from "next/link";
 import Image from "next/image";
+import { FaInstagram, FaFacebookF, FaTelegramPlane } from "react-icons/fa";
 
-const fredoka = Fredoka({ subsets: ["latin"], weight: ["300"] });
+export const fredoka = Fredoka({ subsets: ["latin"], weight: ["300", "400"] });
 
 export default function Home() {
   return (
@@ -119,6 +120,57 @@ export default function Home() {
               />
               <h3>Bags</h3>
             </Link>
+          </div>
+        </div>
+      </div>
+      <div id="contact" className="contacts">
+        <div className="contacts-section basis-1/2 justify-center">
+          <p>
+            <span
+              className={`${fredoka.className} font-medium text-2xl text-primary`}
+            >
+              mariam crochet jewelry
+            </span>{" "}
+            is a Ukrainian clothing and crocheted jewelry brand founded by
+            designer Maryna Kambur. Handcrafted lovingly in Kyiv, Ukraine.
+          </p>
+        </div>
+        <div className="contacts-section">
+          <span className="contacts-subheader">Menu</span>
+          <Link href={"/about"}>About</Link>
+          <Link href={"/shop"}>Shop</Link>
+          <Link href={"/order"}>Orders and delivery</Link>
+        </div>
+        <div className="contacts-section">
+          <span className="contacts-subheader">Contacts</span>
+          <div className="flex flex-row gap-3">
+            <a
+              href="https://www.instagram.com/mariam_crochet_jewelry/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram size={22} />
+            </a>
+            <a
+              href="https://t.me/+380678354246"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaTelegramPlane size={22} />
+            </a>
+            <a
+              href="https://www.facebook.com/mariam.corner/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookF size={22} />
+            </a>
+          </div>
+          <div className="flex flex-col gap-3">
+            <a href="tel:+380678354246">+380678354246</a>
+            <a href="mailto:mariam_jewelry@gmail.com">
+              mariam_jewelry@gmail.com
+            </a>
           </div>
         </div>
       </div>

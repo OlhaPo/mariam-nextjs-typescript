@@ -1,6 +1,7 @@
 import Image from "next/image";
 import HeroImage from "public/hero.jpg";
 import LinkBtn from "@/components/LinkBtn";
+import { fredoka } from "../page";
 
 export default function About() {
   return (
@@ -20,7 +21,9 @@ export default function About() {
             <h2>Hi there, dearest!</h2>
             <p>
               My name is Maryna Kambur. I'm the designer and owner of the brand{" "}
-              <span className="font-bold text-primary">
+              <span
+                className={`${fredoka.className} text-xl font-medium text-primary`}
+              >
                 mariam crochet jewelry
               </span>{" "}
               and an artist from Kyiv, Ukraine.

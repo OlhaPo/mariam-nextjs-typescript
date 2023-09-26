@@ -34,3 +34,15 @@ h2 {
 h3 {
   @apply text-center text-xl;
 }
+
+.contacts {
+  @apply max-w-screen-2xl border border-t-slate-400 flex flex-row px-10 lg:px-12 py-8 text-xl gap-28;
+}
+
+.contacts-section {
+  @apply flex flex-col gap-3;
+}
+
+.contacts-subheader {
+  @apply font-medium text-primary;
+}
