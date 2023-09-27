@@ -6,6 +6,7 @@ import { navLinks } from "./constants";
 import clsx from "clsx";
 import { useState } from "react";
 import { BiMenu } from "react-icons/bi";
+import NavLink from "../link";
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -29,35 +30,26 @@ export default function Navigation() {
       </div>{" "}
       <BiMenu size={30} onClick={handleNav} className="md:hidden z-[150]" />
       {isOpenNav ? (
-        <div className="w-full bg-secondary absolute top-0 left-0 right-0 h-screen flex flex-col justify-center items-center z-[120] gap-5">
+        <div className="w-full bg-secondary absolute top-0 left-0 right-0 min-h-screen flex flex-col justify-center items-center z-[120] gap-5">
           {navLinks.map((link) => (
-            <div key={link.name}>
-              <Link href={link.href} onClick={handleNav}>
-                {link.name}
-              </Link>
-            </div>
+            <NavLink
+              href={link.href}
+              name={link.name}
+              onClick={() => {
+                handleNav();
+              }}
+              key={link.name}
+              isActive={false}
+            />
           ))}
         </div>
       ) : (
         ""
       )}
       <div className="hidden md:inline-flex gap-7">
-        {navLinks.map((link) => {
-          const isActive = pathname === link.href;
-          return (
-            <Link
-              className={clsx({
-                "font-semibold": isActive,
-                "text-primary": isActive,
-                "font-normal": !isActive,
-              })}
-              href={link.href}
-              key={link.name}
-            >
-              {link.name}
-            </Link>
-          );
-        })}
+        {navLinks.map((link) => (
+          <NavLink href={link.href} key={link.name} name={link.name} />
+        ))}
       </div>
     </div>
   );
