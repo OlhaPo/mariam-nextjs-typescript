@@ -1,6 +1,6 @@
 import Image from "next/image";
 import HeroImage from "public/hero.jpg";
-import LinkBtn from "@/components/LinkBtn";
+import Button from "@/components/uikit/button";
 import { fredoka } from "../page";
 
 export default function About() {
@@ -36,7 +36,7 @@ export default function About() {
               waiting for buying.
             </p>
             <div className="py-5 text-center md:text-left">
-              <LinkBtn title="Welcome to Shop" pathName="/shop" />
+              <Button title="Welcome to Shop" pathName="/shop" />
             </div>
           </div>
           <div>
@@ -46,7 +46,7 @@ export default function About() {
               honored to create something beautiful and unique just for you.
             </p>
             <div className="py-5 text-center md:text-left">
-              <LinkBtn title="View all Collections" pathName="/#collections" />
+              <Button title="View all Collections" pathName="/#collections" />
             </div>
           </div>
         </div>

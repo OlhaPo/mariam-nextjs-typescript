@@ -124,7 +124,7 @@ export default function Home() {
         </div>
       </div>
       <div id="contact" className="contacts">
-        <div className="contacts-section basis-full lg:basis-1/2 justify-items-center">
+        <div className="contacts-section basis-full lg:basis-1/2 lg:self-center">
           <p>
             <span
               className={`${fredoka.className} font-medium text-lg md:text-2xl text-primary`}
