@@ -1,12 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks } from "./constants";
 import clsx from "clsx";
 import { useState } from "react";
 import { BiMenu } from "react-icons/bi";
-import NavLink from "../link";
+import NavLink from "./NavLink";
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -26,7 +25,7 @@ export default function Navigation() {
       })}
     >
       <div className="uppercase z-[140]">
-        <NavLink href="/" name="Maryna Kambur" isActive={false} />
+        <NavLink href="/" name="Maryna Kambur" />
       </div>{" "}
       <BiMenu size={30} onClick={handleNav} className="md:hidden z-[150]" />
       {isOpenNav ? (
@@ -35,11 +34,8 @@ export default function Navigation() {
             <NavLink
               href={link.href}
               name={link.name}
-              onClick={() => {
-                handleNav();
-              }}
+              onClick={() => handleNav()}
               key={link.name}
-              isActive={false}
             />
           ))}
         </div>
@@ -48,7 +44,12 @@ export default function Navigation() {
       )}
       <div className="hidden md:inline-flex gap-7">
         {navLinks.map((link) => (
-          <NavLink href={link.href} key={link.name} name={link.name} />
+          <NavLink
+            href={link.href}
+            key={link.name}
+            name={link.name}
+            isActive={pathname === link.href}
+          />
         ))}
       </div>
     </div>

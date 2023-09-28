@@ -1,7 +1,6 @@
 import { LinkProps } from "next/link";
 import Link from "next/link";
 import clsx from "clsx";
-import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
 
 interface NavLinkProps extends LinkProps {
@@ -12,20 +11,14 @@ interface NavLinkProps extends LinkProps {
 }
 
 export default function NavLink(props: NavLinkProps) {
-  const pathname = usePathname();
-
-  const isActiveLink = props.isActive ?? pathname === props.href;
-
   const linkClassName = clsx({
-    "font-semibold text-primary": isActiveLink,
-    "font-normal": !isActiveLink,
+    "font-semibold text-primary": props.isActive,
+    "font-normal": !props.isActive,
   });
 
   return (
-    <div>
-      <Link className={linkClassName} href={props.href} onClick={props.onClick}>
-        {props.name}
-      </Link>
-    </div>
+    <Link className={linkClassName} href={props.href} onClick={props.onClick}>
+      {props.name}
+    </Link>
   );
 }
