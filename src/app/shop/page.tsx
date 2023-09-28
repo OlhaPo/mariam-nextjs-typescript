@@ -13,7 +13,7 @@ export default function Shop() {
           <div key={product.id}>
             {product.title}
             <Image
-              src={product.image}
+              src={product.imageUrl}
               alt={product.title}
               width={350}
               height={350}
