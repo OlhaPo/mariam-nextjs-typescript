@@ -11,7 +11,7 @@ export default function Collections() {
       <div className="flex flex-wrap flex-row gap-5 md:gap-12 items-center justify-center">
         {collectionCovers.map((item) => (
           <div className="collection-navLink">
-            <Link href={item.pathName}>
+            <Link href={item.pathName} key={item.title}>
               <Image
                 src={item.imageUrl}
                 width={300}
