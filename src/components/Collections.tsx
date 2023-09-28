@@ -4,14 +4,11 @@ import { collectionCovers } from "@/app/domains/product/productsToPreOrder";
 
 export default function Collections() {
   return (
-    <section
-      id="collections"
-      className="max-w-screen-xl mx-auto py-16 font-semibold text-primary"
-    >
+    <section id="collections" className="section-container">
       <div>
         <h2 className="mb-5 text-center">View collections</h2>
       </div>
-      <div className="flex flex-wrap flex-row max-w-screen-xl gap-5 md:gap-12 items-center justify-center">
+      <div className="flex flex-wrap flex-row gap-5 md:gap-12 items-center justify-center">
         {collectionCovers.map((item) => (
           <div className="collection-navLink">
             <Link href={item.pathName}>

@@ -18,7 +18,8 @@ p {
   @apply border-2 border-primary rounded-md px-5 py-4 bg-primary text-white shadow-lg;
 }
 
-.collection-cover {
+.collection-cover,
+.img-product-in-stock {
   @layer shadow-secondary-900;
   @apply my-5 rounded-md shadow-2xl hover:scale-110 cursor-pointer ease-in duration-200 text-primary object-cover;
 }
@@ -28,15 +29,15 @@ p {
 }
 
 h2 {
-  @apply text-2xl;
+  @apply text-2xl text-center font-medium;
 }
 
 h3 {
-  @apply text-center text-xl;
+  @apply text-center text-xl font-medium;
 }
 
 .contacts {
-  @apply max-w-full border border-t-slate-400 flex flex-wrap flex-row md:justify-evenly px-10 lg:px-12 py-4 md:py-8 md:text-lg lg:text-xl gap-6 md:gap-8 lg:gap-28;
+  @apply max-w-full border border-t-slate-300 flex flex-wrap flex-row md:justify-evenly px-10 lg:px-12 py-4 md:py-8 md:text-lg lg:text-xl gap-6 md:gap-8 lg:gap-28;
 }
 
 .contacts-section {
@@ -47,5 +48,6 @@ h3 {
   @apply font-medium text-primary;
 }
 
-.img-product-in-stock {
+.section-container {
+  @apply max-w-screen-xl mx-auto py-16 px-5 lg:px-12 text-primary;
 }

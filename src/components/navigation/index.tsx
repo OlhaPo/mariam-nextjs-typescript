@@ -21,7 +21,7 @@ export default function Navigation() {
     <div
       className={clsx("nav", {
         "text-white": isOpenNav || isHome,
-        "text-black-300 border border-b-slate-400": !isHome,
+        "text-black-300 border border-b-slate-300": !isHome,
       })}
     >
       <div className="uppercase z-[140]">

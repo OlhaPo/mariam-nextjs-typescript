@@ -13,12 +13,12 @@ export default function About() {
             width={450}
             height={350}
             alt="Picture of the brand owner"
-            className="border-1 rounded-md mt-5 md:mt-0"
+            className="border-1 rounded-md mt-5 md:mt-0 h-auto"
           />
         </div>
         <div>
           <div>
-            <h2>Hi there, dearest!</h2>
+            <h2 className="text-left font-normal">Hi there, dearest!</h2>
             <p>
               My name is Maryna Kambur. I'm the designer and owner of the brand{" "}
               <span
