@@ -20,7 +20,8 @@ export default function About() {
           <div>
             <h2 className="text-left font-normal">Hi there, dearest!</h2>
             <p>
-              My name is Maryna Kambur. I'm the designer and owner of the brand{" "}
+              My name is Maryna Kambur. I&apos;m the designer and owner of the
+              brand{" "}
               <span
                 className={`${fredoka.className} text-xl font-medium text-primary`}
               >
