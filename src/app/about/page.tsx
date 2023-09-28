@@ -32,7 +32,7 @@ export default function About() {
           <div>
             <p>
               Thank you for stopping by my online corner. Feel free to check out
-              the handmade jewelry and clothing peaces that are ready and
+              the handmade jewelry and clothing pieces that are ready and
               waiting for buying.
             </p>
             <div className="py-5 text-center md:text-left">

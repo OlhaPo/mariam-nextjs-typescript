@@ -46,3 +46,6 @@ h3 {
 .contacts-subheader {
   @apply font-medium text-primary;
 }
+
+.img-product-in-stock {
+}
