@@ -26,7 +26,7 @@ export default function Navigation() {
       })}
     >
       <div className="uppercase z-[140]">
-        <Link href={"/"}>Maryna Kambur</Link>
+        <NavLink href="/" name="Maryna Kambur" isActive={false} />
       </div>{" "}
       <BiMenu size={30} onClick={handleNav} className="md:hidden z-[150]" />
       {isOpenNav ? (

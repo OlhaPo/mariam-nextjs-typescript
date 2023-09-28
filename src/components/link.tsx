@@ -22,8 +22,10 @@ export default function NavLink(props: NavLinkProps) {
   });
 
   return (
-    <Link className={linkClassName} href={props.href} onClick={props.onClick}>
-      {props.name}
-    </Link>
+    <div>
+      <Link className={linkClassName} href={props.href} onClick={props.onClick}>
+        {props.name}
+      </Link>
+    </div>
   );
 }
