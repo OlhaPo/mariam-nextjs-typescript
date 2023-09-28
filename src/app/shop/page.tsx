@@ -13,8 +13,8 @@ export default function Shop() {
             <Image
               src={product.imageUrl}
               alt={product.title}
-              width={350}
-              height={350}
+              width={500}
+              height={500}
               priority
               className="img-product-in-stock hover:scale-100"
             />
