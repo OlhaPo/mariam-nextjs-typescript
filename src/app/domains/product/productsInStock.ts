@@ -3,7 +3,7 @@ import { Product } from "./types";
 export const productsInStock: Product[] = [
   {
     id: 1,
-    imageUrl: "/in-stock/ring.jpg",
+    imageUrl: ["/in-stock/ring.jpg"],
     title: "Ring title",
     price: 10,
     description:
@@ -11,7 +11,7 @@ export const productsInStock: Product[] = [
   },
   {
     id: 2,
-    imageUrl: "/in-stock/set-of-jewelry.jpg",
+    imageUrl: ["/in-stock/set-of-jewelry.jpg"],
     title: "Set of jewelry title",
     price: 10,
     description:
@@ -19,7 +19,7 @@ export const productsInStock: Product[] = [
   },
   {
     id: 3,
-    imageUrl: "/in-stock/white-brooche.jpg",
+    imageUrl: ["/in-stock/white-brooche.jpg"],
     title: "Set of crocheted jewelry",
     price: 10,
     description:
@@ -27,7 +27,7 @@ export const productsInStock: Product[] = [
   },
   {
     id: 4,
-    imageUrl: "/in-stock/ring.jpg",
+    imageUrl: ["/in-stock/ring.jpg"],
     title: "Ring title",
     price: 10,
     description:
@@ -35,7 +35,7 @@ export const productsInStock: Product[] = [
   },
   {
     id: 5,
-    imageUrl: "/in-stock/set-of-jewelry.jpg",
+    imageUrl: ["/in-stock/set-of-jewelry.jpg"],
     title: "Set of jewelry title",
     price: 10,
     description:
@@ -43,7 +43,7 @@ export const productsInStock: Product[] = [
   },
   {
     id: 6,
-    imageUrl: "/in-stock/white-brooche.jpg",
+    imageUrl: ["/in-stock/white-brooche.jpg"],
     title: "Set of crocheted jewelry",
     price: 10,
     description:
@@ -51,7 +51,7 @@ export const productsInStock: Product[] = [
   },
   {
     id: 7,
-    imageUrl: "/in-stock/white-collar.jpg",
+    imageUrl: ["/in-stock/white-collar.jpg"],
     title: "White collar title",
     price: 10,
     description:
@@ -59,7 +59,7 @@ export const productsInStock: Product[] = [
   },
   {
     id: 8,
-    imageUrl: "/in-stock/white-dress.jpg",
+    imageUrl: ["/in-stock/white-dress.jpg"],
     title: "White dress title",
     price: 10,
     description:

@@ -11,7 +11,7 @@ export default function Shop() {
         {productsInStock.map((product) => (
           <div key={product.id} className="flex flex-col items-center gap-2">
             <Image
-              src={product.imageUrl}
+              src={product.imageUrl[0]}
               alt={product.title}
               width={500}
               height={500}
