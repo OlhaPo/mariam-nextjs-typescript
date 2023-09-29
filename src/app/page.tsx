@@ -1,6 +1,5 @@
 import { Fredoka } from "next/font/google";
 import Collections from "@/components/Collections";
-import Contacts from "@/components/Contacts";
 
 export const fredoka = Fredoka({ subsets: ["latin"], weight: ["300", "400"] });
 
@@ -16,7 +15,6 @@ export default function Home() {
         </h1>
       </div>
       <Collections />
-      <Contacts />
     </>
   );
 }
