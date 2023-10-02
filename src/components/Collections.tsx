@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { collectionCovers } from "@/app/domains/product/productsToPreOrder";
 
-export default function Collections() {
+export function Collections() {
   return (
     <section id="collections" className="section-container">
       <div>

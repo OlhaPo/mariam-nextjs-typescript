@@ -5,7 +5,7 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   pathName: string;
 }
 
-export default function LinkButton(props: ButtonProps) {
+export function LinkButton(props: ButtonProps) {
   return (
     <Link href={props.pathName} className="btn-nav">
       {props.title}

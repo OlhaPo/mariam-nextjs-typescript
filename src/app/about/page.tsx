@@ -1,12 +1,12 @@
 import Image from "next/image";
 import heroImage from "public/hero.jpg";
-import LinkButton from "@/components/uikit/button";
+import { LinkButton } from "@/components/uikit/button";
 import { fredoka } from "../page";
 
 export default function About() {
   return (
     <section className="max-w-[1040px] m-auto py-4 md:py-16 px-6 lg:px-0">
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-5 md:gap-8 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-5 md:gap-8">
         <div>
           <Image
             src={heroImage}

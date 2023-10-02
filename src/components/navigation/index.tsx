@@ -5,9 +5,9 @@ import { navLinks } from "./constants";
 import clsx from "clsx";
 import { useState } from "react";
 import { BiMenu } from "react-icons/bi";
-import NavLink from "./NavLink";
+import { NavLink } from "./NavLink";
 
-export default function Navigation() {
+export function Navigation() {
   const pathname = usePathname();
   const isHome = pathname === "/";
 

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FaInstagram, FaFacebookF, FaTelegramPlane } from "react-icons/fa";
 import { fredoka } from "@/app/page";
 
-export default function Contacts() {
+export function Contacts() {
   return (
     <footer id="contacts" className="contacts">
       <div className="contacts-section basis-full lg:basis-1/2 lg:self-center">
