@@ -3,7 +3,12 @@ import { Product } from "./types";
 export const productsInStock: Product[] = [
   {
     id: 1,
-    imageUrl: ["/in-stock/ring.jpg"],
+    imageUrl: [
+      "/in-stock/ring.jpg",
+      "/dresses/set-of-jewelry.jpg",
+      "/dresses/white-brooche.jpg",
+      "/dresses/white-dress-1.jpg",
+    ],
     title: "Ring title",
     price: 10,
     description:
