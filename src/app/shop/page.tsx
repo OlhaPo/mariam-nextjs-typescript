@@ -13,7 +13,7 @@ export default function Shop() {
           <div key={product.id} className="flex flex-col items-center gap-2">
             <Link href={"/product"}>
               <Image
-                src={product.imageUrl[0]}
+                src={product.imageUrls[0]}
                 alt={product.title}
                 width={500}
                 height={500}

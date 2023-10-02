@@ -1,4 +1,4 @@
-export const collectionCovers = [
+export const collectionCoverImage = [
   {
     title: "Dresses",
     pathName: "/dresses",

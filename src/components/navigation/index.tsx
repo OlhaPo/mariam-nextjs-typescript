@@ -34,14 +34,12 @@ export function Navigation() {
             <NavLink
               href={link.href}
               name={link.name}
-              onClick={() => handleNav()}
+              onClick={handleNav}
               key={link.name}
             />
           ))}
         </div>
-      ) : (
-        ""
-      )}
+      ) : null}
       <div className="hidden md:inline-flex gap-7">
         {navLinks.map((link) => (
           <NavLink

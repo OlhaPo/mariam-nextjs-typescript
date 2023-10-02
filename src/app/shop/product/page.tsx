@@ -30,7 +30,7 @@ export function ProductItem() {
               {productsInStock.map((pic, index) => (
                 <Image
                   key={index}
-                  src={pic.imageUrl[index]}
+                  src={pic.imageUrls[index]}
                   height={500}
                   width={500}
                   alt={pic.title}

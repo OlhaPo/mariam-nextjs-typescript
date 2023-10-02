@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { collectionCovers } from "@/app/domains/product/productsToPreOrder";
+import { collectionCoverImage } from "@/app/domains/product/productsToPreOrder";
 
 export function Collections() {
   return (
@@ -9,7 +9,7 @@ export function Collections() {
         <h2 className="mb-5 text-center">View collections</h2>
       </div>
       <div className="flex flex-wrap flex-row gap-5 md:gap-12 items-center justify-center">
-        {collectionCovers.map((item) => (
+        {collectionCoverImage.map((item) => (
           <div className="collection-navLink" key={item.title}>
             <Link href={item.pathName}>
               <Image
