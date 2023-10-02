@@ -37,11 +37,11 @@ h3 {
 }
 
 .contacts {
-  @apply max-w-full border border-t-slate-300 flex flex-wrap flex-row md:justify-evenly px-10 lg:px-12 py-4 md:py-8 md:text-lg lg:text-xl gap-6 md:gap-8 lg:gap-28;
+  @apply max-w-full border border-t-slate-300 flex flex-wrap flex-row md:justify-around px-10 lg:px-12 py-4 md:py-8 md:text-lg lg:text-xl gap-6 lg:gap-12;
 }
 
 .contacts-section {
-  @apply flex flex-col gap-1 md:gap-3;
+  @apply flex flex-col flex-wrap gap-1 md:gap-3;
 }
 
 .contacts-subheader {

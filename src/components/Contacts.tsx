@@ -5,7 +5,7 @@ import { fredoka } from "@/app/page";
 export function Contacts() {
   return (
     <footer id="contacts" className="contacts">
-      <div className="contacts-section basis-full lg:basis-1/2 lg:self-center">
+      <div className="contacts-section basis-full xl:basis-1/2 lg:self-center">
         <p>
           <span
             className={`${fredoka.className} font-medium text-lg md:text-2xl text-primary`}
