@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .main {
-  @apply min-h-screen bg-[url('/background.png')] -mt-20 bg-cover bg-no-repeat flex flex-col gap-16 justify-center items-center text-3xl md:text-5xl text-white;
+  @apply min-h-screen bg-[url('/images/background.png')] -mt-20 bg-cover bg-no-repeat flex flex-col gap-16 justify-center items-center text-3xl md:text-5xl text-white;
 }
 
 .nav {

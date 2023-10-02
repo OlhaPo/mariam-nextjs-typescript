@@ -1,5 +1,5 @@
 import Image from "next/image";
-import heroImage from "public/hero.jpg";
+import heroImage from "public/images/hero.jpg";
 import { LinkButton } from "@/components/uikit/button";
 import { fredoka } from "../page";
 
