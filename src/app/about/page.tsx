@@ -1,5 +1,5 @@
 import Image from "next/image";
-import heroImage from "public/images/hero.jpg";
+import HeroImage from "public/images/hero.jpg";
 import { LinkButton } from "@/components/uikit/button";
 import { fredoka } from "../page";
 
@@ -9,7 +9,7 @@ export default function About() {
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-5 md:gap-8">
         <div>
           <Image
-            src={heroImage}
+            src={HeroImage}
             width={450}
             height={350}
             alt="Picture of the brand owner"
