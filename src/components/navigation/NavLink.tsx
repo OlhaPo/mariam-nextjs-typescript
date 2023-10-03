@@ -4,21 +4,24 @@ import clsx from "clsx";
 import { ReactNode } from "react";
 
 interface NavLinkProps extends LinkProps {
-  children?: ReactNode;
-  name: string;
+  children: ReactNode;
   isActive?: boolean;
-  onClick?: () => void;
 }
 
-export function NavLink(props: NavLinkProps) {
+export default function NavLink(props: NavLinkProps) {
   const linkClassName = clsx({
     "font-semibold text-primary cursor-default": props.isActive,
     "font-normal": !props.isActive,
   });
 
   return (
-    <Link className={linkClassName} href={props.href} onClick={props.onClick}>
-      {props.name}
+    <Link
+      {...props}
+      className={linkClassName}
+      href={props.href}
+      onClick={props.onClick}
+    >
+      {props.children}
     </Link>
   );
 }

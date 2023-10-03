@@ -1,14 +1,20 @@
+import { LinkProps } from "next/link";
+import { ReactNode } from "react";
 import Link from "next/link";
-import React from "react";
+import clsx from "clsx";
 
-interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
-  pathName: string;
+interface LinkButtonProps extends LinkProps {
+  children: ReactNode;
+  className?: string;
 }
-
-export function LinkButton(props: ButtonProps) {
+export default function LinkButton(props: LinkButtonProps) {
   return (
-    <Link href={props.pathName} className="btn-nav">
-      {props.title}
+    <Link
+      {...props}
+      href={props.href}
+      className={clsx("btn-nav", props.className)}
+    >
+      {props.children}
     </Link>
   );
 }

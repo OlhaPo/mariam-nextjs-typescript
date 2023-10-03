@@ -1,6 +1,6 @@
 import Image from "next/image";
 import HeroImage from "public/images/hero.jpg";
-import { LinkButton } from "@/components/uikit/button";
+import LinkButton from "@/components/uikit/button";
 
 export default function About() {
   return (
@@ -34,7 +34,7 @@ export default function About() {
               waiting for buying.
             </p>
             <div className="py-5 text-center md:text-left">
-              <LinkButton title="Welcome to Shop" pathName="/shop" />
+              <LinkButton href="/shop">Welcome to Shop</LinkButton>
             </div>
           </div>
           <div>
@@ -44,10 +44,7 @@ export default function About() {
               honored to create something beautiful and unique just for you.
             </p>
             <div className="py-5 text-center md:text-left">
-              <LinkButton
-                title="View all Collections"
-                pathName="/#collections"
-              />
+              <LinkButton href="/#collections">View all Collections</LinkButton>
             </div>
           </div>
         </div>
