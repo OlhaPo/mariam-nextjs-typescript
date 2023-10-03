@@ -6,7 +6,7 @@ export function Collections() {
   return (
     <section id="collections" className="section-container">
       <div>
-        <h2 className="mb-5 text-center">View collections</h2>
+        <h2 className="mb-5">View collections</h2>
       </div>
       <div className="flex flex-wrap flex-row gap-5 md:gap-12 items-center justify-center">
         {collectionCoverImage.map((item) => (

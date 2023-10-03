@@ -20,9 +20,9 @@ export default function Shop() {
                 priority
                 className="img-product-in-stock hover:scale-100"
               />
-              <h3>{product.title}</h3>
-              <p className="text-center">{product.price} UAH</p>
             </Link>
+            <h3>{product.title}</h3>
+            <p className="text-center">{product.price} UAH</p>
           </div>
         ))}
       </div>

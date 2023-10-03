@@ -1,13 +1,10 @@
-import { Fredoka } from "next/font/google";
 import { Collections } from "@/components/Collections";
-
-export const fredoka = Fredoka({ subsets: ["latin"], weight: ["300", "400"] });
 
 export default function Home() {
   return (
     <>
       <div className="main">
-        <h1 className={fredoka.className}>
+        <h1 className="font-fredoka font-light">
           <span className="text-center block md:inline mb-1 md:mb-0">
             mariam
           </span>{" "}

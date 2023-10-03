@@ -29,11 +29,11 @@ p {
 }
 
 h2 {
-  @apply text-2xl text-center font-medium;
+  @apply text-2xl text-center;
 }
 
 h3 {
-  @apply text-center text-xl font-medium;
+  @apply text-center text-xl;
 }
 
 .contacts {
@@ -45,9 +45,13 @@ h3 {
 }
 
 .contacts-subheader {
-  @apply font-medium text-primary;
+  @apply text-primary font-medium;
 }
 
 .section-container {
-  @apply max-w-screen-xl mx-auto py-16 px-5 lg:px-12 text-primary;
+  @apply max-w-screen-xl mx-auto py-16 px-5 lg:px-12;
+}
+
+a {
+  @apply text-black;
 }

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import HeroImage from "public/images/hero.jpg";
 import { LinkButton } from "@/components/uikit/button";
-import { fredoka } from "../page";
 
 export default function About() {
   return (
@@ -22,9 +21,7 @@ export default function About() {
             <p>
               My name is Maryna Kambur. I&apos;m the designer and owner of the
               brand{" "}
-              <span
-                className={`${fredoka.className} text-xl font-medium text-primary`}
-              >
+              <span className="font-fredoka text-xl font-medium text-primary">
                 mariam crochet jewelry
               </span>{" "}
               and an artist from Kyiv, Ukraine.
