@@ -1,4 +1,4 @@
-import { productsInStock } from "../domains/product/productsInStock";
+import { productsInStock } from "@/domains/product/productsInStock";
 import Image from "next/image";
 import Link from "next/link";
 

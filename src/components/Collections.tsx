@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { collectionCoverImage } from "@/app/domains/product/productsToPreOrder";
+import { collectionCoverImage } from "@/domains/product/productsToPreOrder";
 
 export function Collections() {
   return (
