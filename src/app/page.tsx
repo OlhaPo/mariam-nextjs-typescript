@@ -1,14 +1,17 @@
-import { Fredoka } from "next/font/google";
-
-const fredoka = Fredoka({ subsets: ["latin"], weight: ["300"] });
+import { Collections } from "@/components/Collections";
 
 export default function Home() {
   return (
-    <div className="main">
-      <h1 className={fredoka.className}>
-        <span className="text-center block md:inline mb-1 md:mb-0">mariam</span>{" "}
-        crochet jewelry
-      </h1>
-    </div>
+    <>
+      <div className="main">
+        <h1 className="font-fredoka font-light">
+          <span className="text-center block md:inline mb-1 md:mb-0">
+            mariam
+          </span>{" "}
+          crochet jewelry
+        </h1>
+      </div>
+      <Collections />
+    </>
   );
 }

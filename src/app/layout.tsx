@@ -1,9 +1,20 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
-import Navigation from "@/components/navigation/index";
+import { Noto_Sans, Fredoka } from "next/font/google";
+import { Navigation } from "@/components/navigation/index";
+import { Footer } from "@/components/footer/index";
+import clsx from "clsx";
 
-const roboto = Roboto({ subsets: ["latin"], weight: ["300"] });
+const fredoka = Fredoka({
+  subsets: ["latin"],
+  variable: "--font-fredoka",
+});
+
+const noto_sans = Noto_Sans({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-noto_sans",
+});
 
 export const metadata: Metadata = {
   title: "mariam crochet jewelry - Maryna Kambur",
@@ -18,9 +29,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} + bg-[#948D85]/30`}>
+      <body
+        className={clsx(fredoka.variable, noto_sans.variable, "bg-secondary")}
+      >
         <Navigation />
         <div className="mt-20 text-base md:text-lg">{children}</div>
+        <Footer />
       </body>
     </html>
   );
