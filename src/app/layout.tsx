@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Noto_Sans, Fredoka } from "next/font/google";
 import { Navigation } from "@/components/navigation/index";
-import { Contacts } from "@/components/Contacts";
+import { Contacts } from "@/components/Footer";
 import clsx from "clsx";
 
 const fredoka = Fredoka({
