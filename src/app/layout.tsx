@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Noto_Sans, Fredoka } from "next/font/google";
 import { Navigation } from "@/components/navigation/index";
-import { Contacts } from "@/components/Footer";
+import { Footer } from "@/components/footer/index";
 import clsx from "clsx";
 
 const fredoka = Fredoka({
@@ -34,7 +34,7 @@ export default function RootLayout({
       >
         <Navigation />
         <div className="mt-20 text-base md:text-lg">{children}</div>
-        <Contacts />
+        <Footer />
       </body>
     </html>
   );
