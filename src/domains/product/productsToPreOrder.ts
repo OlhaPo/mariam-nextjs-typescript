@@ -8,6 +8,7 @@ export const productsToPreOrder: Product[] = [
     price: 10,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "rings",
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const productsToPreOrder: Product[] = [
     price: 10,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "rings",
   },
   {
     id: 3,
@@ -24,6 +26,7 @@ export const productsToPreOrder: Product[] = [
     price: 10,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "brooches",
   },
   {
     id: 4,
@@ -32,6 +35,7 @@ export const productsToPreOrder: Product[] = [
     price: 10,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "rings",
   },
   {
     id: 5,
@@ -40,6 +44,7 @@ export const productsToPreOrder: Product[] = [
     price: 10,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "rings",
   },
   {
     id: 6,
@@ -48,6 +53,7 @@ export const productsToPreOrder: Product[] = [
     price: 10,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "brooches",
   },
   {
     id: 7,
@@ -56,6 +62,7 @@ export const productsToPreOrder: Product[] = [
     price: 10,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "collars",
   },
   {
     id: 8,
@@ -64,5 +71,6 @@ export const productsToPreOrder: Product[] = [
     price: 10,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "dresses",
   },
 ];

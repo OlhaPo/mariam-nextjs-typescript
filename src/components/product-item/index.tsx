@@ -4,7 +4,6 @@ import LinkButton from "@/components/uikit/button";
 
 type ProductItemProps = {
   product: Product;
-  category: string | null;
 };
 
 export default function ProductItem(props: ProductItemProps) {

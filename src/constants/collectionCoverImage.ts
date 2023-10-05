@@ -1,42 +1,42 @@
-export const collectionCoverImage = [
+export const mainPageCollections = [
   {
     title: "Dresses",
-    pathName: "/dresses",
+    pathName: "/items?category=dresses",
     imageUrl: "/dresses/dress-cover.jpg",
   },
   {
     title: "Brooches",
-    pathName: "/brooches",
+    pathName: "/items?category=brooches",
     imageUrl: "/brooches/brooches-cover.jpg",
   },
   {
     title: "Bracelets",
-    pathName: "/bracelets",
+    pathName: "/items?category=bracelets",
     imageUrl: "/bracelets/bracelets-cover.jpg",
   },
   {
     title: "Earrings",
-    pathName: "/earrings",
+    pathName: "/items?category=earrings",
     imageUrl: "/earrings/earrings-cover.jpg",
   },
   {
     title: "Necklaces",
-    pathName: "/necklaces",
+    pathName: "/items?category=necklaces",
     imageUrl: "/necklaces/necklaces-cover.jpg",
   },
   {
     title: "Rings",
-    pathName: "/rings",
+    pathName: "/items?category=rings",
     imageUrl: "/rings/rings-cover.jpg",
   },
   {
     title: "Collars",
-    pathName: "/collars",
+    pathName: "/items?category=collars",
     imageUrl: "/collars/collars-cover.jpg",
   },
   {
     title: "Bags",
-    pathName: "/bags",
+    pathName: "/items?category=bags",
     imageUrl: "/bags/bags-cover.jpg",
   },
 ];

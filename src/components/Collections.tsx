@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { collectionCoverImage } from "@/constants/collectionCoverImage";
+import { mainPageCollections } from "@/constants/collectionCoverImage";
 
 export function Collections() {
   return (
@@ -9,7 +9,7 @@ export function Collections() {
         <h2 className="mb-5">View collections</h2>
       </div>
       <div className="flex flex-wrap flex-row gap-5 md:gap-12 items-center justify-center">
-        {collectionCoverImage.map((item) => (
+        {mainPageCollections.map((item) => (
           <div className="collection-navLink" key={item.title}>
             <Link href={item.pathName}>
               <Image
