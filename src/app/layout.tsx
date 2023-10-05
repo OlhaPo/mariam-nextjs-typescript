@@ -33,7 +33,7 @@ export default function RootLayout({
         className={clsx(fredoka.variable, noto_sans.variable, "bg-secondary")}
       >
         <Navigation />
-        <div className="mt-20 text-base md:text-lg">{children}</div>
+        <div className="mt-20 text-base md:text-lg ">{children}</div>
         <Footer />
       </body>
     </html>

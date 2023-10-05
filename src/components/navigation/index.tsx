@@ -21,7 +21,7 @@ export function Navigation() {
     <div
       className={clsx("nav", {
         "text-white": isOpenNav || isHome,
-        "text-text border border-b-slate-300": !isHome,
+        "border border-b-slate-300": !isHome,
       })}
     >
       <div className="uppercase z-[140]">
@@ -42,7 +42,7 @@ export function Navigation() {
           <NavLink
             href={link.href}
             key={link.name}
-            isActive={pathname === link.href}
+            isactive={pathname === link.href}
           >
             {link.name}
           </NavLink>
