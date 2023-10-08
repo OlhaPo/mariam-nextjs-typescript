@@ -6,3 +6,9 @@ export type Product = {
   description?: string;
   category: string;
 };
+
+export type Collection = {
+  title: string;
+  name: string;
+  imageUrl: string;
+};
