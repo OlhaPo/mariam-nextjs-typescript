@@ -2,7 +2,7 @@ export const mainPageCollections = [
   {
     title: "Dresses",
     pathName: "/items?category=dresses",
-    imageUrl: "/dresses/dress-cover.jpg",
+    imageUrl: "/images/dresses/dress-cover.jpg",
   },
   {
     title: "Brooches",
