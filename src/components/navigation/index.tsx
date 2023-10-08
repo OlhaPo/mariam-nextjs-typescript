@@ -42,7 +42,7 @@ export function Navigation() {
           <NavLink
             href={link.href}
             key={link.name}
-            isactive={pathname === link.href}
+            isActive={pathname === link.href}
           >
             {link.name}
           </NavLink>
