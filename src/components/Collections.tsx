@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { mainPageCollections } from "@/constants/collectionCoverImage";
+import { mainPageCollections } from "@/constants/collection/constants";
 
 export function Collections() {
   return (
