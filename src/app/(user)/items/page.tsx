@@ -15,7 +15,7 @@ export default function Items() {
         {allProducts
           .filter((p) => p.category === searchParams.get("category"))
           .map((product) => (
-            <div>
+            <div key={product.title}>
               <ProductItem key={product.id} product={product} />
             </div>
           ))}

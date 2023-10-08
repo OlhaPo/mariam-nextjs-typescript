@@ -3,7 +3,7 @@ import { Product } from "./types";
 export const productsToPreOrder: Product[] = [
   {
     id: 1,
-    imageUrls: ["/in-stock/ring.jpg"],
+    imageUrls: ["/images/in-stock/ring.jpg"],
     title: "Ring title",
     price: 10,
     description:
@@ -12,7 +12,7 @@ export const productsToPreOrder: Product[] = [
   },
   {
     id: 2,
-    imageUrls: ["/in-stock/set-of-jewelry.jpg"],
+    imageUrls: ["/images/in-stock/set-of-jewelry.jpg"],
     title: "Set of jewelry title",
     price: 10,
     description:
@@ -21,7 +21,7 @@ export const productsToPreOrder: Product[] = [
   },
   {
     id: 3,
-    imageUrls: ["/in-stock/white-brooche.jpg"],
+    imageUrls: ["/images/in-stock/white-brooche.jpg"],
     title: "Set of crocheted jewelry",
     price: 10,
     description:
@@ -30,7 +30,7 @@ export const productsToPreOrder: Product[] = [
   },
   {
     id: 4,
-    imageUrls: ["/in-stock/ring.jpg"],
+    imageUrls: ["/images/in-stock/ring.jpg"],
     title: "Ring title",
     price: 10,
     description:
@@ -39,7 +39,7 @@ export const productsToPreOrder: Product[] = [
   },
   {
     id: 5,
-    imageUrls: ["/in-stock/set-of-jewelry.jpg"],
+    imageUrls: ["/images/in-stock/set-of-jewelry.jpg"],
     title: "Set of jewelry title",
     price: 10,
     description:
@@ -48,7 +48,7 @@ export const productsToPreOrder: Product[] = [
   },
   {
     id: 6,
-    imageUrls: ["/in-stock/white-brooche.jpg"],
+    imageUrls: ["/images/in-stock/white-brooche.jpg"],
     title: "Set of crocheted jewelry",
     price: 10,
     description:
@@ -57,7 +57,7 @@ export const productsToPreOrder: Product[] = [
   },
   {
     id: 7,
-    imageUrls: ["/in-stock/white-collar.jpg"],
+    imageUrls: ["/images/in-stock/white-collar.jpg"],
     title: "White collar title",
     price: 10,
     description:
@@ -66,7 +66,7 @@ export const productsToPreOrder: Product[] = [
   },
   {
     id: 8,
-    imageUrls: ["/in-stock/white-dress.jpg"],
+    imageUrls: ["/images/in-stock/white-dress.jpg"],
     title: "White dress title",
     price: 10,
     description:
