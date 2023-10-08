@@ -11,7 +11,7 @@ export default function Shop() {
       <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-10 lg:gap-8 px-10">
         {productsInStock.map((product) => (
           <div key={product.id} className="flex flex-col items-center gap-2">
-            <Link href={"/item"}>
+            <Link href={`/items/${product.id}`}>
               <Image
                 src={product.imageUrls[0]}
                 alt={product.title}
