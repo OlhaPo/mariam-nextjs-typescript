@@ -6,21 +6,21 @@ type ProductItemProps = {
   product: Product;
 };
 
-export default function ProductItem(props: ProductItemProps) {
+export default function ProductItem({ product }: ProductItemProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 gap">
       <div>
         <Image
-          src={props.product.imageUrls[0]}
+          src={product.imageUrls[0]}
           height={500}
           width={500}
-          alt={props.product.title}
+          alt={product.title}
         />
       </div>
       <div className="flex flex-col gap-8">
-        <h2 className="text-left">{props.product.title}</h2>
-        <span>{props.product.price} UAH</span>
-        <p>{props.product.description}</p>
+        <h2 className="text-left">{product.title}</h2>
+        <span>{product.price} UAH</span>
+        <p>{product.description}</p>
         <div>
           <LinkButton href="/cart">Add to cart</LinkButton>
         </div>
