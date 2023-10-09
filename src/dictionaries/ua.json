@@ -1,0 +1,23 @@
+{
+  "navigation": {
+    "home": "Марина Камбур",
+    "about": "Про мене",
+    "shop": "Крамничка",
+    "contacts": "Контакти",
+    "cart": "Корзина"
+  },
+  "page": {
+    "about": {
+      "title": "Привіт, дорогоцінна!",
+      "description": "Мене звати Марина Камбур. Я дизайнерка та власниця бренду <span class=\"font-fredoka text-xl font-medium text-primary\">mariam crochet jewelry</span> та митець з Києва, Україна."
+    },
+    "collections": {
+      "title": "Проглянути колекції"
+    },
+    "footer": {
+      "info": "mariam crochet jewelry - український бренд одягу та в&apos;язаних прикрас, заснований дизайнеркою Мариною Камбур. Виготовлено з люов&apos;ю в Києві, Україна.",
+      "menu-subtitle": "Menu",
+      "contacts-subtitle": "Contacts"
+    }
+  }
+}

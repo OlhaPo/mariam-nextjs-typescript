@@ -10,6 +10,7 @@ import NavLink from "./NavLink";
 export function Navigation() {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  console.log(pathname);
 
   const [isOpenNav, setIsOpenNav] = useState(false);
 
@@ -35,18 +36,28 @@ export function Navigation() {
               {link.name}
             </NavLink>
           ))}
+          <div className="inline-flex gap-3">
+            <div>EN</div>
+            <div>UA</div>
+          </div>
         </div>
       ) : null}
-      <div className="hidden md:inline-flex gap-7">
-        {navLinks.map((link) => (
-          <NavLink
-            href={link.href}
-            key={link.name}
-            isActive={pathname === link.href}
-          >
-            {link.name}
-          </NavLink>
-        ))}
+      <div className="hidden md:inline-flex gap-24">
+        <div className="flex gap-3">
+          <div>EN</div>
+          <div>UA</div>
+        </div>
+        <div className="flex gap-8">
+          {navLinks.map((link) => (
+            <NavLink
+              href={link.href}
+              key={link.name}
+              isactive={pathname === link.href}
+            >
+              {link.name}
+            </NavLink>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -5,18 +5,19 @@ import { ReactNode } from "react";
 
 interface NavLinkProps extends LinkProps {
   children: ReactNode;
-  isActive?: boolean;
+  isactive?: boolean;
 }
 
 export default function NavLink(props: NavLinkProps) {
-  const { isActive } = props;
+  const { isactive: isActive } = props;
   const linkClassName = clsx({
     "font-semibold text-primary cursor-default": isActive,
   });
 
+  const linkProps = { ...props, isactive: undefined };
   return (
     <Link
-      {...props}
+      {...linkProps}
       className={linkClassName}
       href={props.href}
       onClick={props.onClick}

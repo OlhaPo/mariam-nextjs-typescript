@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Noto_Sans, Fredoka } from "next/font/google";
+import { Locale, i18n } from "../../../i18n.config";
 import clsx from "clsx";
 
 const fredoka = Fredoka({
@@ -20,13 +21,19 @@ export const metadata: Metadata = {
     "mariam crochet jewelry is a Ukrainian clothing and crocheted jewelry brand founded by designer Maryna Kambur",
 };
 
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }));
+}
+
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { lang: Locale };
 }) {
   return (
-    <html lang="en">
+    <html lang={params.lang}>
       <body
         className={clsx(fredoka.variable, noto_sans.variable, "bg-secondary")}
       >
