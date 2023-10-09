@@ -9,9 +9,9 @@ interface NavLinkProps extends LinkProps {
 }
 
 export default function NavLink(props: NavLinkProps) {
+  const { isActive } = props;
   const linkClassName = clsx({
-    "font-semibold text-primary cursor-default": props.isActive,
-    "font-normal": !props.isActive,
+    "font-semibold text-primary cursor-default": isActive,
   });
 
   return (
