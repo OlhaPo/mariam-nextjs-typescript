@@ -28,23 +28,19 @@ export default async function About({
             <p dangerouslySetInnerHTML={{ __html: page.about.description }}></p>
           </div>
           <div>
-            <p>
-              Thank you for stopping by my online corner. Feel free to check out
-              the handmade jewelry and clothing pieces that are ready and
-              waiting for buying.
-            </p>
+            <p>{page.about.shop_description}</p>
             <div className="py-5 text-center md:text-left">
-              <LinkButton href={`/${lang}/shop`}>Welcome to Shop</LinkButton>
+              <LinkButton href={`/${lang}/shop`}>
+                {page.about.shop_link}
+              </LinkButton>
             </div>
           </div>
           <div>
-            <p>
-              For more inspiration I invite you to explore the collections,
-              where everything is available for pre-order. Also, I would be
-              honored to create something beautiful and unique just for you.
-            </p>
+            <p>{page.about.collections_description}</p>
             <div className="py-5 text-center md:text-left">
-              <LinkButton href="/#collections">View all Collections</LinkButton>
+              <LinkButton href={`/${lang}/#collections`}>
+                {page.about.collections_link}
+              </LinkButton>
             </div>
           </div>
         </div>

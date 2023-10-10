@@ -6,17 +6,25 @@ import clsx from "clsx";
 import { useState } from "react";
 import { BiMenu } from "react-icons/bi";
 import NavLink from "./NavLink";
+import { Locale } from "../../../i18n.config";
 
-export function Navigation() {
+export function Navigation({
+  translations,
+  lang,
+}: {
+  translations: any;
+  lang: Locale;
+}) {
   const pathname = usePathname();
-  const isHome = pathname === "/";
-  console.log(pathname);
+  const isHome = pathname === "/" + lang;
 
   const [isOpenNav, setIsOpenNav] = useState(false);
 
   const handleNav = () => {
     setIsOpenNav(!isOpenNav);
   };
+
+  const createFullUrl = (url: string) => `/${lang}/${url}`;
 
   return (
     <div
@@ -26,14 +34,18 @@ export function Navigation() {
       })}
     >
       <div className="uppercase z-[140]">
-        <NavLink href="/">Maryna Kambur</NavLink>
+        <NavLink href={createFullUrl("/")}>{translations.home}</NavLink>
       </div>{" "}
       <BiMenu size={30} onClick={handleNav} className="md:hidden z-[150]" />
       {isOpenNav ? (
         <div className="w-full bg-[#948D85] absolute top-0 left-0 right-0 min-h-screen flex flex-col justify-center items-center z-[120] gap-5">
           {navLinks.map((link) => (
-            <NavLink href={link.href} onClick={handleNav} key={link.name}>
-              {link.name}
+            <NavLink
+              href={createFullUrl(link.href)}
+              onClick={handleNav}
+              key={link.title[lang]}
+            >
+              {link.title[lang]}
             </NavLink>
           ))}
           <div className="inline-flex gap-3">
@@ -50,11 +62,11 @@ export function Navigation() {
         <div className="flex gap-8">
           {navLinks.map((link) => (
             <NavLink
-              href={link.href}
-              key={link.name}
-              isactive={pathname === link.href}
+              href={createFullUrl(link.href)}
+              key={link.title[lang]}
+              isactive={pathname === createFullUrl(link.href)}
             >
-              {link.name}
+              {link.title[lang]}
             </NavLink>
           ))}
         </div>

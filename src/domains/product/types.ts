@@ -8,7 +8,9 @@ export type Product = {
 };
 
 export type Collection = {
-  title: string;
+  title: {
+    [lang: string]: string;
+  };
   name: string;
   imageUrl: string;
 };

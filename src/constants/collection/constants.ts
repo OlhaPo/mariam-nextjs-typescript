@@ -2,42 +2,66 @@ import { Collection } from "@/domains/product/types";
 
 export const mainPageCollections: Collection[] = [
   {
-    title: "Dresses",
+    title: {
+      en: "Dresses",
+      ua: "Сукні",
+    },
     name: "/items?category=dresses",
     imageUrl: "/images/dresses/dress-cover.jpg",
   },
   {
-    title: "Brooches",
+    title: {
+      en: "Brooches",
+      ua: "Брошки",
+    },
     name: "/items?category=brooches",
     imageUrl: "/images/brooches/brooches-cover.jpg",
   },
   {
-    title: "Bracelets",
+    title: {
+      en: "Bracelets",
+      ua: "Браслети",
+    },
     name: "/items?category=bracelets",
     imageUrl: "/images/bracelets/bracelets-cover.jpg",
   },
   {
-    title: "Earrings",
+    title: {
+      en: "Earrings",
+      ua: "Сережки",
+    },
     name: "/items?category=earrings",
     imageUrl: "/images/earrings/earrings-cover.jpg",
   },
   {
-    title: "Necklaces",
+    title: {
+      en: "Necklaces",
+      ua: "Намисто",
+    },
     name: "/items?category=necklaces",
     imageUrl: "/images/necklaces/necklaces-cover.jpg",
   },
   {
-    title: "Rings",
+    title: {
+      en: "Rings",
+      ua: "Персні",
+    },
     name: "/items?category=rings",
     imageUrl: "/images/rings/rings-cover.jpg",
   },
   {
-    title: "Collars",
+    title: {
+      en: "Collars",
+      ua: "Комірці",
+    },
     name: "/items?category=collars",
     imageUrl: "/images/collars/collars-cover.jpg",
   },
   {
-    title: "Bags",
+    title: {
+      en: "Bags",
+      ua: "Сумки",
+    },
     name: "/items?category=bags",
     imageUrl: "/images/bags/bags-cover.jpg",
   },
