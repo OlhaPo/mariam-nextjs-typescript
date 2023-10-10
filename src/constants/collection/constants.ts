@@ -4,7 +4,7 @@ export const mainPageCollections: Collection[] = [
   {
     title: {
       en: "Dresses",
-      ua: "Сукні",
+      uk: "Сукні",
     },
     name: "/items?category=dresses",
     imageUrl: "/images/dresses/dress-cover.jpg",
@@ -12,7 +12,7 @@ export const mainPageCollections: Collection[] = [
   {
     title: {
       en: "Brooches",
-      ua: "Брошки",
+      uk: "Брошки",
     },
     name: "/items?category=brooches",
     imageUrl: "/images/brooches/brooches-cover.jpg",
@@ -20,7 +20,7 @@ export const mainPageCollections: Collection[] = [
   {
     title: {
       en: "Bracelets",
-      ua: "Браслети",
+      uk: "Браслети",
     },
     name: "/items?category=bracelets",
     imageUrl: "/images/bracelets/bracelets-cover.jpg",
@@ -28,7 +28,7 @@ export const mainPageCollections: Collection[] = [
   {
     title: {
       en: "Earrings",
-      ua: "Сережки",
+      uk: "Сережки",
     },
     name: "/items?category=earrings",
     imageUrl: "/images/earrings/earrings-cover.jpg",
@@ -36,7 +36,7 @@ export const mainPageCollections: Collection[] = [
   {
     title: {
       en: "Necklaces",
-      ua: "Намисто",
+      uk: "Намисто",
     },
     name: "/items?category=necklaces",
     imageUrl: "/images/necklaces/necklaces-cover.jpg",
@@ -44,7 +44,7 @@ export const mainPageCollections: Collection[] = [
   {
     title: {
       en: "Rings",
-      ua: "Персні",
+      uk: "Персні",
     },
     name: "/items?category=rings",
     imageUrl: "/images/rings/rings-cover.jpg",
@@ -52,7 +52,7 @@ export const mainPageCollections: Collection[] = [
   {
     title: {
       en: "Collars",
-      ua: "Комірці",
+      uk: "Комірці",
     },
     name: "/items?category=collars",
     imageUrl: "/images/collars/collars-cover.jpg",
@@ -60,7 +60,7 @@ export const mainPageCollections: Collection[] = [
   {
     title: {
       en: "Bags",
-      ua: "Сумки",
+      uk: "Сумки",
     },
     name: "/items?category=bags",
     imageUrl: "/images/bags/bags-cover.jpg",

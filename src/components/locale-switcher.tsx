@@ -7,7 +7,6 @@ import { i18n } from "../../i18n.config";
 
 export default function LocaleSwitcher() {
   const pathName = usePathname();
-  console.log("--- pathName:", pathName);
 
   const redirectedPathName = (newLocale: string) => {
     if (!pathName) return "/";
