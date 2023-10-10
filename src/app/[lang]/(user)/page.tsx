@@ -1,13 +1,7 @@
 import { Collections } from "@/components/Collections";
 import { Locale } from "../../../../i18n.config";
 
-export default function Home({
-  children,
-  params,
-}: {
-  children: React.ReactNode;
-  params: { lang: Locale };
-}) {
+export default function Home({ params }: { params: { lang: Locale } }) {
   return (
     <>
       <div className="main">

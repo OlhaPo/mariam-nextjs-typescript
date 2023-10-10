@@ -5,7 +5,7 @@ import { navLinks } from "./constants";
 import clsx from "clsx";
 import { useState } from "react";
 import { BiMenu } from "react-icons/bi";
-import NavLink from "./NavLink";
+import NavLink from "./nav-link";
 import { Locale } from "../../../i18n.config";
 
 export function Navigation({

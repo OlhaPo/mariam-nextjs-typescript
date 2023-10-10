@@ -1,4 +1,4 @@
-import NavLink from "../navigation/NavLink";
+import NavLink from "../navigation/nav-link";
 import { Locale } from "../../../i18n.config";
 import { getDictionary } from "@/lib/dictionary";
 
