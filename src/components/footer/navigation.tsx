@@ -7,9 +7,9 @@ export async function Navigation({ lang }: { lang: Locale }) {
   return (
     <div className="contacts-section">
       <span className="contacts-subheader">{footer.menu_subtitle}</span>
-      <NavLink href={"/about"}>{navigation.about}</NavLink>
-      <NavLink href={"/shop"}>{navigation.shop}</NavLink>
-      <NavLink href={"/orders"}>{navigation.orders}</NavLink>
+      <NavLink href={`/${lang}/about`}>{navigation.about}</NavLink>
+      <NavLink href={`/${lang}/shop`}>{navigation.shop}</NavLink>
+      <NavLink href={`/${lang}/orders`}>{navigation.orders}</NavLink>
     </div>
   );
 }
