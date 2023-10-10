@@ -7,6 +7,7 @@ import { useState } from "react";
 import { BiMenu } from "react-icons/bi";
 import NavLink from "./nav-link";
 import { Locale } from "../../../i18n.config";
+import LocaleSwitcher from "../locale-switcher";
 
 export function Navigation({
   translations,
@@ -48,16 +49,14 @@ export function Navigation({
               {link.title[lang]}
             </NavLink>
           ))}
-          <div className="inline-flex gap-3">
-            <div>EN</div>
-            <div>UA</div>
+          <div>
+            <LocaleSwitcher />
           </div>
         </div>
       ) : null}
-      <div className="hidden md:inline-flex gap-24">
-        <div className="flex gap-3">
-          <div>EN</div>
-          <div>UA</div>
+      <div className="hidden md:inline-flex gap-12">
+        <div>
+          <LocaleSwitcher />
         </div>
         <div className="flex gap-8">
           {navLinks.map((link) => (
