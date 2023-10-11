@@ -1,11 +1,15 @@
 "use client";
 
-import { Formik, Field, Form, FormikHelpers } from "formik";
+import { Formik } from "formik";
+import * as yup from "yup";
 
-interface Values {
-  username: string;
-  password: string;
-}
+let LoginSchema = yup.object().shape({
+  username: yup.string().required("Please enter your username"),
+  password: yup
+    .string()
+    .required("Password is a required field")
+    .min(8, "Password must be at least 8 characters"),
+});
 
 export default function Login() {
   return (
@@ -14,36 +18,49 @@ export default function Login() {
         <h2>Welcome to admin panel</h2>
         <div className="mt-10">
           <Formik
-            initialValues={{
-              username: "",
-              password: "",
-            }}
-            onSubmit={(
-              values: Values,
-              { setSubmitting }: FormikHelpers<Values>
-            ) => {
-              setTimeout(() => {
-                alert(JSON.stringify(values, null, 2));
-                setSubmitting(false);
-              }, 500);
+            validationSchema={LoginSchema}
+            initialValues={{ username: "", password: "" }}
+            onSubmit={(values) => {
+              alert(JSON.stringify(values));
             }}
           >
-            <Form className="flex flex-col gap-4 w-1/4 mx-auto">
-              <label htmlFor="login" className="text-left">
-                Username
-              </label>
-              <Field id="username" name="username" />
-              <label htmlFor="password" className="text-left">
-                Password
-              </label>
-              <Field id="password" name="password" />
-              <button
-                type="submit"
-                className="rounded-md border-2 p-2 bg-white text-black"
-              >
-                Login
-              </button>
-            </Form>
+            {({
+              values,
+              errors,
+              touched,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+            }) => (
+              <div className="login">
+                <div className="form">
+                  <form noValidate onSubmit={handleSubmit}>
+                    <input
+                      type="text"
+                      name="username"
+                      onChange={handleChange}
+                      value={values.username}
+                      placeholder="Enter username"
+                    />
+                    <p className="text-center text-red-900">
+                      {errors.username && touched.username && errors.username}
+                    </p>
+                    <input
+                      type="password"
+                      name="password"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.password}
+                      placeholder="Enter password"
+                    />
+                    <p className="text-center text-red-900">
+                      {errors.password && touched.password && errors.password}
+                    </p>
+                    <button type="submit">Login</button>
+                  </form>
+                </div>
+              </div>
+            )}
           </Formik>
         </div>
       </div>
