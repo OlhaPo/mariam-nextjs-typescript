@@ -1,6 +1,6 @@
 import Image from "next/image";
 import HeroImage from "public/images/hero.jpg";
-import LinkButton from "@/components/uikit/button";
+import Link from "next/link";
 import { Locale } from "../../../../../i18n.config";
 import { getDictionary } from "@/lib/dictionary";
 
@@ -30,17 +30,17 @@ export default async function About({
           <div>
             <p>{page.about.shop_description}</p>
             <div className="py-5 text-center md:text-left">
-              <LinkButton href={`/${lang}/shop`}>
+              <Link href={`/${lang}/shop`} className="btn-nav">
                 {page.about.shop_link}
-              </LinkButton>
+              </Link>
             </div>
           </div>
           <div>
             <p>{page.about.collections_description}</p>
             <div className="py-5 text-center md:text-left">
-              <LinkButton href={`/${lang}/#collections`}>
+              <Link href={`/${lang}/#collections`} className="btn-nav">
                 {page.about.collections_link}
-              </LinkButton>
+              </Link>
             </div>
           </div>
         </div>
