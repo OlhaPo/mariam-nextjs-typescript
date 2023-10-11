@@ -5,7 +5,7 @@ import { Locale } from "../../../i18n.config";
 
 type ProductItemProps = {
   product: Product;
-  lang: Locale;
+  lang?: Locale;
 };
 
 export default function ProductItem({ product, lang }: ProductItemProps) {

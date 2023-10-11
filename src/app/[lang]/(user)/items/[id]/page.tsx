@@ -1,8 +1,18 @@
-// import ProductItem from "@/components/product-item";
+import ProductItem from "@/components/product-item";
+import { productsInStock } from "@/domains/product/productsInStock";
 
-// export default function Item() {
+export default function Item({ params }: { params: { id: string } }) {
+  const id = parseInt(params.id);
 
-//     return (
-//         <ProductItem lang="........" product={.......}></ProductItem>
-//     );
-// }
+  const product = productsInStock.find((p) => p.id === id);
+
+  return (
+    <div className="section-container">
+      {product ? (
+        <ProductItem product={product} />
+      ) : (
+        <div>Product not found</div>
+      )}
+    </div>
+  );
+}

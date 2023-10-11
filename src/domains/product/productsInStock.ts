@@ -14,7 +14,7 @@ export const productsInStock: Product[] = [
     id: 2,
     imageUrls: ["/images/in-stock/set-of-jewelry.jpg"],
     title: "Set of jewelry title",
-    price: 10,
+    price: 100,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "rings",
