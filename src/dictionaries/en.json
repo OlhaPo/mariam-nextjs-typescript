@@ -20,7 +20,8 @@
       "header": "View collections"
     },
     "shop": {
-      "header": "All clothing and jewelry pieces are already available for buying"
+      "header": "All clothing and jewelry pieces are already available for buying",
+      "to_cart": "Add to cart"
     }
   },
   "footer": {
