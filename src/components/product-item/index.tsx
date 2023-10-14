@@ -10,7 +10,7 @@ type ProductItemProps = {
 
 export default function ProductItem({ product, lang }: ProductItemProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 gap">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-12">
       <div>
         <Image
           src={product.imageUrls[0]}
