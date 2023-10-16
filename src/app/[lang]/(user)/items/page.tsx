@@ -1,12 +1,23 @@
 "use client";
 
-import ProductItem from "@/components/product-item";
-import { productsInStock } from "@/domains/product/productsInStock";
-import { productsToPreOrder } from "@/domains/product/productsToPreOrder";
+import { broochesItems } from "@/domains/product/brooches";
+import { braceletsItems } from "@/domains/product/bracelets";
 import { useSearchParams } from "next/navigation";
+import { collarsItems } from "@/domains/product/collars";
+import { dressesItems } from "@/domains/product/dresses";
+import { ringsItems } from "@/domains/product/rings";
+import { earringsItems } from "@/domains/product/earrings";
+import Image from "next/image";
 
 export default function Items() {
-  const allProducts = [...productsInStock, ...productsToPreOrder];
+  const allProducts = [
+    ...braceletsItems,
+    ...broochesItems,
+    ...collarsItems,
+    ...dressesItems,
+    ...ringsItems,
+    ...earringsItems,
+  ];
   const searchParams = useSearchParams();
   const activeCategory = searchParams.get("category");
   let filteredProducts = allProducts;
@@ -18,10 +29,20 @@ export default function Items() {
 
   return (
     <div className="section-container">
-      <div className="flex flex-col flex-wrap gap-12">
+      <h3>TODO: Here goes some title</h3>
+      <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-12 px-10 pt-10">
         {filteredProducts.map((product) => (
-          <div key={product.title}>
-            <ProductItem key={product.id} product={product} />
+          <div key={product.id} className="flex flex-col items-center">
+            <Image
+              src={product.imageUrls[0]}
+              alt={product.title}
+              width={600}
+              height={600}
+              priority
+              className="img-product-in-stock hover:scale-110"
+            />
+            <h3>{product.title}</h3>
+            <p className="text-center">{product.price} UAH</p>
           </div>
         ))}
       </div>

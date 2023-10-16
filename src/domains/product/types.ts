@@ -11,6 +11,6 @@ export type Collection = {
   title: {
     [lang: string]: string;
   };
-  name: string;
+  category: string;
   imageUrl: string;
 };

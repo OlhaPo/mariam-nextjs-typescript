@@ -14,7 +14,7 @@ export async function Collections({ lang }: { lang: Locale }) {
       <div className="flex flex-wrap flex-row gap-5 md:gap-12 items-center justify-center">
         {mainPageCollections.map((item) => (
           <div className="collection-navLink" key={item.title[lang]}>
-            <Link href={item.name}>
+            <Link href={`${lang}/items?category=${item.category}`}>
               <Image
                 src={item.imageUrl}
                 width={300}

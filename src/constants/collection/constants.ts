@@ -6,63 +6,55 @@ export const mainPageCollections: Collection[] = [
       en: "Dresses",
       uk: "Сукні",
     },
-    name: "/items?category=dresses",
-    imageUrl: "/images/dresses/dress-cover.jpg",
+    category: "dresses",
+    imageUrl: "/images/collections-main-page/dress-cover.jpg",
   },
   {
     title: {
       en: "Brooches",
       uk: "Брошки",
     },
-    name: "/items?category=brooches",
-    imageUrl: "/images/brooches/brooches-cover.jpg",
+    category: "brooches",
+    imageUrl: "/images/collections-main-page/brooches-cover.jpg",
   },
   {
     title: {
       en: "Bracelets",
       uk: "Браслети",
     },
-    name: "/items?category=bracelets",
-    imageUrl: "/images/bracelets/bracelets-cover.jpg",
+    category: "bracelets",
+    imageUrl: "/images/collections-main-page/bracelets-cover.jpg",
   },
   {
     title: {
       en: "Earrings",
       uk: "Сережки",
     },
-    name: "/items?category=earrings",
-    imageUrl: "/images/earrings/earrings-cover.jpg",
+    category: "earrings",
+    imageUrl: "/images/collections-main-page/earrings-cover.jpg",
   },
   {
     title: {
       en: "Necklaces",
       uk: "Намисто",
     },
-    name: "/items?category=necklaces",
-    imageUrl: "/images/necklaces/necklaces-cover.jpg",
+    category: "necklaces",
+    imageUrl: "/images/collections-main-page/necklaces-cover.jpg",
   },
   {
     title: {
       en: "Rings",
       uk: "Персні",
     },
-    name: "/items?category=rings",
-    imageUrl: "/images/rings/rings-cover.jpg",
+    category: "rings",
+    imageUrl: "/images/collections-main-page/rings-cover.jpg",
   },
   {
     title: {
       en: "Collars",
       uk: "Комірці",
     },
-    name: "/items?category=collars",
-    imageUrl: "/images/collars/collars-cover.jpg",
-  },
-  {
-    title: {
-      en: "Bags",
-      uk: "Сумки",
-    },
-    name: "/items?category=bags",
-    imageUrl: "/images/bags/bags-cover.jpg",
+    category: "collars",
+    imageUrl: "/images/collections-main-page/collars-cover.jpg",
   },
 ];

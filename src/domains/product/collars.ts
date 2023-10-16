@@ -1,22 +1,22 @@
 import { Product } from "./types";
 
-export const productsInStock: Product[] = [
+export const collarsItems: Product[] = [
   {
-    id: 1,
-    imageUrls: ["/images/collections-main-page/bags-cover.jpg"],
+    id: 301,
+    imageUrls: ["/images/collars/collars-2.jpg"],
     title: "title",
     price: 10,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "bags",
+    category: "collars",
   },
   {
-    id: 2,
-    imageUrls: ["/images/bracelets/bracelets-on-hand-set.jpg"],
+    id: 302,
+    imageUrls: ["/images/collars/collars-cover.jpg"],
     title: "title",
     price: 10,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "bracelets",
+    category: "collars",
   },
 ];

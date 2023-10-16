@@ -1,6 +1,5 @@
 import { Product } from "@/domains/product/types";
 import Image from "next/image";
-import LinkButton from "../uikit/button";
 import { Locale } from "../../../i18n.config";
 
 type ProductItemProps = {
@@ -23,9 +22,6 @@ export default function ProductItem({ product, lang }: ProductItemProps) {
         <h2 className="text-left">{product.title}</h2>
         <span>{product.price} UAH</span>
         <p>{product.description}</p>
-        <div>
-          <LinkButton href={`/${lang}/cart`}>Add to cart</LinkButton>
-        </div>
       </div>
     </div>
   );
