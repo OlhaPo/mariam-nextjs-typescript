@@ -4,19 +4,21 @@ import { broochesItems } from "@/domains/product/brooches";
 import { braceletsItems } from "@/domains/product/bracelets";
 import { useSearchParams } from "next/navigation";
 import { collarsItems } from "@/domains/product/collars";
-import { dressesItems } from "@/domains/product/dresses";
 import { ringsItems } from "@/domains/product/rings";
 import { earringsItems } from "@/domains/product/earrings";
 import Image from "next/image";
+import { wreathsItems } from "@/domains/product/wreaths";
+import { dressesItems } from "@/domains/product/dresses";
 
 export default function Items() {
   const allProducts = [
     ...braceletsItems,
     ...broochesItems,
     ...collarsItems,
-    ...dressesItems,
     ...ringsItems,
     ...earringsItems,
+    ...wreathsItems,
+    ...dressesItems,
   ];
   const searchParams = useSearchParams();
   const activeCategory = searchParams.get("category");

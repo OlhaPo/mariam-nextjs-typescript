@@ -57,4 +57,12 @@ export const mainPageCollections: Collection[] = [
     category: "collars",
     imageUrl: "/images/collections-main-page/collars-cover.jpg",
   },
+  {
+    title: {
+      en: "Wreaths",
+      uk: "Віночки",
+    },
+    category: "wreaths",
+    imageUrl: "/images/wreaths/pink-floral-wreath.jpg",
+  },
 ];

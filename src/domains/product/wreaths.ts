@@ -2,48 +2,129 @@ import { Product } from "./types";
 
 export const wreathsItems: Product[] = [
   {
-    id: 101,
-    imageUrls: ["/images/bracelets/bracelet.jpg"],
+    id: 801,
+    imageUrls: ["/images/wreaths/blue-floral-wreath.jpg"],
     title: "title",
     price: 10,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "bracelets",
+    category: "wreaths",
   },
   {
-    id: 102,
-    imageUrls: ["/images/bracelets/bracelet-on-hand.jpg"],
+    id: 802,
+    imageUrls: ["/images/wreaths/floral-wreath-overview.jpg"],
     title: "title",
     price: 10,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "bracelets",
+    category: "wreaths",
   },
   {
-    id: 103,
-    imageUrls: ["/images/bracelets/bracelets-on-hand-set.jpg"],
+    id: 803,
+    imageUrls: ["/images/wreaths/lilac-green-wreath.jpg"],
     title: "title",
     price: 10,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "bracelets",
+    category: "wreaths",
   },
   {
-    id: 104,
-    imageUrls: ["/images/bracelets/bracelets-on-linen.jpg"],
+    id: 804,
+    imageUrls: ["/images/wreaths/pink-floral-wreath.jpg"],
     title: "title",
     price: 10,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "bracelets",
+    category: "wreaths",
   },
   {
-    id: 105,
-    imageUrls: ["/images/bracelets/bracelets-set.jpg"],
+    id: 805,
+    imageUrls: ["/images/wreaths/pink-floral-wreath-process.jpg"],
     title: "title",
     price: 10,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "bracelets",
+    category: "wreaths",
+  },
+  {
+    id: 806,
+    imageUrls: ["/images/wreaths/pink-green-floral-wreath.jpg"],
+    title: "title",
+    price: 10,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "wreaths",
+  },
+  {
+    id: 807,
+    imageUrls: ["/images/wreaths/pink-green-wreath-1.jpg"],
+    title: "title",
+    price: 10,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "wreaths",
+  },
+  {
+    id: 808,
+    imageUrls: ["/images/wreaths/pink-red-wreath-2.jpg"],
+    title: "title",
+    price: 10,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "wreaths",
+  },
+  {
+    id: 809,
+    imageUrls: ["/images/wreaths/red-brown-floral-wreath.jpg"],
+    title: "title",
+    price: 10,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "wreaths",
+  },
+  {
+    id: 810,
+    imageUrls: ["/images/wreaths/red-green-wreath-1.jpg"],
+    title: "title",
+    price: 10,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "wreaths",
+  },
+  {
+    id: 811,
+    imageUrls: ["/images/wreaths/set-wreath-earrings-pink.jpg"],
+    title: "title",
+    price: 10,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "wreaths",
+  },
+  {
+    id: 812,
+    imageUrls: ["/images/wreaths/white-floral-wreath.jpg"],
+    title: "title",
+    price: 10,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "wreaths",
+  },
+  {
+    id: 813,
+    imageUrls: ["/images/wreaths/wreath-5.jpg"],
+    title: "title",
+    price: 10,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "wreaths",
+  },
+  {
+    id: 814,
+    imageUrls: ["/images/wreaths/yellow-pink-floral-wreath.jpg"],
+    title: "title",
+    price: 10,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "wreaths",
   },
 ];

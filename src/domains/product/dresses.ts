@@ -3,7 +3,7 @@ import { Product } from "./types";
 export const dressesItems: Product[] = [
   {
     id: 401,
-    imageUrls: ["/images/dresses/black-dress.jpg"],
+    imageUrls: ["/images/dresses/white-dress-2.jpg"],
     title: "title",
     price: 10,
     description:
@@ -12,7 +12,7 @@ export const dressesItems: Product[] = [
   },
   {
     id: 402,
-    imageUrls: ["/images/dresses/plain-white-dress-2.jpg"],
+    imageUrls: ["/images/collections-main-page/dress-cover.jpg"],
     title: "title",
     price: 10,
     description:
@@ -21,7 +21,7 @@ export const dressesItems: Product[] = [
   },
   {
     id: 403,
-    imageUrls: ["/images/dresses/white-dress-embroidery.jpg"],
+    imageUrls: ["/images/dresses/white-dress.jpg"],
     title: "title",
     price: 10,
     description:
@@ -30,7 +30,16 @@ export const dressesItems: Product[] = [
   },
   {
     id: 404,
-    imageUrls: ["/images/dresses/white-dress-with-braids-4.jpg"],
+    imageUrls: ["/images/dresses/blue-dress.jpg"],
+    title: "title",
+    price: 10,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "dresses",
+  },
+  {
+    id: 405,
+    imageUrls: ["/images/dresses/white-dress-embroidery.jpg"],
     title: "title",
     price: 10,
     description:
