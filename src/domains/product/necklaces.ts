@@ -3,7 +3,7 @@ import { Product } from "./types";
 export const necklacesItems: Product[] = [
   {
     id: 601,
-    imageUrls: ["/images/collections-main-page/necklaces-cover.jpg"],
+    imageUrls: ["/images/necklaces/necklaces-cover.jpg"],
     title: "title",
     price: 10,
     description:

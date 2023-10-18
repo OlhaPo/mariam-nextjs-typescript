@@ -9,6 +9,7 @@ import { earringsItems } from "@/domains/product/earrings";
 import Image from "next/image";
 import { wreathsItems } from "@/domains/product/wreaths";
 import { dressesItems } from "@/domains/product/dresses";
+import { necklacesItems } from "@/domains/product/necklaces";
 
 export default function Items() {
   const allProducts = [
@@ -19,6 +20,7 @@ export default function Items() {
     ...earringsItems,
     ...wreathsItems,
     ...dressesItems,
+    ...necklacesItems,
   ];
   const searchParams = useSearchParams();
   const activeCategory = searchParams.get("category");

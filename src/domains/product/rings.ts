@@ -12,7 +12,7 @@ export const ringsItems: Product[] = [
   },
   {
     id: 702,
-    imageUrls: ["/images/collections-main-page/rings-cover.jpg"],
+    imageUrls: ["/images/rings/rings-cover.jpg"],
     title: "title",
     price: 10,
     description:

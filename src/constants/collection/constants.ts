@@ -7,7 +7,7 @@ export const mainPageCollections: Collection[] = [
       uk: "Сукні",
     },
     category: "dresses",
-    imageUrl: "/images/collections-main-page/dress-cover.jpg",
+    imageUrl: "/images/dresses/dress-cover.jpg",
   },
   {
     title: {
@@ -15,7 +15,7 @@ export const mainPageCollections: Collection[] = [
       uk: "Брошки",
     },
     category: "brooches",
-    imageUrl: "/images/collections-main-page/brooches-cover.jpg",
+    imageUrl: "/images/brooches/brooches-cover.jpg",
   },
   {
     title: {
@@ -23,7 +23,7 @@ export const mainPageCollections: Collection[] = [
       uk: "Браслети",
     },
     category: "bracelets",
-    imageUrl: "/images/collections-main-page/bracelets-cover.jpg",
+    imageUrl: "/images/bracelets/bracelets-cover.jpg",
   },
   {
     title: {
@@ -31,7 +31,7 @@ export const mainPageCollections: Collection[] = [
       uk: "Сережки",
     },
     category: "earrings",
-    imageUrl: "/images/collections-main-page/earrings-cover.jpg",
+    imageUrl: "/images/earrings/earrings-2.jpg",
   },
   {
     title: {
@@ -39,7 +39,7 @@ export const mainPageCollections: Collection[] = [
       uk: "Намисто",
     },
     category: "necklaces",
-    imageUrl: "/images/collections-main-page/necklaces-cover.jpg",
+    imageUrl: "/images/necklaces/necklaces-cover.jpg",
   },
   {
     title: {
@@ -47,7 +47,7 @@ export const mainPageCollections: Collection[] = [
       uk: "Персні",
     },
     category: "rings",
-    imageUrl: "/images/collections-main-page/rings-cover.jpg",
+    imageUrl: "/images/rings/rings-cover.jpg",
   },
   {
     title: {
@@ -55,7 +55,7 @@ export const mainPageCollections: Collection[] = [
       uk: "Комірці",
     },
     category: "collars",
-    imageUrl: "/images/collections-main-page/collars-cover.jpg",
+    imageUrl: "/images/collars/white-collar.jpg",
   },
   {
     title: {

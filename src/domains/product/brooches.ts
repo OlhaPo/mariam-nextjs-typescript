@@ -11,7 +11,7 @@ export const broochesItems: Product[] = [
     category: "brooches",
   },
   {
-    id: 203,
+    id: 202,
     imageUrls: ["/images/brooches/brooches-2.jpg"],
     title: "title",
     price: 10,
@@ -20,7 +20,7 @@ export const broochesItems: Product[] = [
     category: "brooches",
   },
   {
-    id: 204,
+    id: 203,
     imageUrls: ["/images/brooches/brooches-3.jpg"],
     title: "title",
     price: 10,
@@ -29,7 +29,7 @@ export const broochesItems: Product[] = [
     category: "brooches",
   },
   {
-    id: 205,
+    id: 204,
     imageUrls: ["/images/brooches/brooches-4.jpg"],
     title: "title",
     price: 10,
@@ -38,7 +38,7 @@ export const broochesItems: Product[] = [
     category: "brooches",
   },
   {
-    id: 206,
+    id: 205,
     imageUrls: ["/images/brooches/brooches-5.jpg"],
     title: "title",
     price: 10,
@@ -47,7 +47,7 @@ export const broochesItems: Product[] = [
     category: "brooches",
   },
   {
-    id: 207,
+    id: 206,
     imageUrls: ["/images/brooches/brooches-6.jpg"],
     title: "title",
     price: 10,
@@ -56,17 +56,8 @@ export const broochesItems: Product[] = [
     category: "brooches",
   },
   {
-    id: 209,
+    id: 207,
     imageUrls: ["/images/brooches/brooches-8.jpg"],
-    title: "title",
-    price: 10,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "brooches",
-  },
-  {
-    id: 210,
-    imageUrls: ["/images/brooches/brooches-9.jpg"],
     title: "title",
     price: 10,
     description:
