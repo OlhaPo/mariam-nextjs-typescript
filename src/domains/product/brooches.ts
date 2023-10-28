@@ -109,4 +109,13 @@ export const broochesItems: Product[] = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "brooches",
   },
+  {
+    id: 218,
+    imageUrls: ["/images/brooches/tender-bouquete.jpg"],
+    title: "title",
+    price: 10,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "brooches",
+  },
 ];

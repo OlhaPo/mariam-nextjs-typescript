@@ -19,4 +19,31 @@ export const ringsItems: Product[] = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "rings",
   },
+  {
+    id: 703,
+    imageUrls: ["/images/rings/powder-rings.jpg"],
+    title: "title",
+    price: 10,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "rings",
+  },
+  {
+    id: 704,
+    imageUrls: ["/images/bracelets/golden-set.jpg"],
+    title: "title",
+    price: 10,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "rings",
+  },
+  {
+    id: 705,
+    imageUrls: ["/images/rings/red-flower.jpg"],
+    title: "title",
+    price: 10,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "rings",
+  },
 ];

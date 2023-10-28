@@ -15,7 +15,7 @@ export const dressesItems: Product[] = [
     id: 402,
     imageUrls: ["/images/dresses/white-dress.jpg"],
     title: "title",
-    price: 10,
+    price: 4000,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "dresses",
@@ -31,7 +31,34 @@ export const dressesItems: Product[] = [
   },
   {
     id: 404,
-    imageUrls: ["/images/collections-main-page/dress-cover.jpg"],
+    imageUrls: ["/images/dresses/dress-cover.jpg"],
+    title: "title",
+    price: 10,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "dresses",
+  },
+  {
+    id: 405,
+    imageUrls: ["/images/dresses/black-dress-2.jpg"],
+    title: "title",
+    price: 10,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "dresses",
+  },
+  {
+    id: 406,
+    imageUrls: ["/images/dresses/brown-dress-1.jpg"],
+    title: "title",
+    price: 10,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
+    category: "dresses",
+  },
+  {
+    id: 407,
+    imageUrls: ["/images/dresses/brown-dress-2.jpg"],
     title: "title",
     price: 10,
     description:
