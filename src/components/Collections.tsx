@@ -9,7 +9,7 @@ export async function Collections({ lang }: { lang: Locale }) {
   return (
     <section id="collections" className="section-container">
       <div>
-        <h2 className="mb-5">{page.collections.header}</h2>
+        <h3 className="mb-5">{page.collections.header}</h3>
       </div>
       <div className="flex flex-wrap flex-row gap-5 md:gap-12 items-center justify-center">
         {mainPageCollections.map((item) => (
