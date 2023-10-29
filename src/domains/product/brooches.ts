@@ -19,15 +19,7 @@ export const broochesItems: Product[] = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "brooches",
   },
-  {
-    id: 203,
-    imageUrls: ["/images/brooches/brooches-3.jpg"],
-    title: "title",
-    price: 10,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "brooches",
-  },
+
   {
     id: 204,
     imageUrls: ["/images/brooches/brooches-4.jpg"],

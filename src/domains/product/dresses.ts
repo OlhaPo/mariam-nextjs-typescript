@@ -47,17 +47,9 @@ export const dressesItems: Product[] = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "dresses",
   },
+
   {
     id: 406,
-    imageUrls: ["/images/dresses/brown-dress-1.jpg"],
-    title: "title",
-    price: 10,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "dresses",
-  },
-  {
-    id: 407,
     imageUrls: ["/images/dresses/brown-dress-2.jpg"],
     title: "title",
     price: 10,
@@ -66,35 +58,8 @@ export const dressesItems: Product[] = [
     category: "dresses",
   },
   {
-    id: 408,
-    imageUrls: ["/images/dresses/white-summer-dress-1.jpg"],
-    title: "title",
-    price: 10,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "dresses",
-  },
-  {
-    id: 409,
-    imageUrls: ["/images/dresses/white-summer-dress-2.jpg"],
-    title: "title",
-    price: 10,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "dresses",
-  },
-  {
-    id: 410,
+    id: 407,
     imageUrls: ["/images/dresses/white-summer-dress-3.jpg"],
-    title: "title",
-    price: 10,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "dresses",
-  },
-  {
-    id: 411,
-    imageUrls: ["/images/dresses/white-summer-dress-4.jpg"],
     title: "title",
     price: 10,
     description:

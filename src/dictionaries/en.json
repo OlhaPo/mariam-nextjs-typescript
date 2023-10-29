@@ -12,15 +12,15 @@
       "title": "Hi there, dearest!",
       "description": "My name is Maryna Kambur. I&apos;m the designer and owner of the brand <span class=\"font-fredoka text-xl font-medium text-primary\">mariam crochet jewelry</span> and an artist from Kyiv, Ukraine.",
       "collections_link": "View all Collections",
-      "collections_description": "For more inspiration I invite you to explore the collections, where everything is available for pre-order. Also, I would be honored to create something beautiful and unique just for you.",
+      "collections_description": "For more inspiration and examples of my works, I invite you to explore the collections. I would be honored to create something beautiful and unique just for you.",
       "shop_description": "Thank you for stopping by my online corner. Feel free to check out the handmade jewelry and clothing pieces that are ready and waiting for buying.",
       "shop_link": "Welcome to Shop"
     },
     "collections": {
-      "header": "View collections"
+      "header": "The collections feature examples of works, inspiration, and ideas for custom product orders."
     },
     "shop": {
-      "header": "All clothing and jewelry pieces are already available for buying",
+      "header": "In the shop all clothing and jewelry pieces are in stock and available for purchase. Have enjoyable shopping!",
       "to_cart": "Add to cart"
     }
   },

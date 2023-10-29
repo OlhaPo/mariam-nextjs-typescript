@@ -3,20 +3,21 @@ import { Collection } from "@/domains/product/types";
 export const mainPageCollections: Collection[] = [
   {
     title: {
+      en: "Brooches",
+      uk: "Брошки",
+    },
+    category: "brooches",
+    imageUrl: "/images/brooches/brooches-8.jpg",
+  },
+  {
+    title: {
       en: "Dresses",
       uk: "Сукні",
     },
     category: "dresses",
     imageUrl: "/images/dresses/dress-cover.jpg",
   },
-  {
-    title: {
-      en: "Brooches",
-      uk: "Брошки",
-    },
-    category: "brooches",
-    imageUrl: "/images/brooches/brooches-cover.jpg",
-  },
+
   {
     title: {
       en: "Bracelets",
@@ -31,7 +32,7 @@ export const mainPageCollections: Collection[] = [
       uk: "Сережки",
     },
     category: "earrings",
-    imageUrl: "/images/earrings/earrings-2.jpg",
+    imageUrl: "/images/earrings/pink-earrings-1.jpg",
   },
   {
     title: {

@@ -45,8 +45,8 @@ export default function Items() {
               priority
               className="img-product-in-stock hover:scale-110"
             />
-            <h3>{product.title}</h3>
-            <p className="text-center">{product.price} UAH</p>
+            {/* <h3>{product.title}</h3> */}
+            {/* <p className="text-center">{product.price} UAH</p> */}
           </div>
         ))}
       </div>
