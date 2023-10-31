@@ -11,13 +11,12 @@ export const mainPageCollections: Collection[] = [
   },
   {
     title: {
-      en: "Dresses",
-      uk: "Сукні",
+      en: "Earrings",
+      uk: "Сережки",
     },
-    category: "dresses",
-    imageUrl: "/images/dresses/dress-cover.jpg",
+    category: "earrings",
+    imageUrl: "/images/earrings/pink-earrings-1.jpg",
   },
-
   {
     title: {
       en: "Bracelets",
@@ -28,11 +27,11 @@ export const mainPageCollections: Collection[] = [
   },
   {
     title: {
-      en: "Earrings",
-      uk: "Сережки",
+      en: "Dresses",
+      uk: "Сукні",
     },
-    category: "earrings",
-    imageUrl: "/images/earrings/pink-earrings-1.jpg",
+    category: "dresses",
+    imageUrl: "/images/dresses/dress-cover.jpg",
   },
   {
     title: {
