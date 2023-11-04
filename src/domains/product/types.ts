@@ -5,6 +5,9 @@ export type Product = {
   price: number;
   description?: string;
   category: string;
+  inStock: {
+    [lang: string]: string;
+  };
 };
 
 export type Collection = {

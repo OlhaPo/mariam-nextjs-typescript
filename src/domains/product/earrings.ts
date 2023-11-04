@@ -9,6 +9,10 @@ export const earringsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "earrings",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 502,
@@ -18,6 +22,10 @@ export const earringsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "earrings",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 503,
@@ -27,6 +35,10 @@ export const earringsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "earrings",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 504,
@@ -36,6 +48,10 @@ export const earringsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "earrings",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
 
   {
@@ -46,6 +62,10 @@ export const earringsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "earrings",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
 
   {
@@ -56,6 +76,10 @@ export const earringsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "earrings",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
 
   {
@@ -66,6 +90,10 @@ export const earringsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "earrings",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 513,
@@ -75,6 +103,10 @@ export const earringsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "earrings",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 514,
@@ -84,5 +116,9 @@ export const earringsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "earrings",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
 ];

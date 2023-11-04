@@ -9,6 +9,10 @@ export const wreathsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "wreaths",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
 
   {
@@ -19,6 +23,10 @@ export const wreathsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "wreaths",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 803,
@@ -28,6 +36,10 @@ export const wreathsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "wreaths",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 804,
@@ -37,6 +49,10 @@ export const wreathsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "wreaths",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 805,
@@ -46,6 +62,10 @@ export const wreathsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "wreaths",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 806,
@@ -55,6 +75,10 @@ export const wreathsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "wreaths",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 807,
@@ -64,6 +88,10 @@ export const wreathsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "wreaths",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 808,
@@ -73,6 +101,10 @@ export const wreathsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "wreaths",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 809,
@@ -82,6 +114,10 @@ export const wreathsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "wreaths",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 810,
@@ -91,6 +127,10 @@ export const wreathsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "wreaths",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 811,
@@ -100,5 +140,9 @@ export const wreathsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "wreaths",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
 ];

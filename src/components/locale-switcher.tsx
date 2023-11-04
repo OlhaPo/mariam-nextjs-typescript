@@ -1,18 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
 import { i18n } from "../../i18n.config";
 
 export default function LocaleSwitcher() {
   const pathName = usePathname();
+  const searchParams = useSearchParams();
 
   const redirectedPathName = (newLocale: string) => {
     if (!pathName) return "/";
     const segments = pathName.split("/");
     segments[1] = newLocale;
-    return segments.join("/");
+
+    const addSearchParams = searchParams.toString()
+      ? `?${searchParams.toString()}`
+      : "";
+
+    return segments.join("/") + addSearchParams;
   };
 
   return (

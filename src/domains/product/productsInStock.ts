@@ -9,6 +9,10 @@ export const productsInStock: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "rings",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 2,
@@ -18,6 +22,10 @@ export const productsInStock: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "bracelets",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 3,
@@ -27,6 +35,10 @@ export const productsInStock: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "rings",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 4,
@@ -36,6 +48,10 @@ export const productsInStock: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "dresses",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 5,
@@ -45,6 +61,10 @@ export const productsInStock: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "necklaces",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 6,
@@ -54,6 +74,10 @@ export const productsInStock: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "collars",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 7,
@@ -63,6 +87,10 @@ export const productsInStock: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "necklaces",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 8,
@@ -72,5 +100,9 @@ export const productsInStock: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "brooches",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
 ];

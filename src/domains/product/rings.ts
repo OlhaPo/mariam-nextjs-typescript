@@ -9,6 +9,10 @@ export const ringsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "rings",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 702,
@@ -18,6 +22,10 @@ export const ringsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "rings",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 703,
@@ -27,6 +35,10 @@ export const ringsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "rings",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 704,
@@ -36,6 +48,10 @@ export const ringsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "rings",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 705,
@@ -45,5 +61,9 @@ export const ringsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "rings",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
 ];

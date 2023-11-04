@@ -5,7 +5,8 @@
     "shop": "Shop",
     "contacts": "Contacts",
     "cart": "Cart",
-    "orders": "Orders and delivery"
+    "orders": "Orders and delivery",
+    "collections": "Collections"
   },
   "page": {
     "about": {
@@ -17,7 +18,8 @@
       "shop_link": "Welcome to Shop"
     },
     "collections": {
-      "header": "The collections feature examples of works, inspiration, and ideas for custom product orders."
+      "header": "The collections feature examples of works, inspiration, and ideas for custom product orders.",
+      "breadcrumbs": "To all Collections"
     },
     "shop": {
       "header": "In the shop all clothing and jewelry pieces are in stock and available for purchase",

@@ -9,6 +9,10 @@ export const collarsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "collars",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 302,
@@ -18,6 +22,10 @@ export const collarsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "collars",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 303,
@@ -27,6 +35,10 @@ export const collarsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "collars",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 304,
@@ -36,5 +48,9 @@ export const collarsItems: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
     category: "collars",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
 ];
