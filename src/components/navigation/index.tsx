@@ -39,7 +39,7 @@ export function Navigation({
       </div>{" "}
       <BiMenu size={30} onClick={handleNav} className="md:hidden z-[150]" />
       {isOpenNav ? (
-        <div className="w-full bg-[#948D85] absolute top-0 left-0 right-0 min-h-screen flex flex-col justify-center items-center z-[120] gap-5">
+        <div className="w-full bg-[#948D85] fixed top-0 left-0 right-0 min-h-screen flex flex-col justify-center items-center z-[120] gap-5">
           {navLinks.map((link) => (
             <NavLink
               href={createFullUrl(link.href)}
