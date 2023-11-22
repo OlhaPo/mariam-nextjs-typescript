@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.login-button {
+  @apply bg-primary p-4 px-5 rounded-lg text-lg text-white;
+}
