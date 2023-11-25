@@ -25,7 +25,7 @@ export default function Login() {
       <div className="w-full h-screen flex items-center">
         <div className="text-center w-full">
           <button
-            onClick={() => signIn()}
+            onClick={() => signIn("google")}
             type="button"
             className="login-button"
           >

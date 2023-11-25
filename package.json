@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth/mongodb-adapter": "^2.0.6",
     "@formatjs/intl-localematcher": "^0.4.2",
     "@types/node": "20.6.3",
     "@types/react": "18.2.22",
@@ -20,6 +21,7 @@
     "fontsource-fredoka-one": "^4.0.0",
     "fontsource-roboto": "^4.0.0",
     "formik": "^2.4.5",
+    "mongodb": "^6.3.0",
     "negotiator": "^0.6.3",
     "next": "^13.5.6",
     "next-auth": "^4.24.5",
