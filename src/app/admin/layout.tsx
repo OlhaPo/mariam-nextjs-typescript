@@ -1,4 +1,4 @@
-import "./login/admin.css";
+import "./admin.css";
 import ProvidersWrapper from "./ProvidersWrapper";
 
 export default function RootLayout({
@@ -7,10 +7,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <ProvidersWrapper>
+    <ProvidersWrapper>
+      <html lang="en">
         <body>{children}</body>
-      </ProvidersWrapper>
-    </html>
+      </html>
+    </ProvidersWrapper>
   );
 }
