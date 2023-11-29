@@ -5,3 +5,7 @@
 .login-button {
   @apply bg-primary p-4 px-5 rounded-lg text-lg text-white;
 }
+
+div svg {
+  @apply w-6 h-6;
+}
