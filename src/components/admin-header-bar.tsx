@@ -13,20 +13,26 @@ export default function AdminHeaderBar() {
   }
 
   return (
-    <div>
-      <div className="flex justify-end items-center gap-5">
-        <h2>
+    <div className="admin-header-bar">
+      <h1 className="text-center text-base">
+        <span className="text-primary font-semibold text-3xl">
+          mariam crochet jewelry
+        </span>{" "}
+        admin panel
+      </h1>
+      <div className="inline-flex items-center gap-5">
+        <h2 className="text-base">
           Logged in as{" "}
           <span className="font-semibold">{session?.user?.name}</span>
         </h2>{" "}
         <DropdownMenu.Root>
           <DropdownMenu.Trigger asChild>
-            <button className="inline-flex items-center justify-center outline-none">
+            <button className="outline-none">
               <Image
                 src={session?.user?.image ?? ""}
                 alt="Admin user"
-                width={50}
-                height={50}
+                width={30}
+                height={30}
                 className="rounded-full"
               />
             </button>

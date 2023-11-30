@@ -9,9 +9,9 @@ export default function RootLayout({
   return (
     <div className="admin-panel">
       <AdminHeaderBar />
-      <div className="flex">
+      <div className="flex border-t border-gray-400">
         <AdminNavMenu />
-        <div className="flex-grow pl-4">{children}</div>
+        <div className="flex-grow pl-10 py-7">{children}</div>
       </div>
     </div>
   );

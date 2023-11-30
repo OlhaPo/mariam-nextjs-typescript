@@ -7,13 +7,13 @@ import { signOut } from "next-auth/react";
 import { adminNavLinks } from "./constants";
 
 export default function AdminNavMenu() {
-  const inactiveLink = "inline-flex items-center gap-2";
-  const activeLink = inactiveLink + " bg-red-300 text-red-900 rounded-sm";
-  const activeIcon = "text-blue-400";
+  const inactiveLink = "inline-flex items-center gap-2 pr-10 py-2 pl-2";
+  const activeLink = inactiveLink + " bg-[#3E6A49] text-white rounded-r-md";
+  const activeIcon = "text-white";
   const pathname = usePathname();
 
   return (
-    <nav className="flex flex-col gap-2">
+    <nav className="flex flex-col gap-2 pt-5">
       {adminNavLinks.map((link) => (
         <Link
           href={link.href}

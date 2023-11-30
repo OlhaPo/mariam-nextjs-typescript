@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply bg-[#FEF9F7];
+}
+
 .login-button {
   @apply bg-primary p-4 px-5 rounded-lg text-lg text-white;
 }
@@ -11,5 +15,9 @@ div svg {
 }
 
 .admin-panel {
-  @apply text-lg pl-2 pr-5 pt-5;
+  @apply text-lg px-5 pt-5;
+}
+
+.admin-header-bar {
+  @apply flex justify-between items-center gap-5 mb-10;
 }
