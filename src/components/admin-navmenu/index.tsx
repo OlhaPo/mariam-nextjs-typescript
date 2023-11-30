@@ -13,21 +13,19 @@ export default function AdminNavMenu() {
   const pathname = usePathname();
 
   return (
-    <div>
-      <nav className="flex flex-col gap-2">
-        {adminNavLinks.map((link) => (
-          <Link
-            href={link.href}
-            key={link.title}
-            className={pathname.includes(link.href) ? activeLink : inactiveLink}
-          >
-            <div className={pathname.includes(link.href) ? activeIcon : ""}>
-              {React.createElement(link.icon)}
-            </div>
-            {link.title}
-          </Link>
-        ))}
-      </nav>
-    </div>
+    <nav className="flex flex-col gap-2">
+      {adminNavLinks.map((link) => (
+        <Link
+          href={link.href}
+          key={link.title}
+          className={pathname.includes(link.href) ? activeLink : inactiveLink}
+        >
+          <div className={pathname.includes(link.href) ? activeIcon : ""}>
+            {React.createElement(link.icon)}
+          </div>
+          {link.title}
+        </Link>
+      ))}
+    </nav>
   );
 }

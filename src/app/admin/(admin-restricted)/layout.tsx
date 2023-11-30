@@ -7,10 +7,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <div className="admin-panel">
       <AdminHeaderBar />
-      <AdminNavMenu />
-      <div className="flex">{children}</div>
-    </>
+      <div className="flex">
+        <AdminNavMenu />
+        <div className="flex-grow pl-4">{children}</div>
+      </div>
+    </div>
   );
 }

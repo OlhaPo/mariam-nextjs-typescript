@@ -9,3 +9,7 @@
 div svg {
   @apply w-6 h-6;
 }
+
+.admin-panel {
+  @apply text-lg pl-2 pr-5 pt-5;
+}
