@@ -5,17 +5,12 @@ import React from "react";
 import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
 import { adminNavLinks } from "./constants";
-import { BiLogOut } from "react-icons/bi";
 
 export default function AdminNavMenu() {
   const inactiveLink = "inline-flex items-center gap-2";
   const activeLink = inactiveLink + " bg-red-300 text-red-900 rounded-sm";
   const activeIcon = "text-blue-400";
   const pathname = usePathname();
-
-  async function logout() {
-    await signOut({ callbackUrl: "/admin/login" });
-  }
 
   return (
     <div>
@@ -32,13 +27,6 @@ export default function AdminNavMenu() {
             {link.title}
           </Link>
         ))}
-        <button
-          onClick={() => logout()}
-          className="login-button inline-flex items-center gap-2"
-        >
-          <BiLogOut size={25} />
-          Logout
-        </button>
       </nav>
     </div>
   );
