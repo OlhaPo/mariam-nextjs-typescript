@@ -1,4 +1,4 @@
-import Nav from "@/components/admin-navmenu";
+import AdminNavMenu from "@/components/admin-navmenu/index";
 
 export default function RootLayout({
   children,
@@ -7,7 +7,7 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <Nav />
+      <AdminNavMenu />
       <div className="flex">{children}</div>
     </>
   );
