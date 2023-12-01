@@ -1,6 +1,6 @@
 "use client";
 
-import { mainPageCollections } from "@/constants/collection/constants";
+import { mainPageCollections } from "@/domains/collection/mainPageCollections";
 import { braceletsItems } from "@/domains/product/bracelets";
 import { broochesItems } from "@/domains/product/brooches";
 import { collarsItems } from "@/domains/product/collars";

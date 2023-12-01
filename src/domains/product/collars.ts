@@ -1,4 +1,4 @@
-import { Product } from "./types";
+import { Product } from "@/models/Product";
 
 export const collarsItems: Product[] = [
   {

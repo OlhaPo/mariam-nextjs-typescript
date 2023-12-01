@@ -1,4 +1,4 @@
-import { Collection } from "@/domains/product/types";
+import { Collection } from "@/models/Collection";
 
 export const mainPageCollections: Collection[] = [
   {

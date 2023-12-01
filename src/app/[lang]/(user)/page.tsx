@@ -1,4 +1,4 @@
-import { Collections } from "@/components/Collections";
+import { Collections } from "@/components/collections";
 import { Locale } from "../../../../i18n.config";
 
 export default function Home({ params }: { params: { lang: Locale } }) {

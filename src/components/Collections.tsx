@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { mainPageCollections } from "@/constants/collection/constants";
+import { mainPageCollections } from "@/domains/collection/mainPageCollections";
 import { Locale } from "../../i18n.config";
 import { getDictionary } from "@/lib/dictionary";
 
