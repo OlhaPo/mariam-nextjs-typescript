@@ -11,7 +11,7 @@ export default function RootLayout({
       <AdminHeaderBar />
       <div className="flex border-t border-gray-400">
         <AdminNavMenu />
-        <div className="flex-grow pl-10 py-7">{children}</div>
+        <div className="flex-grow pl-10 py-5">{children}</div>
       </div>
     </div>
   );
