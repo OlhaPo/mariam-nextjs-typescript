@@ -39,10 +39,10 @@ export default function AdminHeaderBar() {
           </DropdownMenu.Trigger>
           <DropdownMenu.Portal>
             <DropdownMenu.Content
-              className="min-w-[150px] bg-primary text-white py-5"
+              className="min-w-[150px] bg-[#9DACB7] py-5 mr-5"
               sideOffset={5}
             >
-              <DropdownMenu.Item className="leading-8 flex justify-center items-center outline-none">
+              <DropdownMenu.Item className="leading-8 flex justify-center items-center outline-none text-lg">
                 <button
                   onClick={() => logout()}
                   className="inline-flex items-center gap-2"

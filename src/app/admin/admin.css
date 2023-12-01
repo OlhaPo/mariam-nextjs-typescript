@@ -19,5 +19,5 @@ div svg {
 }
 
 .admin-header-bar {
-  @apply flex justify-between items-center gap-5 mb-10;
+  @apply flex justify-between items-center gap-5 pb-10 bg-white;
 }
