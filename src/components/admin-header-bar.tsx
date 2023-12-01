@@ -39,7 +39,7 @@ export default function AdminHeaderBar() {
           </DropdownMenu.Trigger>
           <DropdownMenu.Portal>
             <DropdownMenu.Content
-              className="min-w-[150px] bg-[#9DACB7] py-5 mr-5"
+              className="min-w-[150px] bg-[#9DACB7] py-5 mr-8 rounded-md"
               sideOffset={5}
             >
               <DropdownMenu.Item className="leading-8 flex justify-center items-center outline-none text-lg">

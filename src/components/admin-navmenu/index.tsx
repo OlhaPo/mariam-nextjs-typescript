@@ -3,17 +3,17 @@
 import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
-import { signOut } from "next-auth/react";
 import { adminNavLinks } from "./constants";
 
 export default function AdminNavMenu() {
-  const inactiveLink = "inline-flex items-center gap-2 pr-10 py-2 pl-2";
-  const activeLink = inactiveLink + " bg-[#9DACB7] rounded-r-md";
-  const activeIcon = "text-white";
+  const inactiveLink = "inline-flex items-center gap-2 py-3 px-5";
+  const activeLink =
+    inactiveLink + "border bg-white text-black rounded-md px-5";
+  const activeIcon = "text-black";
   const pathname = usePathname();
 
   return (
-    <nav className="flex flex-col gap-2 pt-5">
+    <nav className="flex flex-col gap-4 pt-5 min-h-screen bg-[#9DACB7] px-5">
       {adminNavLinks.map((link) => (
         <Link
           href={link.href}
