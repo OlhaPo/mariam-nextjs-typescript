@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Products() {
   return (
     <div className="products-page">
@@ -5,9 +7,12 @@ export default function Products() {
         <h1 className="uppercase text-primary text-xl font-semibold">
           List of products
         </h1>
-        <button className="bg-[#9DACB7] rounded-md border px-5 py-3">
+        <Link
+          className="bg-[#9DACB7] rounded-md border px-5 py-3"
+          href={"/admin/products/new"}
+        >
           Add new product
-        </button>
+        </Link>
       </div>
     </div>
   );
