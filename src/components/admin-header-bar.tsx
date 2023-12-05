@@ -28,13 +28,15 @@ export default function AdminHeaderBar() {
         <DropdownMenu.Root>
           <DropdownMenu.Trigger asChild>
             <button className="outline-none">
-              <Image
-                src={session?.user?.image ?? ""}
-                alt="Admin user"
-                width={30}
-                height={30}
-                className="rounded-full"
-              />
+              {session?.user?.image && (
+                <Image
+                  src={session.user.image}
+                  alt="Admin user"
+                  width={30}
+                  height={30}
+                  className="rounded-full"
+                />
+              )}
             </button>
           </DropdownMenu.Trigger>
           <DropdownMenu.Portal>

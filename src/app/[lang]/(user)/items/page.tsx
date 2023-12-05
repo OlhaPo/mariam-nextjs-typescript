@@ -44,12 +44,12 @@ export default function Items({ params }: { params: { lang: Locale } }) {
 
   if (activeCategory) {
     filteredProducts = filteredProducts.filter(
-      (p) => p.category === activeCategory
+      (p) => p.collection_name === activeCategory
     );
   }
 
   const currentCategory = mainPageCollections.find(
-    (c) => c.category === activeCategory
+    (c) => c.collection_name === activeCategory
   );
 
   return (

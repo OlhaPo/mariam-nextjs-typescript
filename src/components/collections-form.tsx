@@ -1,13 +1,34 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import * as Form from "@radix-ui/react-form";
+import axios from "axios";
 
-export default function ProductForm() {
+export default function CollectionsForm() {
+  const [titleUk, setTitleUk] = useState("");
+  const [titleEn, setTitleEn] = useState("");
+  const [collectionName, setCollectionName] = useState("");
+
+  async function saveCollection(e: React.FormEvent) {
+    e.preventDefault();
+    const data = { titleUk, titleEn, collectionName };
+
+    try {
+      await axios.post("/api/collections", data);
+      setTitleUk("");
+      setTitleEn("");
+      setCollectionName("");
+      // @TODO: navigate to collections list
+    } catch (e) {
+      // @TODO: show error msg
+      console.error(e);
+    }
+  }
+
   return (
     <div>
-      <Form.Root className="w-[50%]">
-        <Form.Field className="grid mb-[10px]" name="title_uk">
+      <Form.Root className="w-[50%]" onSubmit={saveCollection}>
+        <Form.Field className="grid mb-[10px]" name="titleUk">
           <div className="flex items-baseline justify-between">
             <Form.Label className="text-[15px] font-medium leading-[35px]">
               Title UK
@@ -24,10 +45,12 @@ export default function ProductForm() {
               className="box-border w-full inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black]"
               type="text"
               required
+              value={titleUk}
+              onChange={(e) => setTitleUk(e.target.value)}
             />
           </Form.Control>
         </Form.Field>
-        <Form.Field className="grid mb-[10px]" name="title_en">
+        <Form.Field className="grid mb-[10px]" name="titleEn">
           <div className="flex items-baseline justify-between">
             <Form.Label className="text-[15px] font-medium leading-[35px]">
               Title EN
@@ -44,13 +67,15 @@ export default function ProductForm() {
               className="box-border w-full inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black]"
               type="text"
               required
+              value={titleEn}
+              onChange={(e) => setTitleEn(e.target.value)}
             />
           </Form.Control>
         </Form.Field>
-        <Form.Field className="grid mb-[10px]" name="category_name">
+        <Form.Field className="grid mb-[10px]" name="collectionName">
           <div className="flex items-baseline justify-between">
             <Form.Label className="text-[15px] font-medium leading-[35px]">
-              Category name
+              Collection name
             </Form.Label>
             <Form.Message
               className="text-[13px] opacity-[0.8]"
@@ -64,13 +89,13 @@ export default function ProductForm() {
               className="box-border w-full inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black]"
               type="text"
               required
+              value={collectionName}
+              onChange={(e) => setCollectionName(e.target.value)}
             />
           </Form.Control>
         </Form.Field>
-        <Form.Submit asChild>
-          <button className="box-border w-full inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none shadow-[0_2px_10px] focus:shadow-[0_0_0_2px] focus:shadow-black focus:outline-none mt-[10px]">
-            Save product
-          </button>
+        <Form.Submit className="box-border w-full inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none shadow-[0_2px_10px] focus:shadow-[0_0_0_2px] focus:shadow-black focus:outline-none mt-[10px]">
+          Save collection
         </Form.Submit>
       </Form.Root>
     </div>

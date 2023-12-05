@@ -8,6 +8,6 @@ import { TfiPackage } from "react-icons/tfi";
 export const adminNavLinks = [
   { href: "/admin/dashboard", title: "Dashboard", icon: IoHomeOutline },
   { href: "/admin/products", title: "Products", icon: IoDocumentTextOutline },
-  { href: "/admin/categories", title: "Categories", icon: IoFilterOutline },
+  { href: "/admin/collections", title: "Collections", icon: IoFilterOutline },
   { href: "/admin/orders", title: "Orders", icon: TfiPackage },
 ];
