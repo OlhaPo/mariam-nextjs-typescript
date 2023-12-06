@@ -3,11 +3,13 @@
 import React, { useState } from "react";
 import * as Form from "@radix-ui/react-form";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export default function CollectionsForm() {
   const [titleUk, setTitleUk] = useState("");
   const [titleEn, setTitleEn] = useState("");
   const [collectionName, setCollectionName] = useState("");
+  const router = useRouter();
 
   async function saveCollection(e: React.FormEvent) {
     e.preventDefault();
@@ -15,10 +17,7 @@ export default function CollectionsForm() {
 
     try {
       await axios.post("/api/collections", data);
-      setTitleUk("");
-      setTitleEn("");
-      setCollectionName("");
-      // @TODO: navigate to collections list
+      router.push("/admin/collections");
     } catch (e) {
       // @TODO: show error msg
       console.error(e);
