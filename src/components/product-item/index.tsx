@@ -1,14 +1,15 @@
 import { Product } from "@/domains/product/types";
 import Image from "next/image";
-import LinkButton from "@/components/uikit/button";
+import { Locale } from "../../../i18n.config";
 
 type ProductItemProps = {
   product: Product;
+  lang?: Locale;
 };
 
-export default function ProductItem({ product }: ProductItemProps) {
+export default function ProductItem({ product, lang }: ProductItemProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 gap">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-12">
       <div>
         <Image
           src={product.imageUrls[0]}
@@ -21,9 +22,6 @@ export default function ProductItem({ product }: ProductItemProps) {
         <h2 className="text-left">{product.title}</h2>
         <span>{product.price} UAH</span>
         <p>{product.description}</p>
-        <div>
-          <LinkButton href="/cart">Add to cart</LinkButton>
-        </div>
       </div>
     </div>
   );

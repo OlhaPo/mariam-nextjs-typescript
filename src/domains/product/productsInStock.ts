@@ -1,76 +1,108 @@
-import { Product } from "./types";
+import { Product } from "@/models/Product";
 
 export const productsInStock: Product[] = [
   {
     id: 1,
-    imageUrls: ["/images/in-stock/ring.jpg"],
-    title: "Ring title",
-    price: 10,
+    imageUrls: ["/images/rings/powder-rings.jpg"],
+    title: "title",
+    price: 1500,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "rings",
+    collection_name: "rings",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 2,
-    imageUrls: ["/images/in-stock/set-of-jewelry.jpg"],
-    title: "Set of jewelry title",
-    price: 10,
+    imageUrls: ["/images/bracelets/golden-set.jpg"],
+    title: "title",
+    price: 1400,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "rings",
+    collection_name: "bracelets",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 3,
-    imageUrls: ["/images/in-stock/white-brooche.jpg"],
-    title: "Set of crocheted jewelry",
-    price: 10,
+    imageUrls: ["/images/rings/red-flower.jpg"],
+    title: "title",
+    price: 400,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "brooches",
+    collection_name: "rings",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 4,
-    imageUrls: ["/images/in-stock/ring.jpg"],
-    title: "Ring title",
-    price: 10,
+    imageUrls: ["/images/dresses/white-dress.jpg"],
+    title: "title",
+    price: 4000,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "rings",
+    collection_name: "dresses",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 5,
-    imageUrls: ["/images/in-stock/set-of-jewelry.jpg"],
-    title: "Set of jewelry title",
-    price: 10,
+    imageUrls: ["/images/necklaces/white-flowers.jpg"],
+    title: "title",
+    price: 1500,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "rings",
+    collection_name: "necklaces",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 6,
-    imageUrls: ["/images/in-stock/white-brooche.jpg"],
-    title: "Set of crocheted jewelry",
-    price: 10,
+    imageUrls: ["/images/collars/black-collar.jpg"],
+    title: "title",
+    price: 1400,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "brooches",
+    collection_name: "collars",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 7,
-    imageUrls: ["/images/in-stock/white-collar.jpg"],
-    title: "White collar title",
-    price: 10,
+    imageUrls: ["/images/necklaces/black-necklace.jpg"],
+    title: "title",
+    price: 800,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "collars",
+    collection_name: "necklaces",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
   {
     id: 8,
-    imageUrls: ["/images/in-stock/white-dress.jpg"],
-    title: "White dress title",
-    price: 10,
+    imageUrls: ["/images/brooches/pink-brooches.jpg"],
+    title: "title",
+    price: 650,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a mollis leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse a pulvinar arcu.",
-    category: "dresses",
+    collection_name: "brooches",
+    inStock: {
+      en: "pre-order",
+      uk: "під замовлення",
+    },
   },
 ];

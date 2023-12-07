@@ -5,12 +5,15 @@ import {
   FACEBOOK_LINK,
   PHONE_NUMBER,
   EMAIL,
-} from "..//../constants/contacts";
+} from "../../constants/contacts";
+import { Locale } from "../../../i18n.config";
+import { getDictionary } from "@/lib/dictionary";
 
-export function Contacts() {
+export async function Contacts({ lang }: { lang: Locale }) {
+  const { footer } = await getDictionary(lang);
   return (
     <div className="contacts-section">
-      <span className="contacts-subheader">Contacts</span>
+      <span className="contacts-subheader">{footer.contacts_subtitle}</span>
       <div className="flex flex-row gap-4">
         <a href={INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer">
           <FaInstagram size={20} />
