@@ -1,32 +1,42 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as Form from "@radix-ui/react-form";
-import axios from "axios";
-import { useRouter } from "next/navigation";
+import { CollectionItem } from "@/models/CollectionSchema";
 
-export default function CollectionsForm() {
+interface CollectionsFormProps {
+  data?: CollectionItem;
+  onSave: (newData: CollectionItem) => void;
+}
+
+export default function CollectionsForm({
+  data,
+  onSave,
+}: CollectionsFormProps) {
   const [titleUk, setTitleUk] = useState("");
   const [titleEn, setTitleEn] = useState("");
   const [collectionName, setCollectionName] = useState("");
-  const router = useRouter();
 
-  async function saveCollection(e: React.FormEvent) {
+  useEffect(() => {
+    if (!data) return;
+    setCollectionName(data.collectionName);
+    setTitleEn(data.titleEn);
+    setTitleUk(data.titleUk);
+  }, [data]);
+
+  function save(e: React.FormEvent) {
     e.preventDefault();
-    const data = { titleUk, titleEn, collectionName };
-
-    try {
-      await axios.post("/api/collections", data);
-      router.push("/admin/collections");
-    } catch (e) {
-      // @TODO: show error msg
-      console.error(e);
-    }
+    onSave({
+      _id: data?._id,
+      collectionName: collectionName,
+      titleEn: titleEn,
+      titleUk: titleUk,
+    });
   }
 
   return (
     <div>
-      <Form.Root className="w-[50%]" onSubmit={saveCollection}>
+      <Form.Root className="w-[50%]" onSubmit={save}>
         <Form.Field className="grid mb-[10px]" name="titleUk">
           <div className="flex items-baseline justify-between">
             <Form.Label className="text-[15px] font-medium leading-[35px]">
@@ -94,7 +104,7 @@ export default function CollectionsForm() {
           </Form.Control>
         </Form.Field>
         <Form.Submit className="box-border w-full inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none shadow-[0_2px_10px] focus:shadow-[0_0_0_2px] focus:shadow-black focus:outline-none mt-[10px]">
-          Save collection
+          Save
         </Form.Submit>
       </Form.Root>
     </div>
