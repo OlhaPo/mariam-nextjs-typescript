@@ -1,6 +1,6 @@
 "use client";
 
-import CollectionsForm from "@/components/collections-form";
+import EditCollectionForm from "@/components/edit-collection-form";
 import { CollectionItem } from "@/models/CollectionSchema";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -27,7 +27,6 @@ export default function EditCollectionPage({
   }, [params.id]);
 
   async function saveData(data: CollectionItem) {
-    // @TODO: implement save
     try {
       await axios.put("/api/collections", data);
       router.push("/admin/collections");
@@ -41,7 +40,7 @@ export default function EditCollectionPage({
     <div className="pt-3">
       <h1 className="page-headers mb-5">Edit Collection</h1>
       {collectionInfo ? (
-        <CollectionsForm data={collectionInfo} onSave={saveData} />
+        <EditCollectionForm data={collectionInfo} onSave={saveData} />
       ) : (
         <div>Collection not found</div>
       )}

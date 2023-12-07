@@ -9,7 +9,7 @@ interface CollectionsFormProps {
   onSave: (newData: CollectionItem) => void;
 }
 
-export default function CollectionsForm({
+export default function EditCollectionForm({
   data,
   onSave,
 }: CollectionsFormProps) {
