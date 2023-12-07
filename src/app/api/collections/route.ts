@@ -17,6 +17,6 @@ export async function POST(req: NextRequest) {
 
 export async function GET(req: NextRequest) {
   await mongooseConnect();
-  const result = await Collection.find({});
+  const result = await Collection.find();
   return NextResponse.json(result);
 }

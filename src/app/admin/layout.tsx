@@ -1,5 +1,7 @@
 import "./admin.css";
+import "@radix-ui/themes/styles.css";
 import ProvidersWrapper from "./ProvidersWrapper";
+import { Theme } from "@radix-ui/themes";
 
 export default function RootLayout({
   children,
@@ -9,7 +11,9 @@ export default function RootLayout({
   return (
     <ProvidersWrapper>
       <html lang="en">
-        <body>{children}</body>
+        <body>
+          <Theme>{children}</Theme>
+        </body>
       </html>
     </ProvidersWrapper>
   );
