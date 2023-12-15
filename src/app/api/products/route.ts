@@ -32,9 +32,9 @@ export async function GET(req: NextRequest) {
 
   let result;
   if (id) {
-    result = await Product.findById(id);
+    result = await Product.findById<ProductItem>(id);
   } else {
-    result = await Product.find();
+    result = await Product.find<ProductItem>();
   }
   return NextResponse.json(result);
 }

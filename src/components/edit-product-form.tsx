@@ -19,8 +19,7 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
   const [descriptionUk, setDescriptionUk] = useState("");
   const [descriptionEn, setDescriptionEn] = useState("");
   const [price, setPrice] = useState(0);
-  const [imageUrls, setImageUrls] = useState([]);
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageUrls, setImageUrls] = useState<string[]>([]);
   const [collectionId, setCollectionId] = useState<string | undefined>();
   const [collections, setCollections] = useState<CollectionItem[]>([]);
 
@@ -32,13 +31,14 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
 
   useEffect(() => {
     if (!data) return;
+
     setTitleEn(data.titleEn);
     setTitleUk(data.titleUk);
     setDescriptionEn(data.descriptionEn);
     setDescriptionUk(data.descriptionUk);
     setCollectionId(data.collectionId);
     setPrice(data.price);
-    // setImageUrls(data.imageUrls);
+    setImageUrls(data.imageUrls);
   }, [data]);
 
   function save(e: React.FormEvent) {
@@ -61,19 +61,19 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
   ) {
     const value = e.target.value;
     const urls = [...imageUrls];
-    // urls[index] = value;
+    urls[index] = value;
     setImageUrls(urls);
   }
 
   function addGoogleDriveImageUrl(newUrl: string, index: number) {
     // Update the corresponding URL in the array
-    // setImageUrls((prevUrls) =>
-    //   prevUrls.map((prevUrl, i) => (i === index ? newUrl : prevUrl))
-    // );
+    setImageUrls((prevUrls) =>
+      prevUrls.map((prevUrl, i) => (i === index ? newUrl : prevUrl))
+    );
   }
 
   function handleAddingImageUrl() {
-    // setImageUrls([...imageUrls, imageUrl]);
+    setImageUrls([...imageUrls, ""]);
   }
 
   function handleDeletingImageUrl(index: number) {
@@ -204,11 +204,10 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
         </Form.Field>
         {imageUrls.map((singleImage, index) => (
           <div key={index}>
-            {" "}
             <Form.Field className="mb-[10px]" name={`productImage-${index}`}>
               <div className="flex items-baseline justify-between">
                 <Form.Label className="text-[15px] font-medium leading-[35px]">
-                  Images<span className="icon-required">*</span>
+                  Image URL<span className="icon-required">*</span>
                 </Form.Label>
                 <Form.Message
                   className="text-[13px] opacity-[0.8]"
@@ -241,14 +240,14 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
                   />
                 </div>
               </div>
-            </Form.Field>{" "}
+            </Form.Field>
           </div>
-        ))}{" "}
+        ))}
         <button
           onClick={() => handleAddingImageUrl()}
           className="inline-flex gap-3"
         >
-          <IoMdAdd /> Add more images
+          <IoMdAdd /> Add new image
         </button>
         <Form.Submit className="box-border w-full inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none shadow-[0_2px_10px] focus:shadow-[0_0_0_2px] focus:shadow-black focus:outline-none mt-[10px]">
           Save
