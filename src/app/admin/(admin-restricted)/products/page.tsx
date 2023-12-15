@@ -50,6 +50,8 @@ export default function ProductsPage() {
           <Table.Row>
             <Table.ColumnHeaderCell>Title UK</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Title En</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>Description Uk</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>Description En</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Price</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell></Table.ColumnHeaderCell>
           </Table.Row>
@@ -60,6 +62,8 @@ export default function ProductsPage() {
               <Table.Row key={product._id}>
                 <Table.Cell>{product.titleUk}</Table.Cell>
                 <Table.Cell>{product.titleEn}</Table.Cell>
+                <Table.Cell>{product.descriptionUk}</Table.Cell>
+                <Table.Cell>{product.descriptionEn}</Table.Cell>
                 <Table.Cell>{product.price}</Table.Cell>
                 <Table.Cell>
                   <Link href={`/admin/products/edit/${product._id}`}>

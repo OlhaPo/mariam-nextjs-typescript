@@ -14,6 +14,8 @@ interface ProductFormProps {
 export default function EditProductForm({ data, onSave }: ProductFormProps) {
   const [titleUk, setTitleUk] = useState("");
   const [titleEn, setTitleEn] = useState("");
+  const [descriptionUk, setDescriptionUk] = useState("");
+  const [descriptionEn, setDescriptionEn] = useState("");
   const [price, setPrice] = useState(0);
   const [imageUrls, setImageUrls] = useState([""]);
   const [imageUrl, setImageUrl] = useState("");
@@ -22,6 +24,8 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
     if (!data) return;
     setTitleEn(data.titleEn);
     setTitleUk(data.titleUk);
+    setDescriptionEn(data.descriptionEn);
+    setDescriptionUk(data.descriptionUk);
     setPrice(data.price);
     setImageUrls(data.imageUrls);
   }, [data]);
@@ -32,6 +36,8 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
       _id: data?._id,
       titleEn: titleEn,
       titleUk: titleUk,
+      descriptionEn: descriptionEn,
+      descriptionUk: descriptionUk,
       price: price,
       imageUrls: imageUrls,
     });
@@ -133,6 +139,32 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
             />
           </Form.Control>
         </Form.Field>
+        <Form.Field className="grid mb-[10px]" name="descriptionUk">
+          <Form.Label className="text-[15px] font-medium leading-[35px]">
+            Description UK
+          </Form.Label>
+          <Form.Control asChild>
+            <input
+              className="box-border w-full inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black]"
+              type="text"
+              value={descriptionUk}
+              onChange={(e) => setDescriptionUk(e.target.value)}
+            />
+          </Form.Control>
+        </Form.Field>
+        <Form.Field className="grid mb-[10px]" name="descriptionEn">
+          <Form.Label className="text-[15px] font-medium leading-[35px]">
+            Description EN
+          </Form.Label>
+          <Form.Control asChild>
+            <input
+              className="box-border w-full inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black]"
+              type="text"
+              value={descriptionEn}
+              onChange={(e) => setDescriptionEn(e.target.value)}
+            />
+          </Form.Control>
+        </Form.Field>
         {imageUrls.map((singleImage, index) => (
           <div key={index}>
             {" "}
@@ -148,7 +180,7 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
                   The field can not be blank.
                 </Form.Message>
               </div>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-5">
                 <Form.Control asChild>
                   <input
                     className="box-border w-[80%] h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black]"
@@ -166,10 +198,12 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
                     Delete IMG url
                   </button>
                 )}
+                <div>
+                  <ImportImageUrl
+                    onAdd={(newUrl) => addGoogleDriveImageUrl(newUrl, index)}
+                  />
+                </div>
               </div>
-              <ImportImageUrl
-                onAdd={(newUrl) => addGoogleDriveImageUrl(newUrl, index)}
-              />
             </Form.Field>{" "}
           </div>
         ))}{" "}

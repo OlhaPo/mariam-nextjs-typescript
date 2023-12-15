@@ -5,6 +5,8 @@ export interface ProductItem {
   _id?: string;
   titleUk: string;
   titleEn: string;
+  descriptionUk: string;
+  descriptionEn: string;
   price: number;
   imageUrls: string[];
 }
@@ -13,6 +15,8 @@ export interface ProductItem {
 const productSchema = new Schema<ProductItem>({
   titleUk: { type: String, required: true },
   titleEn: { type: String, required: true },
+  descriptionUk: { type: String, required: true },
+  descriptionEn: { type: String, required: true },
   price: { type: Number, required: true },
   imageUrls: [{ type: String }],
 });
