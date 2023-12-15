@@ -65,12 +65,10 @@ export default function CollectionsPage() {
                 <Table.Cell>{collection.collectionName}</Table.Cell>
                 <Table.Cell>
                   <Link href={`/admin/collections/edit/${collection._id}`}>
-                    <button className="border-2 text-white bg-primary px-5 py-2 mr-5">
-                      Edit
-                    </button>
+                    <button className="edit-btn">Edit</button>
                   </Link>
                   <button
-                    className="border-2 text-white bg-primary px-3 py-2"
+                    className="delete-btn"
                     onClick={() => deleteCollection(collection)}
                   >
                     Delete

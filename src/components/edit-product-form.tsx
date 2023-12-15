@@ -58,6 +58,12 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
     setImageUrls([...imageUrls, imageUrl]);
   }
 
+  function handleDeletingImageUrl(index: number) {
+    const urls = [...imageUrls];
+    urls.splice(index, 1);
+    setImageUrls(urls);
+  }
+
   return (
     <div>
       <Form.Root className="w-[70%]" onSubmit={save}>
@@ -129,6 +135,7 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
         </Form.Field>
         {imageUrls.map((singleImage, index) => (
           <div key={index}>
+            {" "}
             <Form.Field className="mb-[10px]" name={`productImage-${index}`}>
               <div className="flex items-baseline justify-between">
                 <Form.Label className="text-[15px] font-medium leading-[35px]">
@@ -151,13 +158,21 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
                     onChange={(e) => handleImageUrlChange(e, index)}
                   />
                 </Form.Control>
+                {imageUrls.length !== 1 && (
+                  <button
+                    onClick={() => handleDeletingImageUrl(index)}
+                    className="inline-flex gap-3 delete-btn"
+                  >
+                    Delete IMG url
+                  </button>
+                )}
               </div>
               <ImportImageUrl
                 onAdd={(newUrl) => addGoogleDriveImageUrl(newUrl, index)}
               />
             </Form.Field>{" "}
           </div>
-        ))}
+        ))}{" "}
         <button
           onClick={() => handleAddingImageUrl()}
           className="inline-flex gap-3"

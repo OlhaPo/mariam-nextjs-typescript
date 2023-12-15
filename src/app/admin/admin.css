@@ -18,6 +18,15 @@ div svg {
   @apply text-lg;
 }
 
+.delete-btn,
+.import-btn {
+  @apply border-2 text-white bg-primary px-3 py-2;
+}
+
+.edit-btn {
+  @apply border-2 text-white bg-primary px-5 py-2 mr-5;
+}
+
 .admin-header-bar {
   @apply flex justify-between items-center gap-5 py-10 bg-white px-5;
 }

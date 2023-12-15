@@ -17,10 +17,7 @@ export default function ImportImageUrl({
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <button
-          className="inline-flex h-[35px] items-center justify-center rounded-[4px] bg-white px-[15px] font-medium leading-none shadow-[0_2px_10px] focus:shadow-[0_0_0_2px] focus:shadow-black focus:outline-none"
-          onClick={() => setNewImageUrl("")}
-        >
+        <button className="import-btn" onClick={() => setNewImageUrl("")}>
           Import
         </button>
       </Dialog.Trigger>
