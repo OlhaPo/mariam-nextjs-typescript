@@ -1,18 +1,26 @@
-import { Product } from "@/models/ProductSchema";
+import { Product, ProductItem } from "@/models/ProductSchema";
 import { mongooseConnect } from "../../../../lib/mongogoose";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
   await mongooseConnect();
   const data = await req.json();
-  const { titleUk, titleEn, descriptionEn, descriptionUk, price, imageUrls } =
-    data;
+  const {
+    titleUk,
+    titleEn,
+    descriptionEn,
+    descriptionUk,
+    price,
+    collectionId,
+    imageUrls,
+  } = data;
   const productDoc = await Product.create({
     titleUk,
     titleEn,
     descriptionEn,
     descriptionUk,
     price,
+    collectionId,
     imageUrls,
   });
   return NextResponse.json(productDoc);
@@ -40,9 +48,10 @@ export async function PUT(req: NextRequest) {
     descriptionEn,
     descriptionUk,
     price,
+    collectionId,
     imageUrls,
   } = data;
-  const productDoc = await Product.updateOne(
+  const productDoc = await Product.updateOne<ProductItem>(
     { _id },
     {
       titleUk,
@@ -50,6 +59,7 @@ export async function PUT(req: NextRequest) {
       descriptionEn,
       descriptionUk,
       price,
+      collectionId,
       imageUrls,
     }
   );

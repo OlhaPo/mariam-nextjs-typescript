@@ -3,8 +3,10 @@
 import React, { useEffect, useState } from "react";
 import * as Form from "@radix-ui/react-form";
 import { ProductItem } from "@/models/ProductSchema";
+import { CollectionItem } from "@/models/CollectionSchema";
 import ImportImageUrl from "./import-image-url";
 import { IoMdAdd } from "react-icons/io";
+import axios from "axios";
 
 interface ProductFormProps {
   data?: ProductItem;
@@ -17,8 +19,16 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
   const [descriptionUk, setDescriptionUk] = useState("");
   const [descriptionEn, setDescriptionEn] = useState("");
   const [price, setPrice] = useState(0);
-  const [imageUrls, setImageUrls] = useState([""]);
+  const [imageUrls, setImageUrls] = useState([]);
   const [imageUrl, setImageUrl] = useState("");
+  const [collectionId, setCollectionId] = useState<string | undefined>();
+  const [collections, setCollections] = useState<CollectionItem[]>([]);
+
+  useEffect(() => {
+    axios.get("/api/collections").then((result) => {
+      setCollections(result.data);
+    });
+  }, []);
 
   useEffect(() => {
     if (!data) return;
@@ -26,8 +36,9 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
     setTitleUk(data.titleUk);
     setDescriptionEn(data.descriptionEn);
     setDescriptionUk(data.descriptionUk);
+    setCollectionId(data.collectionId);
     setPrice(data.price);
-    setImageUrls(data.imageUrls);
+    // setImageUrls(data.imageUrls);
   }, [data]);
 
   function save(e: React.FormEvent) {
@@ -39,6 +50,7 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
       descriptionEn: descriptionEn,
       descriptionUk: descriptionUk,
       price: price,
+      collectionId: collectionId,
       imageUrls: imageUrls,
     });
   }
@@ -49,19 +61,19 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
   ) {
     const value = e.target.value;
     const urls = [...imageUrls];
-    urls[index] = value;
+    // urls[index] = value;
     setImageUrls(urls);
   }
 
   function addGoogleDriveImageUrl(newUrl: string, index: number) {
     // Update the corresponding URL in the array
-    setImageUrls((prevUrls) =>
-      prevUrls.map((prevUrl, i) => (i === index ? newUrl : prevUrl))
-    );
+    // setImageUrls((prevUrls) =>
+    //   prevUrls.map((prevUrl, i) => (i === index ? newUrl : prevUrl))
+    // );
   }
 
   function handleAddingImageUrl() {
-    setImageUrls([...imageUrls, imageUrl]);
+    // setImageUrls([...imageUrls, imageUrl]);
   }
 
   function handleDeletingImageUrl(index: number) {
@@ -164,6 +176,31 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
               onChange={(e) => setDescriptionEn(e.target.value)}
             />
           </Form.Control>
+        </Form.Field>
+        <Form.Field className="grid mb-[10px]" name="collection">
+          <div className="flex items-baseline justify-between">
+            <Form.Label className="text-[15px] font-medium leading-[35px]">
+              Collection
+            </Form.Label>
+            <Form.Message
+              className="text-[13px] opacity-[0.8]"
+              match="valueMissing"
+            >
+              The field can not be blank.
+            </Form.Message>
+          </div>
+          <select
+            value={collectionId}
+            onChange={(ev) => setCollectionId(ev.target.value)}
+          >
+            <option value="">Without collection</option>
+            {collections.length > 0 &&
+              collections.map((c) => (
+                <option key={c._id} value={c._id}>
+                  {c.titleEn}
+                </option>
+              ))}
+          </select>
         </Form.Field>
         {imageUrls.map((singleImage, index) => (
           <div key={index}>
