@@ -5,11 +5,11 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest) {
   await mongooseConnect();
   const data = await req.json();
-  const { titleUk, titleEn, collectionName, imageUrl } = data;
+  const { title_uk, title_en, collection_name, imageUrl } = data;
   const collectionDoc = await Collection.create({
-    titleUk,
-    titleEn,
-    collectionName,
+    title_uk,
+    title_en,
+    collection_name,
     imageUrl,
   });
   return NextResponse.json(collectionDoc);
@@ -30,13 +30,13 @@ export async function GET(req: NextRequest) {
 
 export async function PUT(req: NextRequest) {
   const data = await req.json();
-  const { titleUk, titleEn, collectionName, _id, imageUrl } = data;
+  const { title_uk, title_en, collection_name, _id, imageUrl } = data;
   const collectionDoc = await Collection.updateOne(
     { _id },
     {
-      titleUk,
-      titleEn,
-      collectionName,
+      title_uk,
+      title_en,
+      collection_name,
       imageUrl,
     }
   );

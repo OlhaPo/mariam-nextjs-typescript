@@ -14,16 +14,16 @@ export default function EditCollectionForm({
   data,
   onSave,
 }: CollectionsFormProps) {
-  const [titleUk, setTitleUk] = useState("");
-  const [titleEn, setTitleEn] = useState("");
-  const [collectionName, setCollectionName] = useState("");
+  const [title_uk, setTitleUk] = useState("");
+  const [title_en, setTitleEn] = useState("");
+  const [collection_name, setCollectionName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
     if (!data) return;
-    setCollectionName(data.collectionName);
-    setTitleEn(data.titleEn);
-    setTitleUk(data.titleUk);
+    setCollectionName(data.collection_name);
+    setTitleEn(data.title_en);
+    setTitleUk(data.title_uk);
     setImageUrl(data.imageUrl);
   }, [data]);
 
@@ -31,9 +31,9 @@ export default function EditCollectionForm({
     e.preventDefault();
     onSave({
       _id: data?._id,
-      collectionName: collectionName,
-      titleEn: titleEn,
-      titleUk: titleUk,
+      collection_name: collection_name,
+      title_en: title_en,
+      title_uk: title_uk,
       imageUrl: imageUrl,
     });
   }
@@ -45,7 +45,7 @@ export default function EditCollectionForm({
   return (
     <div>
       <Form.Root className="w-[70%]" onSubmit={save}>
-        <Form.Field className="grid mb-[10px]" name="titleUk">
+        <Form.Field className="grid mb-[10px]" name="title_uk">
           <div className="flex items-baseline justify-between">
             <Form.Label className="text-[15px] font-medium leading-[35px]">
               Title UK
@@ -62,12 +62,12 @@ export default function EditCollectionForm({
               className="box-border w-full inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black]"
               type="text"
               required
-              value={titleUk}
+              value={title_uk}
               onChange={(e) => setTitleUk(e.target.value)}
             />
           </Form.Control>
         </Form.Field>
-        <Form.Field className="grid mb-[10px]" name="titleEn">
+        <Form.Field className="grid mb-[10px]" name="title_en">
           <div className="flex items-baseline justify-between">
             <Form.Label className="text-[15px] font-medium leading-[35px]">
               Title EN
@@ -84,7 +84,7 @@ export default function EditCollectionForm({
               className="box-border w-full inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black]"
               type="text"
               required
-              value={titleEn}
+              value={title_en}
               onChange={(e) => setTitleEn(e.target.value)}
             />
           </Form.Control>
@@ -106,7 +106,7 @@ export default function EditCollectionForm({
               className="box-border w-full inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black]"
               type="text"
               required
-              value={collectionName}
+              value={collection_name}
               onChange={(e) => setCollectionName(e.target.value)}
             />
           </Form.Control>

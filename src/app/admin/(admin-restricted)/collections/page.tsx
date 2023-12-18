@@ -60,8 +60,8 @@ export default function CollectionsPage() {
           {collections.length > 0 &&
             collections.map((collection) => (
               <Table.Row key={collection._id}>
-                <Table.Cell>{collection.titleUk}</Table.Cell>
-                <Table.Cell>{collection.titleEn}</Table.Cell>
+                <Table.Cell>{collection.title_uk}</Table.Cell>
+                <Table.Cell>{collection.title_en}</Table.Cell>
                 <Table.Cell>{collection.collectionName}</Table.Cell>
                 <Table.Cell>
                   <Link href={`/admin/collections/edit/${collection._id}`}>

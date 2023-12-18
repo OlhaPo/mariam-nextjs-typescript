@@ -6,20 +6,20 @@ export async function POST(req: NextRequest) {
   await mongooseConnect();
   const data = await req.json();
   const {
-    titleUk,
-    titleEn,
-    descriptionEn,
-    descriptionUk,
+    title_uk,
+    title_en,
+    description_en,
+    description_uk,
     price,
     collectionId,
     imageUrls,
     status,
   } = data;
   const productDoc = await Product.create({
-    titleUk,
-    titleEn,
-    descriptionEn,
-    descriptionUk,
+    title_uk,
+    title_en,
+    description_en,
+    description_uk,
     price,
     collectionId,
     imageUrls,
@@ -45,10 +45,10 @@ export async function PUT(req: NextRequest) {
   const data = await req.json();
   const {
     _id,
-    titleUk,
-    titleEn,
-    descriptionEn,
-    descriptionUk,
+    title_uk,
+    title_en,
+    description_en,
+    description_uk,
     price,
     collectionId,
     imageUrls,
@@ -57,10 +57,10 @@ export async function PUT(req: NextRequest) {
   const productDoc = await Product.updateOne<ProductItem>(
     { _id },
     {
-      titleUk,
-      titleEn,
-      descriptionEn,
-      descriptionUk,
+      title_uk,
+      title_en,
+      description_en,
+      description_uk,
       price,
       collectionId,
       imageUrls,

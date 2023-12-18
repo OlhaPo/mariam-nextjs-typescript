@@ -20,7 +20,7 @@ export default function ProductsPage() {
   function deleteProduct(product: ProductItem) {
     Swal.fire({
       title: "Are you sure?",
-      text: `Do you want to delete ${product.titleEn}?`,
+      text: `Do you want to delete ${product.title_en}?`,
       showCancelButton: true,
       cancelButtonText: "Cancel",
       confirmButtonText: "Yes, Delete!",
@@ -61,9 +61,9 @@ export default function ProductsPage() {
             products.map((product) => (
               <Table.Row key={product._id}>
                 <Table.Cell>{product.titleUk}</Table.Cell>
-                <Table.Cell>{product.titleEn}</Table.Cell>
-                <Table.Cell>{product.descriptionUk}</Table.Cell>
-                <Table.Cell>{product.descriptionEn}</Table.Cell>
+                <Table.Cell>{product.title_en}</Table.Cell>
+                <Table.Cell>{product.description_uk}</Table.Cell>
+                <Table.Cell>{product.description_en}</Table.Cell>
                 <Table.Cell>{product.price}</Table.Cell>
                 <Table.Cell>
                   <Link href={`/admin/products/edit/${product._id}`}>

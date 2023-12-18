@@ -2,22 +2,22 @@ import mongoose, { Schema, model, models } from "mongoose";
 
 export interface ProductItem {
   _id?: string;
-  titleUk: string;
-  titleEn: string;
-  descriptionUk: string;
-  descriptionEn: string;
-  collectionId: string | undefined;
+  title_uk: string;
+  title_en: string;
+  description_uk: string;
+  description_en: string;
+  collection_id: string | undefined;
   price: number;
   imageUrls: string[];
   status: string;
 }
 
 const productSchema = new Schema<ProductItem>({
-  titleUk: { type: String, required: true },
-  titleEn: { type: String, required: true },
-  descriptionUk: { type: String, required: true },
-  descriptionEn: { type: String, required: true },
-  collectionId: { type: mongoose.Types.ObjectId, ref: "CollectionItems" },
+  title_uk: { type: String, required: true },
+  title_en: { type: String, required: true },
+  description_uk: { type: String, required: true },
+  description_en: { type: String, required: true },
+  collection_id: { type: mongoose.Types.ObjectId, ref: "CollectionItems" },
   price: { type: Number, required: true },
   imageUrls: [{ type: String }],
   status: { type: String, required: true },

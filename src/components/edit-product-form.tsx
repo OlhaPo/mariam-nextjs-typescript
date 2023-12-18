@@ -22,14 +22,14 @@ const availability_status = [
 ];
 
 export default function EditProductForm({ data, onSave }: ProductFormProps) {
-  const [titleUk, setTitleUk] = useState("");
-  const [titleEn, setTitleEn] = useState("");
-  const [descriptionUk, setDescriptionUk] = useState("");
-  const [descriptionEn, setDescriptionEn] = useState("");
+  const [title_uk, setTitleUk] = useState("");
+  const [title_en, setTitleEn] = useState("");
+  const [description_uk, setDescriptionUk] = useState("");
+  const [description_en, setDescriptionEn] = useState("");
   const [price, setPrice] = useState(0);
   const [status, setStatus] = useState("");
   const [imageUrls, setImageUrls] = useState<string[]>([]);
-  const [collectionId, setCollectionId] = useState<string | undefined>();
+  const [collection_id, setCollectionId] = useState<string | undefined>();
   const [collections, setCollections] = useState<CollectionItem[]>([]);
 
   useEffect(() => {
@@ -41,11 +41,11 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
   useEffect(() => {
     if (!data) return;
 
-    setTitleEn(data.titleEn);
-    setTitleUk(data.titleUk);
-    setDescriptionEn(data.descriptionEn);
-    setDescriptionUk(data.descriptionUk);
-    setCollectionId(data.collectionId);
+    setTitleEn(data.title_en);
+    setTitleUk(data.title_uk);
+    setDescriptionEn(data.description_en);
+    setDescriptionUk(data.description_uk);
+    setCollectionId(data.collection_id);
     setPrice(data.price);
     setImageUrls(data.imageUrls);
     setStatus(data.status);
@@ -55,12 +55,12 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
     e.preventDefault();
     onSave({
       _id: data?._id,
-      titleEn: titleEn,
-      titleUk: titleUk,
-      descriptionEn: descriptionEn,
-      descriptionUk: descriptionUk,
+      title_en: title_en,
+      title_uk: title_uk,
+      description_en: description_en,
+      description_uk: description_uk,
       price: price,
-      collectionId: collectionId,
+      collection_id: collection_id,
       imageUrls: imageUrls,
       status: status,
     });
@@ -96,7 +96,7 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
   return (
     <div>
       <Form.Root className="w-[70%]" onSubmit={save}>
-        <Form.Field className="grid mb-[10px]" name="titleUk">
+        <Form.Field className="grid mb-[10px]" name="title_uk">
           <div className="flex items-baseline justify-between">
             <Form.Label className="text-[15px] font-medium leading-[35px]">
               Title UK
@@ -113,12 +113,12 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
               className="box-border w-full inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black]"
               type="text"
               required
-              value={titleUk}
+              value={title_uk}
               onChange={(e) => setTitleUk(e.target.value)}
             />
           </Form.Control>
         </Form.Field>
-        <Form.Field className="grid mb-[10px]" name="titleEn">
+        <Form.Field className="grid mb-[10px]" name="title_en">
           <div className="flex items-baseline justify-between">
             <Form.Label className="text-[15px] font-medium leading-[35px]">
               Title EN
@@ -135,7 +135,7 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
               className="box-border w-full inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black]"
               type="text"
               required
-              value={titleEn}
+              value={title_en}
               onChange={(e) => setTitleEn(e.target.value)}
             />
           </Form.Control>
@@ -162,7 +162,7 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
             />
           </Form.Control>
         </Form.Field>
-        <Form.Field className="grid mb-[10px]" name="descriptionUk">
+        <Form.Field className="grid mb-[10px]" name="description_uk">
           <Form.Label className="text-[15px] font-medium leading-[35px]">
             Description UK
           </Form.Label>
@@ -170,12 +170,12 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
             <input
               className="box-border w-full inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black]"
               type="text"
-              value={descriptionUk}
+              value={description_uk}
               onChange={(e) => setDescriptionUk(e.target.value)}
             />
           </Form.Control>
         </Form.Field>
-        <Form.Field className="grid mb-[10px]" name="descriptionEn">
+        <Form.Field className="grid mb-[10px]" name="description_en">
           <Form.Label className="text-[15px] font-medium leading-[35px]">
             Description EN
           </Form.Label>
@@ -183,7 +183,7 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
             <input
               className="box-border w-full inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black]"
               type="text"
-              value={descriptionEn}
+              value={description_en}
               onChange={(e) => setDescriptionEn(e.target.value)}
             />
           </Form.Control>
@@ -201,14 +201,14 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
             </Form.Message>
           </div>
           <select
-            value={collectionId}
+            value={collection_id}
             onChange={(ev) => setCollectionId(ev.target.value)}
           >
             <option value="">Without collection</option>
             {collections.length > 0 &&
               collections.map((c) => (
                 <option key={c._id} value={c._id}>
-                  {c.titleEn}
+                  {c.title_en}
                 </option>
               ))}
           </select>
