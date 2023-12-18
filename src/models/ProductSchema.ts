@@ -9,6 +9,7 @@ export interface ProductItem {
   collectionId: string | undefined;
   price: number;
   imageUrls: string[];
+  status: string;
 }
 
 const productSchema = new Schema<ProductItem>({
@@ -19,6 +20,7 @@ const productSchema = new Schema<ProductItem>({
   collectionId: { type: mongoose.Types.ObjectId, ref: "CollectionItems" },
   price: { type: Number, required: true },
   imageUrls: [{ type: String }],
+  status: { type: String, required: true },
 });
 
 export const Product =

@@ -13,12 +13,21 @@ interface ProductFormProps {
   onSave: (newData: ProductItem) => void;
 }
 
+const availability_status = [
+  {
+    status: "in stock",
+  },
+  { status: "pre-order" },
+  { status: "sold out" },
+];
+
 export default function EditProductForm({ data, onSave }: ProductFormProps) {
   const [titleUk, setTitleUk] = useState("");
   const [titleEn, setTitleEn] = useState("");
   const [descriptionUk, setDescriptionUk] = useState("");
   const [descriptionEn, setDescriptionEn] = useState("");
   const [price, setPrice] = useState(0);
+  const [status, setStatus] = useState("");
   const [imageUrls, setImageUrls] = useState<string[]>([]);
   const [collectionId, setCollectionId] = useState<string | undefined>();
   const [collections, setCollections] = useState<CollectionItem[]>([]);
@@ -39,6 +48,7 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
     setCollectionId(data.collectionId);
     setPrice(data.price);
     setImageUrls(data.imageUrls);
+    setStatus(data.status);
   }, [data]);
 
   function save(e: React.FormEvent) {
@@ -52,6 +62,7 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
       price: price,
       collectionId: collectionId,
       imageUrls: imageUrls,
+      status: status,
     });
   }
 
@@ -249,6 +260,27 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
         >
           <IoMdAdd /> Add new image
         </button>
+        <Form.Field className="grid mb-[10px]" name="status">
+          <div className="flex items-baseline justify-between">
+            <Form.Label className="text-[15px] font-medium leading-[35px]">
+              Availability status
+            </Form.Label>
+            <Form.Message
+              className="text-[13px] opacity-[0.8]"
+              match="valueMissing"
+            >
+              The field can not be blank.
+            </Form.Message>
+          </div>
+          <select value={status} onChange={(ev) => setStatus(ev.target.value)}>
+            <option value="">Without status</option>{" "}
+            {availability_status.map((stat) => (
+              <option key={stat.status} value={stat.status}>
+                {stat.status}
+              </option>
+            ))}{" "}
+          </select>
+        </Form.Field>
         <Form.Submit className="box-border w-full inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none shadow-[0_2px_10px] focus:shadow-[0_0_0_2px] focus:shadow-black focus:outline-none mt-[10px]">
           Save
         </Form.Submit>

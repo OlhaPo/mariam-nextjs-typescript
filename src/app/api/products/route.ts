@@ -13,6 +13,7 @@ export async function POST(req: NextRequest) {
     price,
     collectionId,
     imageUrls,
+    status,
   } = data;
   const productDoc = await Product.create({
     titleUk,
@@ -22,6 +23,7 @@ export async function POST(req: NextRequest) {
     price,
     collectionId,
     imageUrls,
+    status,
   });
   return NextResponse.json(productDoc);
 }
@@ -50,6 +52,7 @@ export async function PUT(req: NextRequest) {
     price,
     collectionId,
     imageUrls,
+    status,
   } = data;
   const productDoc = await Product.updateOne<ProductItem>(
     { _id },
@@ -61,6 +64,7 @@ export async function PUT(req: NextRequest) {
       price,
       collectionId,
       imageUrls,
+      status,
     }
   );
   return NextResponse.json(productDoc);
