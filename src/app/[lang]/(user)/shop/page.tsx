@@ -17,14 +17,14 @@ export default async function Shop({
         {productsInStock.map((product) => (
           <div key={product.id} className="flex flex-col items-center gap-2">
             {/* <Link href={`/items/${product.id}`}> */}
-              <Image
-                src={product.imageUrls[0]}
-                alt={product.title}
-                width={500}
-                height={500}
-                priority
-                className="img-product-in-stock hover:scale-100"
-              />
+            <Image
+              src={product.imageUrls[0]}
+              alt={product.title}
+              width={500}
+              height={500}
+              priority
+              className="img-product-in-stock hover:scale-100"
+            />
             {/* </Link> */}
             <h3>{product.title}</h3>
             <p className="text-center">{product.price} UAH</p>

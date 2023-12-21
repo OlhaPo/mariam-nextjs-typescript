@@ -20,7 +20,7 @@ export default function CollectionsPage() {
   function deleteCollection(collection: CollectionItem) {
     Swal.fire({
       title: "Are you sure?",
-      text: `Do you want to delete ${collection.collectionName}?`,
+      text: `Do you want to delete ${collection.collection_name}?`,
       showCancelButton: true,
       cancelButtonText: "Cancel",
       confirmButtonText: "Yes, Delete!",
@@ -62,7 +62,7 @@ export default function CollectionsPage() {
               <Table.Row key={collection._id}>
                 <Table.Cell>{collection.title_uk}</Table.Cell>
                 <Table.Cell>{collection.title_en}</Table.Cell>
-                <Table.Cell>{collection.collectionName}</Table.Cell>
+                <Table.Cell>{collection.collection_name}</Table.Cell>
                 <Table.Cell>
                   <Link href={`/admin/collections/edit/${collection._id}`}>
                     <button className="edit-btn">Edit</button>

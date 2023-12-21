@@ -1,29 +1,37 @@
 import Link from "next/link";
-import Image from "next/image";
-import { mainPageCollections } from "@/domains/collection/mainPageCollections";
 import { Locale } from "../../i18n.config";
 import { getDictionary } from "@/lib/dictionary";
+import { CollectionItem } from "@/models/CollectionSchema";
+import { getAllCollections } from "@/services/collection";
 
-export async function Collections({ lang }: { lang: Locale }) {
+export default async function Collections({ lang }: { lang: Locale }) {
   const { page } = await getDictionary(lang);
+  const allCollections = await getAllCollections();
+
+  function getLangField(
+    item: CollectionItem,
+    fieldName: string
+  ): string | undefined {
+    const fullKey = (fieldName + lang) as keyof CollectionItem;
+    return item[fullKey];
+  }
+
   return (
     <section id="collections" className="section-container">
       <div>
         <h3 className="mb-5">{page.collections.header}</h3>
       </div>
       <div className="flex flex-wrap flex-row gap-5 md:gap-12 items-center justify-center">
-        {mainPageCollections.map((item) => (
-          <div className="collection-navLink" key={item.title[lang]}>
+        {allCollections.map((item: CollectionItem) => (
+          <div className="collection-navLink" key={item._id}>
             <Link href={`${lang}/items?category=${item.collection_name}`}>
-              <Image
+              <img
                 src={item.imageUrl}
-                width={300}
-                height={300}
-                alt={item.title[lang]}
                 className="collection-cover"
+                alt={getLangField(item, "title_")}
               />
-              <h3>{item.title[lang]}</h3>
-            </Link>{" "}
+              <h3>{getLangField(item, "title_")}</h3>
+            </Link>
           </div>
         ))}
       </div>

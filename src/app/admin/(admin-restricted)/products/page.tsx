@@ -60,7 +60,7 @@ export default function ProductsPage() {
           {products.length > 0 &&
             products.map((product) => (
               <Table.Row key={product._id}>
-                <Table.Cell>{product.titleUk}</Table.Cell>
+                <Table.Cell>{product.title_uk}</Table.Cell>
                 <Table.Cell>{product.title_en}</Table.Cell>
                 <Table.Cell>{product.description_uk}</Table.Cell>
                 <Table.Cell>{product.description_en}</Table.Cell>
