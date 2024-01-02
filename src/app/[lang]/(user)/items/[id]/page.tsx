@@ -1,19 +1,20 @@
 import ProductItem from "@/components/product-item";
-import { productsInStock } from "@/domains/product/productsInStock";
+import { getProductById } from "@/services/product";
 import { Locale } from "../../../../../../i18n.config";
 
-export default function ItemPage({
+export default async function ItemPage({
   params,
 }: {
   params: { id: string; lang: Locale };
 }) {
+  const productDetailsData = await getProductById(params.id);
   return (
     <div className="section-container">
-      {/* {product ? (
-        <ProductItem product={product} />
+      {productDetailsData ? (
+        <ProductItem product={productDetailsData} lang={params.lang} />
       ) : (
         <div>Product not found</div>
-      )} */}
+      )}
     </div>
   );
 }
