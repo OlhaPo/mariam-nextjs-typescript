@@ -31,10 +31,13 @@ export async function POST(req: NextRequest) {
 export async function GET(req: NextRequest) {
   await mongooseConnect();
   const id = req.nextUrl.searchParams.get("id");
+  const collection_id = req.nextUrl.searchParams.get("collection");
 
-  let result;
+  let result: ProductItem[] | ProductItem | null;
   if (id) {
     result = await Product.findById<ProductItem>(id);
+  } else if (collection_id) {
+    result = await Product.find<ProductItem>({ collection_id });
   } else {
     result = await Product.find<ProductItem>();
   }
@@ -50,7 +53,7 @@ export async function PUT(req: NextRequest) {
     description_en,
     description_uk,
     price,
-    collectionId,
+    collection_id,
     imageUrls,
     status,
   } = data;
@@ -62,7 +65,7 @@ export async function PUT(req: NextRequest) {
       description_en,
       description_uk,
       price,
-      collectionId,
+      collection_id,
       imageUrls,
       status,
     }

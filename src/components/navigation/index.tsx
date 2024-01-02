@@ -40,11 +40,11 @@ export function Navigation({
       <BiMenu size={30} onClick={handleNav} className="md:hidden z-[150]" />
       {isOpenNav ? (
         <div className="w-full bg-[#948D85] fixed top-0 left-0 right-0 min-h-screen flex flex-col justify-center items-center z-[120] gap-5">
-          {navLinks.map((link) => (
+          {navLinks.map((link, i) => (
             <NavLink
               href={createFullUrl(link.href)}
               onClick={handleNav}
-              key={link.title[lang]}
+              key={i}
             >
               {link.title[lang]}
             </NavLink>
@@ -59,10 +59,10 @@ export function Navigation({
           <LocaleSwitcher />
         </div>
         <div className="flex gap-8">
-          {navLinks.map((link) => (
+          {navLinks.map((link, i) => (
             <NavLink
               href={createFullUrl(link.href)}
-              key={link.title[lang]}
+              key={i}
               isactive={pathname === createFullUrl(link.href)}
             >
               {link.title[lang]}

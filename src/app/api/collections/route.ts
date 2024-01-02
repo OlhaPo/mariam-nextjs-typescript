@@ -18,10 +18,13 @@ export async function POST(req: NextRequest) {
 export async function GET(req: NextRequest) {
   await mongooseConnect();
   const id = req.nextUrl.searchParams.get("id");
+  const name = req.nextUrl.searchParams.get("name");
 
   let result;
   if (id) {
     result = await Collection.findById(id);
+  } else if (name) {
+    result = await Collection.findOne({ collection_name: name });
   } else {
     result = await Collection.find();
   }
