@@ -35,5 +35,10 @@
     "0": "In stock",
     "1": "Pre-order",
     "2": "Sold out"
+  },
+  "cartButton": {
+    "0": "Buy",
+    "1": "Pre-order",
+    "2": "Unavailable to order"
   }
 }
