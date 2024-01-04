@@ -1,4 +1,4 @@
-import { Product, ProductItem } from "@/models/ProductSchema";
+import { Product, ProductItem, ProductStatus } from "@/models/ProductSchema";
 import { mongooseConnect } from "../../../../lib/mongogoose";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
     description_en,
     description_uk,
     price,
-    collectionId,
+    collection_id,
     imageUrls,
     status,
   } = data;
@@ -21,9 +21,9 @@ export async function POST(req: NextRequest) {
     description_en,
     description_uk,
     price,
-    collectionId,
+    collection_id,
     imageUrls,
-    status,
+    status: status as ProductStatus,
   });
   return NextResponse.json(productDoc);
 }
@@ -32,12 +32,15 @@ export async function GET(req: NextRequest) {
   await mongooseConnect();
   const id = req.nextUrl.searchParams.get("id");
   const collection_id = req.nextUrl.searchParams.get("collection");
+  const status = req.nextUrl.searchParams.get("status");
 
   let result: ProductItem[] | ProductItem | null;
   if (id) {
     result = await Product.findById<ProductItem>(id);
   } else if (collection_id) {
     result = await Product.find<ProductItem>({ collection_id });
+  } else if (status) {
+    result = await Product.find<ProductItem>({ status });
   } else {
     result = await Product.find<ProductItem>();
   }

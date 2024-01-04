@@ -12,6 +12,7 @@ import { getCollectionByName } from "@/services/collection";
 import { getProductsByCollectionId } from "@/services/product";
 import { ProductItem } from "@/models/ProductSchema";
 import { getLangField } from "@/lib/dictionaryUtils";
+import { availabilityStatus } from "@/components/edit-product-form";
 
 export default function Items({ params }: { params: { lang: Locale } }) {
   const searchParams = useSearchParams();
@@ -60,7 +61,7 @@ export default function Items({ params }: { params: { lang: Locale } }) {
       <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-12 px-10 pt-10">
         {products?.map((product: ProductItem) => (
           <div key={product._id} className="flex flex-col items-center">
-            <Link href={`/items/${product._id}`}>
+            <Link href={`/${params.lang}/items/${product._id}`}>
               <Image
                 src={product.imageUrls[0]}
                 alt={product.title_en}
@@ -70,7 +71,9 @@ export default function Items({ params }: { params: { lang: Locale } }) {
               />
             </Link>
             <h3>{getLangField(product, "title_", params.lang)}</h3>
-            <p>{product.status}</p>
+            <p>
+              {(translations as any).productStatus[product.status.toString()]}
+            </p>
             <p className="text-center">{product.price} UAH</p>
           </div>
         ))}

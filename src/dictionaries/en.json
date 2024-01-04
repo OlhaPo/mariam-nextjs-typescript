@@ -30,5 +30,10 @@
     "info": "<span class=\"font-fredoka text-lg md:text-2xl text-primary\">mariam crochet jewelry</span> is a Ukrainian clothing and crocheted jewelry brand founded by designer Maryna Kambur. Handcrafted lovingly in Kyiv, Ukraine.",
     "menu_subtitle": "Menu",
     "contacts_subtitle": "Contacts"
+  },
+  "productStatus": {
+    "0": "In stock",
+    "1": "Pre-order",
+    "2": "Sold out"
   }
 }

@@ -1,5 +1,11 @@
 import mongoose, { Schema, model, models } from "mongoose";
 
+export enum ProductStatus {
+  InStock,
+  PreOrder,
+  SoldOut,
+}
+
 export interface ProductItem {
   _id?: string;
   title_uk: string;
@@ -9,7 +15,7 @@ export interface ProductItem {
   collection_id: string | undefined;
   price: number;
   imageUrls: string[];
-  status: string;
+  status: ProductStatus;
 }
 
 const productSchema = new Schema<ProductItem>({
@@ -17,11 +23,17 @@ const productSchema = new Schema<ProductItem>({
   title_en: { type: String, required: true },
   description_uk: { type: String, required: true },
   description_en: { type: String, required: true },
-  collection_id: { type: mongoose.Types.ObjectId, ref: "CollectionItems" },
+  collection_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "CollectionItems",
+  },
   price: { type: Number, required: true },
   imageUrls: [{ type: String }],
-  status: { type: String, required: true },
+  status: {
+    type: Number,
+    enum: Object.values(ProductStatus).filter((s) => !isNaN(Number(s))),
+  },
 });
 
 export const Product =
-  models.ProductItems || model<ProductItem>("ProductItems", productSchema);
+  models?.ProductItems || model<ProductItem>("ProductItems", productSchema);

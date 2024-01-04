@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import * as Form from "@radix-ui/react-form";
-import { ProductItem } from "@/models/ProductSchema";
+import { ProductItem, ProductStatus } from "@/models/ProductSchema";
 import { CollectionItem } from "@/models/CollectionSchema";
 import ImportImageUrl from "./import-image-url";
 import { IoMdAdd } from "react-icons/io";
@@ -13,13 +13,11 @@ interface ProductFormProps {
   onSave: (newData: ProductItem) => void;
 }
 
-const availability_status = [
-  {
-    status: "in stock",
-  },
-  { status: "pre-order" },
-  { status: "sold out" },
-];
+export const availabilityStatus = {
+  [ProductStatus.InStock]: "In stock",
+  [ProductStatus.PreOrder]: "Pre-order",
+  [ProductStatus.SoldOut]: "Sold out",
+};
 
 export default function EditProductForm({ data, onSave }: ProductFormProps) {
   const [title_uk, setTitleUk] = useState("");
@@ -27,7 +25,7 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
   const [description_uk, setDescriptionUk] = useState("");
   const [description_en, setDescriptionEn] = useState("");
   const [price, setPrice] = useState(0);
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState<ProductStatus | undefined>();
   const [imageUrls, setImageUrls] = useState<string[]>([]);
   const [collection_id, setCollectionId] = useState<string | undefined>();
   const [collections, setCollections] = useState<CollectionItem[]>([]);
@@ -62,7 +60,7 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
       price: price,
       collection_id: collection_id,
       imageUrls: imageUrls,
-      status: status,
+      status: status ?? ProductStatus.InStock,
     });
   }
 
@@ -272,11 +270,14 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
               The field can not be blank.
             </Form.Message>
           </div>
-          <select value={status} onChange={(ev) => setStatus(ev.target.value)}>
-            <option value="">Without status</option>{" "}
-            {availability_status.map((stat) => (
-              <option key={stat.status} value={stat.status}>
-                {stat.status}
+          <select
+            value={status}
+            onChange={(ev) => setStatus(Number(ev.target.value))}
+          >
+            <option value="">Without status</option>
+            {Object.entries(availabilityStatus).map(([key, value]) => (
+              <option key={key} value={key}>
+                {value}
               </option>
             ))}{" "}
           </select>
