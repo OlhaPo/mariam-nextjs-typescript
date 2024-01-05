@@ -3,5 +3,5 @@ export const navLinks = [
   { href: "#collections", title: { en: "Collections", uk: "Колекції" } },
   { href: "/shop", title: { en: "Shop", uk: "Крамничка" } },
   { href: "#contacts", title: { en: "Contacts", uk: "Контакти" } },
-  { href: "/cart", title: { en: "Cart", uk: "Корзина" } },
+  // { href: "/cart", title: { en: "Cart", uk: "Корзина" } },
 ];

@@ -8,6 +8,7 @@ import { BiMenu } from "react-icons/bi";
 import NavLink from "./nav-link";
 import { Locale } from "../../../i18n.config";
 import LocaleSwitcher from "../locale-switcher";
+import { AiOutlineShopping } from "react-icons/ai";
 
 export function Navigation({
   translations,
@@ -34,10 +35,11 @@ export function Navigation({
         "border border-b-slate-300": !isHome,
       })}
     >
+      <BiMenu size={30} onClick={handleNav} className="md:hidden z-[150]" />
       <div className="uppercase z-[140]">
         <NavLink href={createFullUrl("/")}>{translations.home}</NavLink>
       </div>{" "}
-      <BiMenu size={30} onClick={handleNav} className="md:hidden z-[150]" />
+      <AiOutlineShopping size={28} className="md:hidden" />
       {isOpenNav ? (
         <div className="w-full bg-[#948D85] fixed top-0 left-0 right-0 min-h-screen flex flex-col justify-center items-center z-[120] gap-5">
           {navLinks.map((link, i) => (
@@ -54,7 +56,7 @@ export function Navigation({
           </div>
         </div>
       ) : null}
-      <div className="hidden md:inline-flex gap-12">
+      <div className="hidden md:inline-flex gap-12 items-center">
         <div>
           <LocaleSwitcher />
         </div>
@@ -68,6 +70,9 @@ export function Navigation({
               {link.title[lang]}
             </NavLink>
           ))}
+        </div>
+        <div>
+          <AiOutlineShopping size={28} />
         </div>
       </div>
     </div>
