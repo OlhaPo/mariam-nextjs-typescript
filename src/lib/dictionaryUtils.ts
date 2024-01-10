@@ -8,3 +8,7 @@ export function getLangField<T>(
   const fullKey = (fieldName + lang) as keyof T;
   return item ? (item[fullKey] as string) : "";
 }
+
+export type Translations = {
+  [key: string]: Translations | string;
+};

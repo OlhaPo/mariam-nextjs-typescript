@@ -7,10 +7,7 @@ import { Locale } from "../../../../i18n.config";
 import { getDictionary } from "@/lib/dictionary";
 import ShoppingCart from "@/components/shopping-cart";
 import { useEffect, useState } from "react";
-
-type Translations = {
-  [key: string]: string | Translations;
-};
+import { Translations } from "@/lib/dictionaryUtils";
 
 export default function UserLayout({
   children,
@@ -44,7 +41,7 @@ export default function UserLayout({
           onOpenCart={handleCart}
         />
         <div className="mt-20 text-base md:text-lg">{children}</div>
-        <Footer lang={params.lang} />
+        <Footer lang={params.lang} translations={translations} />
       </div>
     </>
   );

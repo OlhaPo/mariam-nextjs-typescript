@@ -1,14 +1,23 @@
+"use client";
+
 import { Contacts } from "./contacts";
 import { Info } from "./info";
-import { Navigation } from "./navigation";
+import { NavigationFooter } from "./navigation-footer";
 import { Locale } from "../../../i18n.config";
+import { Translations } from "@/lib/dictionaryUtils";
 
-export async function Footer({ lang }: { lang: Locale }) {
+export function Footer({
+  lang,
+  translations,
+}: {
+  lang: Locale;
+  translations: Translations;
+}) {
   return (
     <footer id="contacts" className="contacts">
-      <Info lang={lang} />
-      <Navigation lang={lang} />
-      <Contacts lang={lang} />
+      <Info translations={translations} />
+      <NavigationFooter lang={lang} translations={translations} />
+      <Contacts translations={translations} />
     </footer>
   );
 }

@@ -6,14 +6,14 @@ import {
   PHONE_NUMBER,
   EMAIL,
 } from "../../constants/contacts";
-import { Locale } from "../../../i18n.config";
-import { getDictionary } from "@/lib/dictionary";
+import { Translations } from "@/lib/dictionaryUtils";
 
-export async function Contacts({ lang }: { lang: Locale }) {
-  const { footer } = await getDictionary(lang);
+export function Contacts({ translations }: { translations: Translations }) {
   return (
     <div className="contacts-section">
-      <span className="contacts-subheader">{footer.contacts_subtitle}</span>
+      <span className="contacts-subheader">
+        {(translations?.footer as Translations)?.contacts_subtitle.toString()}
+      </span>
       <div className="flex flex-row gap-4">
         <a href={INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer">
           <FaInstagram size={20} />
