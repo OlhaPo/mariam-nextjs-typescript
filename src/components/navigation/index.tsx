@@ -13,9 +13,11 @@ import { AiOutlineShopping } from "react-icons/ai";
 export function Navigation({
   translations,
   lang,
+  onOpenCart,
 }: {
   translations: any;
   lang: Locale;
+  onOpenCart: () => void;
 }) {
   const pathname = usePathname();
   const isHome = pathname === "/" + lang;
@@ -37,7 +39,7 @@ export function Navigation({
     >
       <BiMenu size={30} onClick={handleNav} className="md:hidden z-[150]" />
       <div className="uppercase z-[140]">
-        <NavLink href={createFullUrl("/")}>{translations.home}</NavLink>
+        <NavLink href={createFullUrl("/")}>{translations?.home}</NavLink>
       </div>{" "}
       <AiOutlineShopping size={28} className="md:hidden" />
       {isOpenNav ? (
@@ -72,7 +74,7 @@ export function Navigation({
           ))}
         </div>
         <div>
-          <AiOutlineShopping size={28} />
+          <AiOutlineShopping size={28} onClick={onOpenCart} />
         </div>
       </div>
     </div>

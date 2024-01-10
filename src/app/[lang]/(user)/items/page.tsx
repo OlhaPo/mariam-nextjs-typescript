@@ -12,7 +12,6 @@ import { getCollectionByName } from "@/services/collection";
 import { getProductsByCollectionId } from "@/services/product";
 import { ProductItem } from "@/models/ProductSchema";
 import { getLangField } from "@/lib/dictionaryUtils";
-import { availabilityStatus } from "@/components/edit-product-form";
 
 export default function Items({ params }: { params: { lang: Locale } }) {
   const searchParams = useSearchParams();
