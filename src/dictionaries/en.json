@@ -38,7 +38,6 @@
   },
   "cartButton": {
     "0": "Buy",
-    "1": "Pre-order",
-    "2": "Unavailable to order"
+    "1": "Pre-order"
   }
 }
