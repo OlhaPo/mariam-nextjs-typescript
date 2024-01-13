@@ -1,22 +1,61 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import { CartStore } from "./types";
+import { CartItem, CartState } from "./types";
+import { ProductItem } from "@/models/ProductSchema";
 
-export const useCart = create<CartStore>()(
+export const useCartStore = create<CartState>()(
   persist(
     (set, get) => ({
-      productIds: [],
-      addItem: (productId) =>
-        set((state) => ({ productIds: [...state.productIds, productId] })),
-      removeItem: (productId: string) =>
+      cart: [],
+      count: (): number => {
+        const { cart } = get();
+        if (cart.length) {
+          return cart.map((item) => item.count).reduce((a, b) => a + b);
+        }
+        return 0;
+      },
+      incrementItem: (product: ProductItem) =>
         set((state) => ({
-          productIds: state.productIds.filter((id) => id !== productId),
+          cart: state.cart.map((item) =>
+            item.product._id === product._id
+              ? { ...item, count: item.count + 1 }
+              : item
+          ),
         })),
-      isItemInCart: (productId: string) => get().productIds.includes(productId),
+      decrementItem: (product: ProductItem) =>
+        set((state) => ({
+          cart: state.cart.map((item) =>
+            item.product._id === product._id
+              ? { ...item, count: item.count - 1 }
+              : item
+          ),
+        })),
+      addToCart: (product: ProductItem) => {
+        const newItem: CartItem = {
+          product,
+          count: 1,
+        };
+
+        set((state) => ({ cart: [...state.cart, newItem] }));
+      },
+      removeFromCart: (product: ProductItem) => {
+        set((state) => ({
+          cart: state.cart.filter((item) => item.product._id !== product._id),
+        }));
+      },
+      totalPrice: (): number => {
+        const { cart } = get();
+        if (cart.length) {
+          return cart
+            .map((item) => item.count * item.product.price)
+            .reduce((a, b) => a + b);
+        }
+        return 0;
+      },
     }),
     {
-      name: "food-storage", // name of the item in the storage (must be unique)
-      storage: createJSONStorage(() => sessionStorage), // (optional) by default, 'localStorage' is used
+      name: "items-storage",
+      storage: createJSONStorage(() => sessionStorage),
     }
   )
 );

@@ -1,12 +1,16 @@
-export type CartStore = {
-  productIds: string[];
-  addItem: (productId: string) => void;
-  removeItem: (productId: string) => void;
-  isItemInCart: (productId: string) => boolean;
+import { ProductItem } from "@/models/ProductSchema";
+
+export interface CartItem {
+  product: ProductItem;
+  count: number;
+}
+
+export type CartState = {
+  cart: CartItem[];
+  count: () => number;
+  incrementItem: (product: ProductItem) => void;
+  decrementItem: (product: ProductItem) => void;
+  addToCart: (product: ProductItem) => void;
+  removeFromCart: (product: ProductItem) => void;
+  totalPrice: () => number;
 };
-
-// import { ProductItem } from "@/models/ProductSchema";
-
-// export interface CartStore extends ProductItem {
-//   count: number;
-// }

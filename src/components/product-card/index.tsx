@@ -2,10 +2,8 @@ import { ProductItem, ProductStatus } from "@/models/ProductSchema";
 import Image from "next/image";
 import { Locale } from "../../../i18n.config";
 import { getLangField } from "@/lib/dictionaryUtils";
-import LinkButton from "../uikit/button";
-import { getDictionary } from "@/lib/dictionary";
-import { useCart } from "@/services/cart/hooks";
 import { Translations } from "@/lib/dictionaryUtils";
+import { useCartStore } from "@/services/cart/hooks";
 
 export default function ProductCard({
   product,
@@ -16,7 +14,7 @@ export default function ProductCard({
   translations: Translations;
   lang: Locale;
 }) {
-  // const { cartButton, productStatus } = await getDictionary(lang);
+  const addToCart = useCartStore((state) => state.addToCart);
 
   function getLabelByStatus(
     dict: { [key: string]: string },
@@ -24,6 +22,10 @@ export default function ProductCard({
   ): string {
     const key = status.toString();
     return dict ? dict[key] : "";
+  }
+
+  function handleAddToCart(product: ProductItem) {
+    addToCart(product);
   }
 
   return (
@@ -47,7 +49,7 @@ export default function ProductCard({
         <p>{product.price} UAH</p>
         <p>{getLangField(product, "description_", lang)}</p>
         {product.status !== ProductStatus.SoldOut ? (
-          <button className="btn-nav">
+          <button className="btn-nav" onClick={() => handleAddToCart(product)}>
             {getLabelByStatus(
               translations?.cartButton as { [key: string]: string },
               product.status

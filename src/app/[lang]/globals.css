@@ -29,7 +29,7 @@ p {
 }
 
 .cart {
-  @apply w-[35%] bg-[#D4D4D4] fixed top-0 right-0 min-h-screen flex flex-col z-[1200] px-10 py-10;
+  @apply w-[35%] bg-[#D4D4D4] absolute top-0 right-0 h-screen flex flex-col z-[1200] px-10 py-10 gap-10 overflow-y-scroll;
 }
 
 h2 {
