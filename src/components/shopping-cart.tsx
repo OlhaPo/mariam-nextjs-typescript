@@ -22,8 +22,8 @@ export default function ShoppingCart({ onClose }: { onClose: () => void }) {
         <RxCross1 onClick={() => onClose()} />
       </div>
       {cart.map((product, i) => (
-        <div className="flex flex-row gap-5">
-          <div key={i}>
+        <div key={i} className="flex flex-row gap-5">
+          <div>
             <Image
               src={product.product.imageUrls[0]}
               alt="hero"
