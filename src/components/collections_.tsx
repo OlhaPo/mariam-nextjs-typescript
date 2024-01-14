@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Locale } from "../../i18n.config";
 import { getDictionary } from "@/lib/dictionary";
 import { CollectionItem } from "@/models/CollectionSchema";
@@ -18,10 +19,12 @@ export default async function Collections({ lang }: { lang: Locale }) {
         {allCollections.map((item: CollectionItem) => (
           <div className="collection-navLink" key={item._id}>
             <Link href={`${lang}/items?collection=${item.collection_name}`}>
-              <img
+              <Image
                 src={item.imageUrl}
                 className="collection-cover"
                 alt={getLangField(item, "title_", lang)}
+                width={300}
+                height={300}
               />
               <h3>{getLangField(item, "title_", lang)}</h3>
             </Link>
