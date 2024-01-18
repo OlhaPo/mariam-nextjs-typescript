@@ -19,7 +19,8 @@ div svg {
 }
 
 .delete-btn,
-.import-btn {
+.import-btn,
+.btn-primary {
   @apply border-2 text-white bg-primary px-3 py-2;
 }
 

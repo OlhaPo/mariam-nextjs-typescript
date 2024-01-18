@@ -32,6 +32,10 @@ p {
   @apply w-[35%] bg-[#D4D4D4] absolute top-0 right-0 h-screen flex flex-col z-[1200] px-10 py-10 gap-10 overflow-y-scroll;
 }
 
+.checkout {
+  @apply w-full mx-auto px-20 py-20;
+}
+
 h2 {
   @apply text-2xl text-center;
 }
@@ -54,4 +58,20 @@ h3 {
 
 .section-container {
   @apply max-w-screen-xl mx-auto py-16 px-5 lg:px-12;
+}
+
+.btn-primary {
+  @apply border-2 text-white bg-primary px-4 py-3;
+}
+
+.form-field {
+  @apply grid mb-6;
+}
+
+.form-input {
+  @apply border-primary border-2 rounded-md h-[35px];
+}
+
+.form-label {
+  @apply text-lg leading-[35px];
 }

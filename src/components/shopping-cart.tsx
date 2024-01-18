@@ -4,8 +4,16 @@ import { RxCross1 } from "react-icons/rx";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import Image from "next/image";
 import { useCartStore } from "@/services/cart/hooks";
+import { Locale } from "../../i18n.config";
+import { useRouter } from "next/navigation";
 
-export default function ShoppingCart({ onClose }: { onClose: () => void }) {
+export default function ShoppingCart({
+  onClose,
+  lang,
+}: {
+  onClose: () => void;
+  lang: Locale;
+}) {
   const {
     cart,
     removeFromCart,
@@ -14,6 +22,13 @@ export default function ShoppingCart({ onClose }: { onClose: () => void }) {
     decrementItem,
     totalPrice,
   } = useCartStore();
+
+  const router = useRouter();
+
+  function navigateToCheckout() {
+    onClose();
+    router.push(`/${lang}/checkout`);
+  }
 
   return (
     <section className="cart">
@@ -67,7 +82,13 @@ export default function ShoppingCart({ onClose }: { onClose: () => void }) {
           </p>
         </div>
       </div>
-      <button className="btn-nav">Checkout</button>
+      <button
+        type="button"
+        onClick={() => navigateToCheckout()}
+        className="btn-nav"
+      >
+        Checkout
+      </button>
     </section>
   );
 }

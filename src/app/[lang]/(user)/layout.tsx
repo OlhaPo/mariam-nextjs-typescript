@@ -33,7 +33,9 @@ export default function UserLayout({
 
   return (
     <>
-      {showCart ? <ShoppingCart onClose={handleCart} /> : null}
+      {showCart ? (
+        <ShoppingCart lang={params.lang} onClose={handleCart} />
+      ) : null}
       <div className={showCart ? "opacity-50" : "opacity-100"}>
         <Navigation
           translations={translations.navigation}
