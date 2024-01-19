@@ -9,7 +9,7 @@ export default function CheckoutPage() {
   const { cart, totalPrice } = useCartStore();
 
   return (
-    <div className="checkout">
+    <section className="checkout">
       <div>
         <h1 className="uppercase text-2xl mb-10">Checkout</h1>
         <CheckoutForm />
@@ -21,20 +21,17 @@ export default function CheckoutPage() {
             className="border-b-slate-500 flex flex-row pb-5"
             key={item.product._id}
           >
-            <div className="pr-5">
-              <Image
-                src={item.product.imageUrls[0]}
-                alt="hero"
-                width={90}
-                height={90}
-              />
-            </div>
-            <div>
-              <div>
-                <span>{item.count}</span> x <span>{item.product.title_en}</span>
-              </div>{" "}
-              <div>Price: {item.product.price} UAH</div>
-            </div>
+            <Image
+              src={item.product.imageUrls[0]}
+              alt="hero"
+              width={90}
+              height={90}
+              className="pr-5"
+            />
+            <p>
+              <span>{item.count}</span> x <span>{item.product.title_en}</span>
+            </p>{" "}
+            <p>Price: {item.product.price} UAH</p>
           </div>
         ))}
         <div className="inline-block my-5">
@@ -46,6 +43,6 @@ export default function CheckoutPage() {
           </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
