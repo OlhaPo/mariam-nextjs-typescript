@@ -26,7 +26,7 @@ export const useCartStore = create<CartState>()(
         set((state) => ({
           cart: state.cart.map((item) =>
             item.product._id === product._id
-              ? { ...item, count: item.count - 1 }
+              ? { ...item, count: Math.max(item.count - 1, 1) }
               : item
           ),
         })),

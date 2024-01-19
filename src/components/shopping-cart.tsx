@@ -40,14 +40,14 @@ export default function ShoppingCart({
     <section className="cart">
       {cart.length === 0 ? (
         <div className="flex flex-col min-h-screen justify-center items-center gap-10">
-          <h3>Shopping cart is empty</h3>
+          <h3>Your cart is empty</h3>
           <button onClick={() => navigateToShop()} className="btn-primary">
             Continue shopping
           </button>
         </div>
       ) : (
         <div>
-          <div className="flex flex-row justify-between border-b-black border-b">
+          <div className="flex flex-row justify-between border-b-black border-b mb-5">
             <h2>Shopping Cart</h2>
             <RxCross1 onClick={() => onClose()} />
           </div>{" "}
