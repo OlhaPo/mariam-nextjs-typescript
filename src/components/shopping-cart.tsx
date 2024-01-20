@@ -6,7 +6,6 @@ import Image from "next/image";
 import { useCartStore } from "@/services/cart/hooks";
 import { Locale } from "../../i18n.config";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 
 export default function ShoppingCart({
   onClose,

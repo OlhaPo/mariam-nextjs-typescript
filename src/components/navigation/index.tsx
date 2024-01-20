@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import dynamic from "next/dynamic";
 import { navLinks } from "./constants";
 import clsx from "clsx";
 import { useState } from "react";
@@ -9,6 +10,12 @@ import NavLink from "./nav-link";
 import { Locale } from "../../../i18n.config";
 import LocaleSwitcher from "../locale-switcher";
 import { AiOutlineShopping } from "react-icons/ai";
+import { CartLabelProps } from "./cart-label";
+
+const CartLabelNoSSR = dynamic<CartLabelProps>(
+  () => import("./cart-label").then((mod) => mod.CartLabel),
+  { ssr: false }
+);
 
 export function Navigation({
   translations,
@@ -73,9 +80,7 @@ export function Navigation({
             </NavLink>
           ))}
         </div>
-        <div>
-          <AiOutlineShopping size={28} onClick={onOpenCart} />
-        </div>
+        <CartLabelNoSSR onOpen={onOpenCart} />
       </div>
     </div>
   );

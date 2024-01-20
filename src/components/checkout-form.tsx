@@ -3,7 +3,7 @@
 import * as Form from "@radix-ui/react-form";
 import { useState } from "react";
 
-export default function CheckoutForm() {
+export function CheckoutForm() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -129,7 +129,6 @@ export default function CheckoutForm() {
           <textarea className="Textarea" required />
         </Form.Control>
       </Form.Field>
-
       <Form.Submit className="btn-primary">Place order</Form.Submit>
     </Form.Root>
   );
