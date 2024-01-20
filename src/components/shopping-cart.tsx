@@ -96,9 +96,8 @@ export default function ShoppingCart({
             </div>
           </div>
           <button
-            type="button"
             onClick={() => navigateToCheckout()}
-            className="btn-nav"
+            className="btn-nav w-full"
           >
             Checkout
           </button>

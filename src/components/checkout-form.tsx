@@ -19,7 +19,7 @@ export function CheckoutForm() {
   };
 
   return (
-    <Form.Root className="w-[50%]">
+    <Form.Root>
       <Form.Field className="form-field" name="firstName">
         <div className="flex items-baseline justify-between">
           <Form.Label className="form-label">First Name*</Form.Label>

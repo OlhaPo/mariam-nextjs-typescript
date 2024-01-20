@@ -25,7 +25,9 @@ export default function CheckoutPage() {
         <h1 className="uppercase text-2xl mb-10">Checkout</h1>
         <CheckoutFormNoSSR />
       </div>
-      <CartSummaryNoSSR />
+      <div>
+        <CartSummaryNoSSR />
+      </div>
     </section>
   );
 }
