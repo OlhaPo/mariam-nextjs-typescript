@@ -1,4 +1,5 @@
 import mongoose, { Schema, model, models } from "mongoose";
+import { mongooseConnect } from "../../lib/mongogoose";
 
 export enum ProductStatus {
   InStock,
@@ -16,6 +17,14 @@ export interface ProductItem {
   price: number;
   imageUrls: string[];
   status: ProductStatus;
+}
+
+export async function getProductsInStockFromDb(): Promise<ProductItem[]> {
+  await mongooseConnect();
+  const result = await Product.find<ProductItem>({
+    status: ProductStatus.InStock,
+  });
+  return result;
 }
 
 const productSchema = new Schema<ProductItem>({

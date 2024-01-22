@@ -1,4 +1,5 @@
 import { Schema, model, models } from "mongoose";
+import { mongooseConnect } from "../../lib/mongogoose";
 
 // 1. Create an interface representing a document in MongoDB.
 export interface CollectionItem {
@@ -7,6 +8,12 @@ export interface CollectionItem {
   title_en: string;
   collection_name: string;
   imageUrl: string;
+}
+
+export async function getAllCollectionsFromDb(): Promise<CollectionItem[]> {
+  await mongooseConnect();
+  const result = await Collection.find<CollectionItem>();
+  return result;
 }
 
 // 2. Create a Schema corresponding to the document interface.

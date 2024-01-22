@@ -1,11 +1,7 @@
-import { Product, ProductItem, ProductStatus } from "@/models/ProductSchema";
-import { mongooseConnect } from "../../../../../lib/mongogoose";
+import { getProductsInStockFromDb } from "@/models/ProductSchema";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  await mongooseConnect();
-  const result = await Product.find<ProductItem>({
-    status: ProductStatus.InStock,
-  });
+  const result = await getProductsInStockFromDb();
   return NextResponse.json(result);
 }
