@@ -1,7 +1,7 @@
 import { ProductItem } from "@/models/ProductSchema";
 
 export const getProductsByCollectionId = async (
-  collectionId: string | undefined
+  collectionId: string
 ): Promise<ProductItem[] | null> => {
   try {
     const res = await fetch(`/api/products?collection_id=${collectionId}`, {

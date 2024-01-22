@@ -38,8 +38,10 @@ export default function Items({ params }: { params: { lang: Locale } }) {
   }, [activeCollectionName]);
 
   useEffect(() => {
+    if (!currentCollection) return;
+
     const load = async () => {
-      const p = await getProductsByCollectionId(currentCollection?._id);
+      const p = await getProductsByCollectionId(currentCollection?._id ?? "");
       setProducts(p);
     };
     load();

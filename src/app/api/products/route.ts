@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
 export async function GET(req: NextRequest) {
   await mongooseConnect();
   const id = req.nextUrl.searchParams.get("id");
-  const collection_id = req.nextUrl.searchParams.get("collection");
+  const collection_id = req.nextUrl.searchParams.get("collection_id");
   const status = req.nextUrl.searchParams.get("status");
 
   let result: ProductItem[] | ProductItem | null;
