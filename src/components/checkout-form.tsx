@@ -1,14 +1,39 @@
 "use client";
 
+import { Order } from "@/models/OrderSchema";
+import { useCartStore } from "@/services/cart/hooks";
 import * as Form from "@radix-ui/react-form";
 import { useState } from "react";
 
-export function CheckoutForm() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+export interface CheckoutFormProps {
+  onSave: (data: Order) => void;
+}
+
+export function CheckoutForm({ onSave }: CheckoutFormProps) {
+  const [first_name, setFirstName] = useState("");
+  const [last_name, setLastName] = useState("");
+  const [phone_number, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [messenger, setMessenger] = useState("");
+  const [comment, setComment] = useState("");
+
+  const { cart } = useCartStore();
+
+  function save(e: React.FormEvent) {
+    e.preventDefault();
+    onSave({
+      items: cart.map((c) => ({
+        product_id: c.product._id ?? "",
+        count: c.count,
+      })),
+      first_name: first_name,
+      last_name: last_name,
+      email: email,
+      phone_number: phone_number,
+      messenger: messenger,
+      comment: comment,
+    });
+  }
 
   const messengerOptions = {
     [0]: "Telegram",
@@ -19,8 +44,8 @@ export function CheckoutForm() {
   };
 
   return (
-    <Form.Root>
-      <Form.Field className="form-field" name="firstName">
+    <Form.Root onSubmit={save}>
+      <Form.Field className="form-field" name="first_name">
         <div className="flex items-baseline justify-between">
           <Form.Label className="form-label">First Name*</Form.Label>
           <Form.Message
@@ -35,13 +60,13 @@ export function CheckoutForm() {
             className="form-input"
             type="text"
             required
-            value={firstName}
+            value={first_name}
             onChange={(e) => setFirstName(e.target.value)}
           />
         </Form.Control>
       </Form.Field>
 
-      <Form.Field className="form-field" name="lastName">
+      <Form.Field className="form-field" name="last_name">
         <div className="flex items-baseline justify-between">
           <Form.Label className="form-label">Last Name*</Form.Label>
           <Form.Message
@@ -56,7 +81,7 @@ export function CheckoutForm() {
             className="form-input"
             type="text"
             required
-            value={lastName}
+            value={last_name}
             onChange={(e) => setLastName(e.target.value)}
           />
         </Form.Control>
@@ -78,7 +103,7 @@ export function CheckoutForm() {
         </Form.Control>
       </Form.Field>
 
-      <Form.Field className="form-field" name="phoneNumber">
+      <Form.Field className="form-field" name="phone_number">
         <div className="flex items-baseline justify-between">
           <Form.Label className="form-label">Phone Number*</Form.Label>
           <Form.Message
@@ -94,7 +119,7 @@ export function CheckoutForm() {
             className="form-input"
             type="text"
             required
-            value={phoneNumber}
+            value={phone_number}
             onChange={(ev) => setPhoneNumber(ev.target.value)}
           />
         </Form.Control>
@@ -126,7 +151,12 @@ export function CheckoutForm() {
           Additionl information
         </Form.Message>
         <Form.Control asChild>
-          <textarea className="Textarea" required />
+          <textarea
+            className="Textarea"
+            required
+            value={comment}
+            onChange={(ev) => setComment(ev.target.value)}
+          />
         </Form.Control>
       </Form.Field>
       <Form.Submit className="btn-primary">Place order</Form.Submit>
