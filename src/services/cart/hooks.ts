@@ -35,7 +35,6 @@ export const useCartStore = create<CartState>()(
           product,
           count: 1,
         };
-
         set((state) => ({ cart: [...state.cart, newItem] }));
       },
       removeFromCart: (product: ProductItem) => {
@@ -52,6 +51,7 @@ export const useCartStore = create<CartState>()(
         }
         return 0;
       },
+      clearCart: () => set({ cart: [] }),
     }),
     {
       name: "items-storage",

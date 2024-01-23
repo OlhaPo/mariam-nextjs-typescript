@@ -13,4 +13,5 @@ export type CartState = {
   addToCart: (product: ProductItem) => void;
   removeFromCart: (product: ProductItem) => void;
   totalPrice: () => number;
+  clearCart: () => void;
 };

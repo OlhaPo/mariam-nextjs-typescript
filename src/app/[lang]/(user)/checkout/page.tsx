@@ -2,6 +2,7 @@
 
 import { CheckoutFormProps } from "@/components/checkout-form";
 import { Order } from "@/models/OrderSchema";
+import { useCartStore } from "@/services/cart/hooks";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 
@@ -21,6 +22,7 @@ const CheckoutFormNoSSR = dynamic<CheckoutFormProps>(
 
 export default function CheckoutPage() {
   const router = useRouter();
+  const { clearCart } = useCartStore();
   async function placeNewOrder(data: Order) {
     try {
       const res = await fetch(`/api/orders`, {
@@ -34,6 +36,7 @@ export default function CheckoutPage() {
         throw new Error(`HTTP error! Status: ${res.status}`);
       }
       router.push("/order-confirmation");
+      clearCart();
     } catch (e) {
       console.error(e);
       return null;
