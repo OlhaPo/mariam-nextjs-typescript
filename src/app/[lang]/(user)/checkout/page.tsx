@@ -1,9 +1,9 @@
 "use client";
 
 import { CheckoutFormProps } from "@/components/checkout-form";
-// import { CartSummaryProps } from "@/components/cart-summary";
-// import { CheckoutForm } from "@/components/checkout-form";
+import { Order } from "@/models/OrderSchema";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/navigation";
 
 const CartSummaryNoSSR = dynamic(
   () => import("@/components/cart-summary").then((mod) => mod.CartSummary),
@@ -20,7 +20,26 @@ const CheckoutFormNoSSR = dynamic<CheckoutFormProps>(
 );
 
 export default function CheckoutPage() {
-  function placeNewOrder() {}
+  const router = useRouter();
+  async function placeNewOrder(data: Order) {
+    try {
+      const res = await fetch(`/api/orders`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
+      router.push("/order-confirmation");
+    } catch (e) {
+      console.error(e);
+      return null;
+    }
+  }
+
   return (
     <section className="checkout">
       <div>

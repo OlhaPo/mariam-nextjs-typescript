@@ -30,8 +30,11 @@ export interface Order {
 export const orderSchema = new Schema<Order>({
   items: [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "ProductItems",
+      product_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "ProductItems",
+      },
+      count: { type: Number },
     },
   ],
   first_name: { type: String, required: true },
