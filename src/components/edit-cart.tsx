@@ -7,11 +7,11 @@ export default function EditCart() {
   return (
     <>
       {cart.map((product, i) => (
-        <div key={i} className="flex flex-row gap-5">
+        <div key={i} className="flex flex-row gap-5 mt-5 md:mt-10">
           <div>
             <Image
               src={product.product.imageUrls[0]}
-              alt="hero"
+              alt="Picture of handcrafted item"
               width={150}
               height={150}
             />

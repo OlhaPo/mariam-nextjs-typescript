@@ -31,27 +31,27 @@ export default function ShoppingCart({
     <section className="cart">
       {cart.length === 0 ? (
         <div className="flex flex-col min-h-screen justify-center items-center gap-10">
-          <h3>Your cart is empty</h3>
+          <p className="text-lg">Your cart is empty</p>
           <button onClick={() => navigateToShop()} className="btn-primary">
             Continue shopping
           </button>
         </div>
       ) : (
         <div>
-          <div className="flex flex-row justify-between border-b-black border-b mb-5">
+          <div className="flex flex-row justify-between border-b-black border-b mb-10">
             <h2>Shopping Cart</h2>
             <RxCross1 onClick={() => onClose()} />
           </div>{" "}
           <EditCart />
-          <div className="flex flex-col">
-            <div className="inline-flex justify-between items-center">
-              <h2>Total items in cart</h2>
+          <div className="flex flex-col gap-3 lg:gap-0 mt-10 md:mt-5">
+            <div className="inline-flex justify-between items-center text-lg">
+              <p>Total items in cart</p>
               <p>
                 <span>{count()}</span> pieces
               </p>
             </div>
-            <div className="inline-flex justify-between items-center">
-              <h2>Subtotal</h2>
+            <div className="inline-flex justify-between items-center text-lg">
+              <p>Subtotal</p>
               <p>
                 <span>{totalPrice()}</span> UAH
               </p>
@@ -59,7 +59,7 @@ export default function ShoppingCart({
           </div>
           <button
             onClick={() => navigateToCheckout()}
-            className="btn-nav w-full"
+            className="btn-nav w-full mt-10 md:mt-5"
           >
             Checkout
           </button>
