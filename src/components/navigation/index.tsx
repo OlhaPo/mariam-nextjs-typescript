@@ -48,7 +48,10 @@ export function Navigation({
       <div className="uppercase z-[140]">
         <NavLink href={createFullUrl("/")}>{translations?.home}</NavLink>
       </div>{" "}
-      <AiOutlineShopping size={28} className="md:hidden" />
+      <div className="md:hidden">
+        <CartLabelNoSSR onOpen={onOpenCart} />
+      </div>
+      {/* <AiOutlineShopping size={28}  /> */}
       {isOpenNav ? (
         <div className="w-full bg-[#948D85] fixed top-0 left-0 right-0 min-h-screen flex flex-col justify-center items-center z-[120] gap-5">
           {navLinks.map((link, i) => (
