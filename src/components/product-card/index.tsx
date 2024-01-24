@@ -36,20 +36,26 @@ export default function ProductCard({
           height={500}
           width={500}
           alt={getLangField(product, "title_", lang)}
+          priority
         />
       </div>
-      <div className="flex flex-col gap-8">
-        <h2 className="text-left">{getLangField(product, "title_", lang)}</h2>
+      <div className="flex flex-col mt-8 md:mt-0">
+        <h2 className="text-left mb-5">
+          {getLangField(product, "title_", lang)}
+        </h2>
+        <p>{product.price} UAH</p>
         <p>
           {getLabelByStatus(
             translations?.productStatus as { [key: string]: string },
             product.status
           )}
         </p>
-        <p>{product.price} UAH</p>
         <p>{getLangField(product, "description_", lang)}</p>
         {product.status !== ProductStatus.SoldOut ? (
-          <button className="btn-nav" onClick={() => handleAddToCart(product)}>
+          <button
+            className="btn-nav mt-12 md:mt-5"
+            onClick={() => handleAddToCart(product)}
+          >
             {getLabelByStatus(
               translations?.cartButton as { [key: string]: string },
               product.status

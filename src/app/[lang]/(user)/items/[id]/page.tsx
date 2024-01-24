@@ -31,7 +31,6 @@ export default function ItemPage({
     loadItemData();
   }, [params.id]);
 
-  // const productDetailsData = await getProductById(params.id);
   return (
     <div className="section-container">
       {item ? (
