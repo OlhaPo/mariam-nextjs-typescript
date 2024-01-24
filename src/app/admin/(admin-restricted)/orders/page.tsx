@@ -47,8 +47,8 @@ export default function OrdersPage() {
             orders.map((order) => (
               <Table.Row key={order._id}>
                 <Table.Cell>
-                  {order.items.map((item) => (
-                    <div>
+                  {order.items.map((item, index) => (
+                    <div key={index}>
                       {item.count} x {item.product_id}
                     </div>
                   ))}
