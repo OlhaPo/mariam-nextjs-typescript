@@ -46,7 +46,7 @@ export default function CheckoutPage() {
   return (
     <section className="checkout">
       <div>
-        <h1 className="uppercase text-2xl mb-10">Checkout</h1>
+        <h1 className="uppercase text-2xl">Checkout</h1>
         <CheckoutFormNoSSR onSave={placeNewOrder} />
       </div>
       <div>
