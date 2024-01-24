@@ -1,4 +1,4 @@
-import { OrderModel } from "@/models/OrderSchema";
+import { Order, OrderModel } from "@/models/OrderSchema";
 import { mongooseConnect } from "../../../../lib/mongogoose";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -24,4 +24,15 @@ export async function POST(req: NextRequest) {
     comment,
   });
   return NextResponse.json(orderDoc);
+}
+
+// export async function GET() {
+//   const result = await getAllOrdersFromDb();
+//   return NextResponse.json(result);
+// }
+
+export async function GET() {
+  await mongooseConnect();
+  const result = await OrderModel.find<Order>();
+  return NextResponse.json(result);
 }

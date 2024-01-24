@@ -1,20 +1,10 @@
 import mongoose, { Schema, model, models } from "mongoose";
+import { mongooseConnect } from "../../lib/mongogoose";
 
 export interface OrderItem {
   product_id: string;
   count: number;
 }
-
-/*
-@TODO:
-    + complete Order interface
-    + complete orderSchema
-    - create API endpoints:
-        - POST /order (for user)
-        - GET /orders (admin)
-    - create a helper fn for user `placeNewOrder()`
-    - bind placeNewOrder() fn to 'Place Order' btn
-*/
 
 export interface Order {
   _id?: string;
