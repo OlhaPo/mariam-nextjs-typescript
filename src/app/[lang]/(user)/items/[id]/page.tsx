@@ -5,8 +5,8 @@ import { getProductById } from "@/services/product";
 import { Locale } from "../../../../../../i18n.config";
 import { useEffect, useState } from "react";
 import { ProductItem } from "@/models/ProductSchema";
-import { Translations } from "@/lib/dictionaryUtils";
 import { getDictionary } from "@/lib/dictionary";
+import CircleLoader from "react-spinners/CircleLoader";
 
 export default function ItemPage({
   params,
@@ -40,7 +40,9 @@ export default function ItemPage({
           translations={translations}
         />
       ) : (
-        <div>Product not found</div>
+        <div>
+          <CircleLoader color="#2B4A33" />
+        </div>
       )}
     </div>
   );
