@@ -31,11 +31,16 @@ export const useCartStore = create<CartState>()(
           ),
         })),
       addToCart: (product: ProductItem) => {
-        const newItem: CartItem = {
-          product,
-          count: 1,
-        };
-        set((state) => ({ cart: [...state.cart, newItem] }));
+        set((state) => {
+          if (state.cart.some((item) => item.product._id === product._id)) {
+            return state;
+          }
+          const newItem: CartItem = {
+            product,
+            count: 1,
+          };
+          return { cart: [...state.cart, newItem] };
+        });
       },
       removeFromCart: (product: ProductItem) => {
         set((state) => ({
