@@ -1,12 +1,12 @@
 import { create } from "zustand";
-import { persist, createJSONStorage } from "zustand/middleware";
+import { persist } from "zustand/middleware";
 import { CartItem, CartState } from "./types";
 import { ProductItem } from "@/models/ProductSchema";
 
 export const useCartStore = create<CartState>()(
   persist(
     (set, get) => ({
-      cart: [],
+      cart: <CartItem[]>[],
       count: (): number => {
         const { cart } = get();
         if (cart.length) {
@@ -57,10 +57,12 @@ export const useCartStore = create<CartState>()(
         return 0;
       },
       clearCart: () => set({ cart: [] }),
+      isInCart: (productId: string): boolean => {
+        return get().cart.some((p) => p.product._id === productId);
+      },
     }),
     {
       name: "items-storage",
-      storage: createJSONStorage(() => sessionStorage),
     }
   )
 );

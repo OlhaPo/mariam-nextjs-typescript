@@ -15,7 +15,7 @@ export default function ProductCard({
   translations: Translations;
   lang: Locale;
 }) {
-  const addToCart = useCartStore((state) => state.addToCart);
+  const { addToCart, isInCart } = useCartStore();
 
   function getLabelByStatus(
     dict: { [key: string]: string },
@@ -27,17 +27,27 @@ export default function ProductCard({
 
   console.log(translations);
 
-  function handleAddToCart(product: ProductItem) {
+  function showAlert(title: string) {
     Swal.fire({
-      title: `${getLangField(product, "title_", lang)}\n${
-        (translations as any).page?.cart?.confirmation_alert
-      }`,
+      title: `${getLangField(product, "title_", lang)}\n${title}`,
       customClass: {
         title: "swal-title",
         confirmButton: "swal-btn-primary",
       },
       buttonsStyling: false,
     });
+  }
+
+  function handleAddToCart(product: ProductItem) {
+    if (isInCart(product._id)) {
+      // @TODO: translate
+      showAlert("This product is already in the cart");
+    } else {
+      showAlert(
+        ((translations.page as Translations).cart as Translations)
+          .confirmation_alert as string
+      );
+    }
     addToCart(product);
   }
 

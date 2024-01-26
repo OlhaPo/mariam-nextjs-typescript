@@ -5,15 +5,20 @@ import { useCartStore } from "@/services/cart/hooks";
 import { Locale } from "../../i18n.config";
 import { useRouter } from "next/navigation";
 import EditCart from "./edit-cart";
+import { Translations } from "@/lib/dictionaryUtils";
 
 export default function ShoppingCart({
   onClose,
   lang,
+  translations,
 }: {
   onClose: () => void;
   lang: Locale;
+  translations: Translations;
 }) {
-  const { cart, count, totalPrice } = useCartStore();
+  const cart = useCartStore((state) => state.cart);
+  const count = useCartStore((state) => state.count);
+  const totalPrice = useCartStore((state) => state.totalPrice);
 
   const router = useRouter();
 
@@ -31,9 +36,11 @@ export default function ShoppingCart({
     <section className="cart">
       {cart.length === 0 ? (
         <div className="flex flex-col min-h-screen justify-center items-center gap-10">
-          <p className="text-lg">Your cart is empty</p>
+          <p className="text-lg">
+            {(translations as any)?.page?.cart?.empty_cart}
+          </p>
           <button onClick={() => navigateToShop()} className="btn-primary">
-            Continue shopping
+            {(translations as any)?.page?.cart?.to_shopping}
           </button>
         </div>
       ) : (

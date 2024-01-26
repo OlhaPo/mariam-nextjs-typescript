@@ -31,7 +31,9 @@
       "brooches": "Брошки"
     },
     "cart": {
-      "confirmation_alert": "додано до кошика"
+      "confirmation_alert": "додано до кошика",
+      "empty_cart": "Кошик порожній",
+      "to_shopping": "До крамнички"
     }
   },
   "footer": {
