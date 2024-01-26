@@ -60,7 +60,9 @@ h3 {
   @apply max-w-screen-xl mx-auto py-16 px-5 lg:px-12;
 }
 
-.btn-primary {
+.btn-primary,
+.swal-btn-primary,
+.swal-btn-primary:hover {
   @apply border-2 text-white bg-primary px-4 py-3;
 }
 
@@ -74,4 +76,8 @@ h3 {
 
 .form-label {
   @apply text-lg leading-[35px];
+}
+
+.swal-title {
+  @apply text-black text-lg font-light;
 }

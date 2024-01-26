@@ -4,6 +4,7 @@ import { Locale } from "../../../i18n.config";
 import { getLangField } from "@/lib/dictionaryUtils";
 import { Translations } from "@/lib/dictionaryUtils";
 import { useCartStore } from "@/services/cart/hooks";
+import Swal from "sweetalert2";
 
 export default function ProductCard({
   product,
@@ -25,6 +26,18 @@ export default function ProductCard({
   }
 
   function handleAddToCart(product: ProductItem) {
+    Swal.fire({
+      title: `${getLangField(
+        product,
+        "title_",
+        lang
+      )}\nwas added to the shopping cart`,
+      customClass: {
+        title: "swal-title",
+        confirmButton: "swal-btn-primary",
+      },
+      buttonsStyling: false,
+    });
     addToCart(product);
   }
 
@@ -55,6 +68,7 @@ export default function ProductCard({
           <button
             className="btn-nav mt-12 md:mt-5"
             onClick={() => handleAddToCart(product)}
+            aria-label="Update dimensions"
           >
             {getLabelByStatus(
               translations?.cartButton as { [key: string]: string },
