@@ -57,7 +57,7 @@ export const useCartStore = create<CartState>()(
         return 0;
       },
       clearCart: () => set({ cart: [] }),
-      isInCart: (productId: string): boolean => {
+      isInCart: (productId: string | undefined): boolean => {
         return get().cart.some((p) => p.product._id === productId);
       },
     }),

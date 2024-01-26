@@ -8,7 +8,7 @@ export enum ProductStatus {
 }
 
 export interface ProductItem {
-  _id: string;
+  _id?: string;
   title_uk: string;
   title_en: string;
   description_uk: string;

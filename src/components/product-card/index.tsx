@@ -40,8 +40,10 @@ export default function ProductCard({
 
   function handleAddToCart(product: ProductItem) {
     if (isInCart(product._id)) {
-      // @TODO: translate
-      showAlert("This product is already in the cart");
+      showAlert(
+        ((translations.page as Translations).cart as Translations)
+          .already_in_cart as string
+      );
     } else {
       showAlert(
         ((translations.page as Translations).cart as Translations)

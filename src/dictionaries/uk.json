@@ -32,6 +32,7 @@
     },
     "cart": {
       "confirmation_alert": "додано до кошика",
+      "already_in_cart": "вже додано до кошика",
       "empty_cart": "Кошик порожній",
       "to_shopping": "До крамнички"
     }

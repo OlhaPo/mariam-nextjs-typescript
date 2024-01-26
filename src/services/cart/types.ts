@@ -14,5 +14,5 @@ export type CartState = {
   removeFromCart: (product: ProductItem) => void;
   totalPrice: () => number;
   clearCart: () => void;
-  isInCart: (productId: string) => boolean;
+  isInCart: (productId: string | undefined) => boolean;
 };

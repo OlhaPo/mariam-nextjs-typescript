@@ -26,7 +26,8 @@
       "to_cart": "Add to cart"
     },
     "cart": {
-      "confirmation_alert": "was added to the shopping cart",
+      "confirmation_alert": "was added to the cart",
+      "already_in_cart": "is already in the cart",
       "empty_cart": "Your cart is empty",
       "to_shopping": "Continue shopping"
     }
