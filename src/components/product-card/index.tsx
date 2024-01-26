@@ -25,13 +25,13 @@ export default function ProductCard({
     return dict ? dict[key] : "";
   }
 
+  console.log(translations);
+
   function handleAddToCart(product: ProductItem) {
     Swal.fire({
-      title: `${getLangField(
-        product,
-        "title_",
-        lang
-      )}\nwas added to the shopping cart`,
+      title: `${getLangField(product, "title_", lang)}\n${
+        (translations as any).page?.cart?.confirmation_alert
+      }`,
       customClass: {
         title: "swal-title",
         confirmButton: "swal-btn-primary",

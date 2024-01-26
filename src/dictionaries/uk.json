@@ -8,6 +8,7 @@
     "orders": "Замовлення та доставка",
     "collections": "Колекції"
   },
+
   "page": {
     "about": {
       "title": "Привіт, дорогоцінна!",
@@ -28,6 +29,9 @@
     "collectionItems": {
       "dresses": "Сукні",
       "brooches": "Брошки"
+    },
+    "cart": {
+      "confirmation_alert": "додано до кошика"
     }
   },
   "footer": {

@@ -9,7 +9,6 @@ import { BiMenu } from "react-icons/bi";
 import NavLink from "./nav-link";
 import { Locale } from "../../../i18n.config";
 import LocaleSwitcher from "../locale-switcher";
-import { AiOutlineShopping } from "react-icons/ai";
 import { CartLabelProps } from "./cart-label";
 
 const CartLabelNoSSR = dynamic<CartLabelProps>(
