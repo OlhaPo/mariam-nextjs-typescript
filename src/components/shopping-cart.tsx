@@ -37,10 +37,16 @@ export default function ShoppingCart({
       {cart.length === 0 ? (
         <div className="flex flex-col min-h-screen justify-center items-center gap-10">
           <p className="text-lg">
-            {(translations as any)?.page?.cart?.empty_cart}
+            {
+              ((translations.page as Translations).cart as Translations)
+                .empty_cart as string
+            }
           </p>
           <button onClick={() => navigateToShop()} className="btn-primary">
-            {(translations as any)?.page?.cart?.to_shopping}
+            {
+              ((translations.page as Translations).cart as Translations)
+                .to_shopping as string
+            }
           </button>
         </div>
       ) : (
