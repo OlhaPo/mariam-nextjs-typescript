@@ -31,10 +31,16 @@
       "brooches": "Брошки"
     },
     "cart": {
+      "title": "Кошик",
       "confirmation_alert": "додано до кошика",
       "already_in_cart": "вже додано до кошика",
       "empty_cart": "Кошик порожній",
-      "to_shopping": "До крамнички"
+      "to_shopping": "До крамнички",
+      "remove": "Видалити",
+      "total_items": "Усього товарів в кошику",
+      "subtotal": "Загалом",
+      "checkout": "Оформити",
+      "entity": "шт"
     }
   },
   "footer": {

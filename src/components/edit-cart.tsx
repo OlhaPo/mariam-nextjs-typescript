@@ -1,8 +1,16 @@
 import { useCartStore } from "@/services/cart/hooks";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import Image from "next/image";
+import { Locale } from "../../i18n.config";
+import { Translations, getLangField } from "@/lib/dictionaryUtils";
 
-export default function EditCart() {
+export default function EditCart({
+  lang,
+  translations,
+}: {
+  lang: Locale;
+  translations: Translations;
+}) {
   const { cart, removeFromCart, incrementItem, decrementItem } = useCartStore();
   return (
     <>
@@ -17,7 +25,9 @@ export default function EditCart() {
             />
           </div>
           <div className="flex flex-col items-start">
-            <p>{product.product.title_en}</p>
+            <p className="pt-0">
+              {getLangField(product.product, "title_", lang)}
+            </p>
             <p className="text-gray">
               {product.product.price} <span> UAH</span>
             </p>
@@ -32,7 +42,10 @@ export default function EditCart() {
             </div>
 
             <button onClick={() => removeFromCart(product.product)}>
-              Remove
+              {
+                ((translations.page as Translations).cart as Translations)
+                  .remove as string
+              }
             </button>
           </div>
         </div>

@@ -52,19 +52,38 @@ export default function ShoppingCart({
       ) : (
         <div>
           <div className="flex flex-row justify-between border-b-black border-b mb-10">
-            <h2>Shopping Cart</h2>
+            <h2>
+              {
+                ((translations.page as Translations).cart as Translations)
+                  .title as string
+              }
+            </h2>
             <RxCross1 onClick={() => onClose()} />
           </div>{" "}
-          <EditCart />
+          <EditCart lang={lang} translations={translations} />
           <div className="flex flex-col gap-3 lg:gap-0 mt-10 md:mt-5">
             <div className="inline-flex justify-between items-center text-lg">
-              <p>Total items in cart</p>
               <p>
-                <span>{count()}</span> pieces
+                {
+                  ((translations.page as Translations).cart as Translations)
+                    .total_items as string
+                }
+              </p>
+              <p>
+                <span>{count()}</span>{" "}
+                {
+                  ((translations.page as Translations).cart as Translations)
+                    .entity as string
+                }
               </p>
             </div>
             <div className="inline-flex justify-between items-center text-lg">
-              <p>Subtotal</p>
+              <p>
+                {
+                  ((translations.page as Translations).cart as Translations)
+                    .subtotal as string
+                }
+              </p>
               <p>
                 <span>{totalPrice()}</span> UAH
               </p>
@@ -74,7 +93,10 @@ export default function ShoppingCart({
             onClick={() => navigateToCheckout()}
             className="btn-nav w-full mt-10 md:mt-5"
           >
-            Checkout
+            {
+              ((translations.page as Translations).cart as Translations)
+                .checkout as string
+            }
           </button>
         </div>
       )}
