@@ -43,8 +43,8 @@ export default function EditCart({
 
             <button onClick={() => removeFromCart(product.product)}>
               {
-                ((translations.page as Translations).cart as Translations)
-                  .remove as string
+                ((translations?.page as Translations)?.cart as Translations)
+                  ?.remove as string
               }
             </button>
           </div>

@@ -40,7 +40,19 @@
       "total_items": "Усього товарів в кошику",
       "subtotal": "Загалом",
       "checkout": "Оформити",
-      "entity": "шт"
+      "entity": "шт",
+      "cart_summary": "Замовлення"
+    },
+    "checkout_page": {
+      "title": "Оформлення замовлення",
+      "first_name": "Ім&apos;я*",
+      "last_name": "Прізвище",
+      "email": "Email",
+      "phone_number": "Телефон",
+      "messenger": "Месенджер для зв&apos;язку*",
+      "other_messenger": "Інше (свій варіант додайте в полі для коментарів)",
+      "comment": "Питання або коментарі до замовлення",
+      "place_order": "Оформити замовлення"
     }
   },
   "footer": {

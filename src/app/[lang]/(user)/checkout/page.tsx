@@ -5,6 +5,10 @@ import { Order } from "@/models/OrderSchema";
 import { useCartStore } from "@/services/cart/hooks";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
+import { Locale } from "../../../../../i18n.config";
+import { Translations } from "@/lib/dictionaryUtils";
+import { useEffect, useState } from "react";
+import { getDictionary } from "@/lib/dictionary";
 
 const CartSummaryNoSSR = dynamic(
   () => import("@/components/cart-summary").then((mod) => mod.CartSummary),
@@ -20,9 +24,25 @@ const CheckoutFormNoSSR = dynamic<CheckoutFormProps>(
   }
 );
 
-export default function CheckoutPage() {
+export default function CheckoutPage({
+  params: { lang },
+}: {
+  params: { lang: Locale };
+}) {
+  const [translations, setTranslations] = useState<Translations>({});
+
   const router = useRouter();
+
   const { clearCart } = useCartStore();
+
+  useEffect(() => {
+    const getTranslations = async () => {
+      const t = await getDictionary(lang);
+      setTranslations(t);
+    };
+    getTranslations();
+  }, []);
+
   async function placeNewOrder(data: Order) {
     try {
       const res = await fetch(`/api/orders`, {
@@ -35,7 +55,7 @@ export default function CheckoutPage() {
       if (!res.ok) {
         throw new Error(`HTTP error! Status: ${res.status}`);
       }
-      router.push("/order-confirmation");
+      router.push(`/${lang}/order-confirmation`);
       clearCart();
     } catch (e) {
       console.error(e);
@@ -46,11 +66,18 @@ export default function CheckoutPage() {
   return (
     <section className="checkout">
       <div>
-        <h1 className="uppercase text-2xl">Checkout</h1>
-        <CheckoutFormNoSSR onSave={placeNewOrder} />
+        <h1 className="uppercase text-2xl">
+          {
+            (
+              (translations?.page as Translations)
+                ?.checkout_page as Translations
+            )?.title as string
+          }
+        </h1>
+        <CheckoutFormNoSSR onSave={placeNewOrder} translations={translations} />
       </div>
       <div>
-        <CartSummaryNoSSR />
+        <CartSummaryNoSSR lang={lang} translations={translations} />
       </div>
     </section>
   );

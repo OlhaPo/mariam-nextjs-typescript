@@ -35,7 +35,19 @@
       "total_items": "Total items in cart",
       "subtotal": "Subtotal",
       "checkout": "Checkout",
-      "entity": "pcs"
+      "entity": "pcs",
+      "cart_summary": "Cart Summary"
+    },
+    "checkout_page": {
+      "title": "Checkout",
+      "first_name": "First name*",
+      "last_name": "Last name",
+      "email": "Email",
+      "phone_number": "Phone number",
+      "messenger": "Preferred contact messenger*",
+      "other_messenger": "Other (add in section for commets below)",
+      "comment": "Questions or comments",
+      "place_order": "Place order"
     }
   },
   "footer": {

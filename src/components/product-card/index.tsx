@@ -25,8 +25,6 @@ export default function ProductCard({
     return dict ? dict[key] : "";
   }
 
-  console.log(translations);
-
   function showAlert(title: string) {
     Swal.fire({
       title: `${getLangField(product, "title_", lang)}\n${title}`,

@@ -1,5 +1,6 @@
 "use client";
 
+import { Translations } from "@/lib/dictionaryUtils";
 import { Order } from "@/models/OrderSchema";
 import { useCartStore } from "@/services/cart/hooks";
 import * as Form from "@radix-ui/react-form";
@@ -7,9 +8,10 @@ import { useState } from "react";
 
 export interface CheckoutFormProps {
   onSave: (data: Order) => void;
+  translations: Translations;
 }
 
-export function CheckoutForm({ onSave }: CheckoutFormProps) {
+export function CheckoutForm({ onSave, translations }: CheckoutFormProps) {
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
   const [phone_number, setPhoneNumber] = useState("");
@@ -35,19 +37,29 @@ export function CheckoutForm({ onSave }: CheckoutFormProps) {
     });
   }
 
-  const messengerOptions = {
-    [0]: "Telegram",
-    [1]: "Email",
-    [2]: "Viber",
-    [3]: "WhatsApp",
-    [4]: "Other (add in section for commets below)",
-  };
+  // const messengerOptions = {
+  //   [0]: "Telegram",
+  //   [1]: "Email",
+  //   [2]: "Viber",
+  //   [3]: "WhatsApp",
+  //   [4]: "Other (add in section for comments below)",
+  // };
+
+  const messengerOptions = ["Telegram", "Email", "Viber", "WhatsApp", "Other"];
 
   return (
     <Form.Root onSubmit={save}>
       <Form.Field className="form-field" name="first_name">
         <div className="flex items-baseline justify-between">
-          <Form.Label className="form-label">First Name*</Form.Label>
+          <Form.Label
+            className="form-label"
+            dangerouslySetInnerHTML={{
+              __html: (
+                (translations?.page as Translations)
+                  ?.checkout_page as Translations
+              )?.first_name as string,
+            }}
+          ></Form.Label>
           <Form.Message
             className="text-[13px] opacity-[0.8]"
             match="valueMissing"
@@ -68,7 +80,15 @@ export function CheckoutForm({ onSave }: CheckoutFormProps) {
 
       <Form.Field className="form-field" name="last_name">
         <div className="flex items-baseline justify-between">
-          <Form.Label className="form-label">Last Name*</Form.Label>
+          <Form.Label className="form-label">
+            {
+              (
+                (translations?.page as Translations)
+                  ?.checkout_page as Translations
+              )?.last_name as string
+            }
+            *
+          </Form.Label>
           <Form.Message
             className="text-[13px] opacity-[0.8]"
             match="valueMissing"
@@ -88,7 +108,15 @@ export function CheckoutForm({ onSave }: CheckoutFormProps) {
       </Form.Field>
 
       <Form.Field className="form-field" name="email">
-        <Form.Label className="form-label">Email</Form.Label>
+        <Form.Label className="form-label">
+          {
+            (
+              (translations?.page as Translations)
+                ?.checkout_page as Translations
+            )?.email as string
+          }
+          *
+        </Form.Label>
         <Form.Message className="FormMessage" match="typeMismatch">
           Please provide a valid email
         </Form.Message>
@@ -105,7 +133,15 @@ export function CheckoutForm({ onSave }: CheckoutFormProps) {
 
       <Form.Field className="form-field" name="phone_number">
         <div className="flex items-baseline justify-between">
-          <Form.Label className="form-label">Phone Number*</Form.Label>
+          <Form.Label className="form-label">
+            {
+              (
+                (translations?.page as Translations)
+                  ?.checkout_page as Translations
+              )?.phone_number as string
+            }
+            *
+          </Form.Label>
           <Form.Message
             className="text-[13px] opacity-[0.8]"
             match="valueMissing"
@@ -125,28 +161,46 @@ export function CheckoutForm({ onSave }: CheckoutFormProps) {
         </Form.Control>
       </Form.Field>
 
-      <Form.Field className="form-field" name="collection">
+      <Form.Field className="form-field" name="messenger">
         <div className="flex items-baseline justify-between">
-          <Form.Label className="form-label">
-            Preferable messenger for contacting*
-          </Form.Label>
+          <Form.Label
+            className="form-label"
+            dangerouslySetInnerHTML={{
+              __html: (
+                (translations?.page as Translations)
+                  ?.checkout_page as Translations
+              )?.messenger as string,
+            }}
+          ></Form.Label>
         </div>
         <select
           className="form-input"
           value={messenger}
           onChange={(ev) => setMessenger(ev.target.value)}
         >
-          <option value="">Choose messenger</option>
-          {Object.entries(messengerOptions).map(([key, value]) => (
-            <option key={key} value={key}>
-              {value}
+          <option value=""></option>
+          {messengerOptions.map((m, i) => (
+            <option key={i} value={m}>
+              {m === "Other"
+                ? ((
+                    (translations?.page as Translations)
+                      ?.checkout_page as Translations
+                  )?.other_messenger as string)
+                : m}
             </option>
           ))}
         </select>
       </Form.Field>
 
-      <Form.Field className="form-field" name="question">
-        <Form.Label className="form-label">Questions or comments</Form.Label>
+      <Form.Field className="form-field" name="comment">
+        <Form.Label className="form-label">
+          {
+            (
+              (translations?.page as Translations)
+                ?.checkout_page as Translations
+            )?.comment as string
+          }
+        </Form.Label>
         <Form.Message className="form-input" match="valueMissing">
           Additionl information
         </Form.Message>
@@ -159,7 +213,12 @@ export function CheckoutForm({ onSave }: CheckoutFormProps) {
           />
         </Form.Control>
       </Form.Field>
-      <Form.Submit className="btn-primary">Place order</Form.Submit>
+      <Form.Submit className="btn-primary">
+        {
+          ((translations?.page as Translations)?.checkout_page as Translations)
+            ?.place_order as string
+        }
+      </Form.Submit>
     </Form.Root>
   );
 }
