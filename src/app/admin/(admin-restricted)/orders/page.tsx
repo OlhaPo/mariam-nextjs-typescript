@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { Table } from "@radix-ui/themes";
-import { Order } from "@/models/OrderSchema";
+import { PopulatedOrder } from "@/models/OrderSchema";
 
 export default function OrdersPage() {
-  const [orders, setOrders] = useState<Order[]>([]);
+  const [orders, setOrders] = useState<PopulatedOrder[]>([]);
 
   useEffect(() => {
     async function fetchOrders() {
@@ -49,7 +49,7 @@ export default function OrdersPage() {
                 <Table.Cell>
                   {order.items.map((item, index) => (
                     <div key={index}>
-                      {item.count} x {item.product_id}
+                      {item.count} x {item.product_id.title_en}
                     </div>
                   ))}
                 </Table.Cell>

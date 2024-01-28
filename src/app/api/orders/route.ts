@@ -33,6 +33,6 @@ export async function POST(req: NextRequest) {
 
 export async function GET() {
   await mongooseConnect();
-  const result = await OrderModel.find<Order>();
+  const result = await OrderModel.find<Order>().populate("items.product_id");
   return NextResponse.json(result);
 }

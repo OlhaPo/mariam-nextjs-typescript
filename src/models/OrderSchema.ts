@@ -1,5 +1,6 @@
 import mongoose, { Schema, model, models } from "mongoose";
 import { mongooseConnect } from "../../lib/mongogoose";
+import { ProductItem } from "./ProductSchema";
 
 export interface OrderItem {
   product_id: string;
@@ -15,6 +16,17 @@ export interface Order {
   phone_number: string;
   messenger: string;
   comment?: string;
+}
+
+export interface PopulatedOrder {
+  _id: string;
+  items: { product_id: ProductItem; count: number }[];
+  first_name: string;
+  last_name: string;
+  email: string;
+  phone_number: string;
+  messenger: string;
+  comment: string;
 }
 
 export const orderSchema = new Schema<Order>({
