@@ -5,6 +5,8 @@ import { getLangField } from "@/lib/dictionaryUtils";
 import { Translations } from "@/lib/dictionaryUtils";
 import { useCartStore } from "@/services/cart/hooks";
 import Swal from "sweetalert2";
+import Slider from "react-slick";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 export default function ProductCard({
   product,
@@ -51,17 +53,59 @@ export default function ProductCard({
     addToCart(product);
   }
 
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <FaArrowRight />,
+    prevArrow: <FaArrowLeft />,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+        },
+      },
+    ],
+  };
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-12">
-      <div>
-        <Image
-          src={product.imageUrls[0]}
-          height={500}
-          width={500}
-          alt={getLangField(product, "title_", lang)}
-          priority
-        />
-      </div>
+      {product.imageUrls.length === 1 ? (
+        <div>
+          <Image
+            src={product.imageUrls[0]}
+            height={500}
+            width={500}
+            alt={getLangField(product, "title_", lang)}
+            priority
+          />
+        </div>
+      ) : (
+        <div>
+          <Slider {...settings}>
+            {product.imageUrls.map((image, index) => (
+              <div key={index}>
+                <Image
+                  src={image}
+                  height={500}
+                  width={500}
+                  alt={getLangField(product, "title_", lang)}
+                  priority
+                />
+              </div>
+            ))}
+          </Slider>
+        </div>
+      )}
       <div className="flex flex-col mt-8 md:mt-0">
         <h2 className="text-left mb-5">
           {getLangField(product, "title_", lang)}

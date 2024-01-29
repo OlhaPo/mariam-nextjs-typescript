@@ -26,11 +26,6 @@ export async function POST(req: NextRequest) {
   return NextResponse.json(orderDoc);
 }
 
-// export async function GET() {
-//   const result = await getAllOrdersFromDb();
-//   return NextResponse.json(result);
-// }
-
 export async function GET() {
   await mongooseConnect();
   const result = await OrderModel.find<Order>().populate("items.product_id");

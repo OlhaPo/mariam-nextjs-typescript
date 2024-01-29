@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
 .main {
   @apply min-h-screen bg-[url('/images/background.jpg')] -mt-20 bg-cover bg-no-repeat flex flex-col justify-center items-center text-white;
 }
@@ -80,4 +83,15 @@ h3 {
 
 .swal-title {
   @apply text-black text-lg font-light;
+}
+
+.slick-prev,
+.slick-next,
+.slick-prev:hover,
+.slick-next:hover {
+  @apply text-[#8B847D] text-[28px];
+}
+
+.slick-next {
+  @apply right-11;
 }
