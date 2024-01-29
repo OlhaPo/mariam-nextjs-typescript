@@ -63,7 +63,7 @@ export default function ProductCard({
     prevArrow: <FaArrowLeft />,
     responsive: [
       {
-        breakpoint: 600,
+        breakpoint: 1024,
         settings: {
           arrows: false,
         },
