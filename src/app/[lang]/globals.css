@@ -18,7 +18,7 @@ p {
 }
 
 .btn-nav {
-  @apply border-2 border-primary rounded-md px-5 py-4 bg-primary text-white shadow-lg;
+  @apply border-2 border-primary rounded-md py-3 bg-primary text-white shadow-lg md:max-w-[200px] lg:max-w-[250px];
 }
 
 .collection-cover,

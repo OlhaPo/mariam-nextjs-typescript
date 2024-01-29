@@ -107,7 +107,7 @@ export default function ProductCard({
         </div>
       )}
       <div className="flex flex-col mt-8 md:mt-0">
-        <h2 className="text-left mb-5">
+        <h2 className="text-left mb-5 text-[#685C52]">
           {getLangField(product, "title_", lang)}
         </h2>
         <p>{product.price} UAH</p>
