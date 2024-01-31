@@ -5,7 +5,8 @@ export const ConfirmationEmail: React.FC<Readonly<PopulatedOrder>> = ({
   first_name,
 }) => (
   <div>
-    <h1>Dear {first_name}!</h1>
-    <></>
+    <h2>Dear {first_name}!</h2>
+    <p>Your order has been received.</p>
+    <p>Order details are shown below.</p>
   </div>
 );
