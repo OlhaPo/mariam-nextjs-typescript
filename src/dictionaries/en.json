@@ -48,6 +48,12 @@
       "other_messenger": "Other (add in section for commets below)",
       "comment": "Questions or comments",
       "place_order": "Place order"
+    },
+    "confirmation_page": {
+      "thank_you": "Thank you for the order",
+      "paragraph_one": "I&apos;ll reach out to you as soon as possible. An email with order details has been sent to email address you provided.",
+      "paragraph_two": "Meanwhile I invite you to check my Instagram and Facebook page.",
+      "paragraph_three": "Wishing you a beautiful day!"
     }
   },
   "footer": {

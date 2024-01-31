@@ -95,3 +95,7 @@ h3 {
 .slick-next {
   @apply right-11;
 }
+
+.confirmation-page {
+  @apply max-w-[1040px] mx-auto flex items-center flex-col justify-center py-20 px-10;
+}

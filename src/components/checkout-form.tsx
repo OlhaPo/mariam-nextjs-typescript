@@ -37,14 +37,6 @@ export function CheckoutForm({ onSave, translations }: CheckoutFormProps) {
     });
   }
 
-  // const messengerOptions = {
-  //   [0]: "Telegram",
-  //   [1]: "Email",
-  //   [2]: "Viber",
-  //   [3]: "WhatsApp",
-  //   [4]: "Other (add in section for comments below)",
-  // };
-
   const messengerOptions = ["Telegram", "Email", "Viber", "WhatsApp", "Other"];
 
   return (

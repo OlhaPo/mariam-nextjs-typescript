@@ -1,5 +1,4 @@
 import mongoose, { Schema, model, models } from "mongoose";
-import { mongooseConnect } from "../../lib/mongogoose";
 import { ProductItem } from "./ProductSchema";
 
 export interface OrderItem {
