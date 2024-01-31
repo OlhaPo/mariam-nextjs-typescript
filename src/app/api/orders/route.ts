@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 import nodemailer, { Transporter } from "nodemailer";
 import { Resend } from "resend";
 import { ConfirmationEmail } from "@/components/confirmation-email";
+import { Product } from "@/models/ProductSchema";
 
 export async function POST(req: NextRequest) {
   await mongooseConnect();
@@ -38,9 +39,10 @@ export async function POST(req: NextRequest) {
 
   if (orderDoc) {
     const detailedOrder: PopulatedOrder | null =
-      await OrderModel.findById<Order>(orderDoc._id).populate(
-        "items.product_id"
-      );
+      await OrderModel.findById<Order>(orderDoc._id).populate({
+        path: "items.product_id",
+        model: Product,
+      });
 
     if (detailedOrder) {
       await sendWithResend(detailedOrder);
@@ -53,7 +55,10 @@ export async function POST(req: NextRequest) {
 
 export async function GET() {
   await mongooseConnect();
-  const result = await OrderModel.find<Order>().populate("items.product_id");
+  const result = await OrderModel.find<Order>().populate({
+    path: "items.product_id",
+    model: Product,
+  });
   return NextResponse.json(result);
 }
 
