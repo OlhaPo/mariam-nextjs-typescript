@@ -71,9 +71,9 @@ async function sendWithResend(orderData: PopulatedOrder, lang: Locale) {
 
   if (!orderData.email) return;
   const { data, error } = await resend.emails.send({
-    from: `Mariam Crochet Jewelry<${process.env.SENDER_EMAIL}>`,
+    from: `mariam crochet jewelry<${process.env.SENDER_EMAIL}>`,
     to: [orderData.email],
-    subject: "Hello world", // @TODO: provide actual subject
+    subject: "order confirmation",
     react: ConfirmationEmail({ order: orderData, lang }) as React.ReactElement,
   });
 

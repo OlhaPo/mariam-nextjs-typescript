@@ -59,7 +59,10 @@
       "header": "Dear",
       "order_received": "Your order has been received.",
       "details_below": "Order details are shown below.",
-      "info_provided": "You provided such information"
+      "info_provided": "You provided such information",
+      "price": "Price",
+      "order_subtotal": "Order subtotal",
+      "email_ending": "I&apos;ll reach out to you as soon as possible. I invite you to check my social media."
     }
   },
   "footer": {
