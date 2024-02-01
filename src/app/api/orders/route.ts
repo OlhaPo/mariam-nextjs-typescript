@@ -5,9 +5,13 @@ import nodemailer, { Transporter } from "nodemailer";
 import { Resend } from "resend";
 import { ConfirmationEmail } from "@/components/confirmation-email";
 import { Product } from "@/models/ProductSchema";
+import { Locale } from "../../../../i18n.config";
+
+const DEFAULT_LANG = "en";
 
 export async function POST(req: NextRequest) {
   await mongooseConnect();
+  const lang = (req.nextUrl.searchParams.get("lang") ?? DEFAULT_LANG) as Locale;
   const data = await req.json();
   const {
     items,
@@ -45,7 +49,7 @@ export async function POST(req: NextRequest) {
       });
 
     if (detailedOrder) {
-      await sendWithResend(detailedOrder);
+      await sendWithResend(detailedOrder, lang);
       // sendWithNodemailer(email, first_name);
     }
   }
@@ -62,7 +66,7 @@ export async function GET() {
   return NextResponse.json(result);
 }
 
-async function sendWithResend(orderData: PopulatedOrder) {
+async function sendWithResend(orderData: PopulatedOrder, lang: Locale) {
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   if (!orderData.email) return;
@@ -70,7 +74,7 @@ async function sendWithResend(orderData: PopulatedOrder) {
     from: `Mariam Crochet Jewelry<${process.env.SENDER_EMAIL}>`,
     to: [orderData.email],
     subject: "Hello world", // @TODO: provide actual subject
-    react: ConfirmationEmail(orderData) as React.ReactElement,
+    react: ConfirmationEmail({ order: orderData, lang }) as React.ReactElement,
   });
 
   if (error) {

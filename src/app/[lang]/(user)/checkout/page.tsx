@@ -45,7 +45,7 @@ export default function CheckoutPage({
 
   async function placeNewOrder(data: Order) {
     try {
-      const res = await fetch(`/api/orders`, {
+      const res = await fetch(`/api/orders?lang=${lang}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { CartItem, CartState } from "./types";
 import { ProductItem } from "@/models/ProductSchema";
+import { calculateSubtotal } from "@/lib/orderUtils";
 
 export const useCartStore = create<CartState>()(
   persist(
@@ -50,9 +51,7 @@ export const useCartStore = create<CartState>()(
       totalPrice: (): number => {
         const { cart } = get();
         if (cart.length) {
-          return cart
-            .map((item) => item.count * item.product.price)
-            .reduce((a, b) => a + b);
+          return calculateSubtotal(cart);
         }
         return 0;
       },
