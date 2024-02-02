@@ -91,7 +91,7 @@ export default function ShoppingCart({
           </div>
           <button
             onClick={() => navigateToCheckout()}
-            className="btn-nav w-full mt-10 md:mt-5"
+            className="checkout-btn mt-10 md:mt-5"
           >
             {
               ((translations.page as Translations).cart as Translations)

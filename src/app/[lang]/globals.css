@@ -21,6 +21,10 @@ p {
   @apply border-2 border-primary rounded-md py-3 bg-primary text-white shadow-lg md:max-w-[200px] lg:max-w-[250px];
 }
 
+.checkout-btn {
+  @apply w-full border-2 border-primary rounded-md py-3 bg-primary text-white shadow-lg;
+}
+
 .collection-cover,
 .img-product-in-stock {
   @layer shadow-secondary-900;
@@ -32,7 +36,7 @@ p {
 }
 
 .cart {
-  @apply w-[80%] md:w-[70%] lg:w-[35%] bg-[#D4D4D4] absolute top-0 right-0 h-screen flex flex-col z-[1200] px-10 py-10 gap-10 overflow-y-scroll;
+  @apply w-[80%] md:w-[54%] lg:w-[28%] bg-[#D4D4D4] absolute top-0 right-0 h-screen flex flex-col z-[1200] px-5 md:px-10 py-10 gap-10 overflow-y-scroll;
 }
 
 .checkout {

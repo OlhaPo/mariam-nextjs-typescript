@@ -25,7 +25,7 @@ export default function EditCart({
             />
           </div>
           <div className="flex flex-col items-start">
-            <p className="pt-0">
+            <p className="pt-0 leading-6">
               {getLangField(product.product, "title_", lang)}
             </p>
             <p className="text-gray">
@@ -40,7 +40,6 @@ export default function EditCart({
                 <FaPlus />
               </button>
             </div>
-
             <button onClick={() => removeFromCart(product.product)}>
               {
                 ((translations?.page as Translations)?.cart as Translations)
