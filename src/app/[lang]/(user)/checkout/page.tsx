@@ -9,6 +9,7 @@ import { Locale } from "../../../../../i18n.config";
 import { Translations } from "@/lib/dictionaryUtils";
 import { useEffect, useState } from "react";
 import { getDictionary } from "@/lib/dictionary";
+import { CartSummary } from "@/components/cart-summary";
 
 const CartSummaryNoSSR = dynamic(
   () => import("@/components/cart-summary").then((mod) => mod.CartSummary),
@@ -77,7 +78,7 @@ export default function CheckoutPage({
         <CheckoutFormNoSSR onSave={placeNewOrder} translations={translations} />
       </div>
       <div>
-        <CartSummaryNoSSR lang={lang} translations={translations} />
+        <CartSummary lang={lang} translations={translations} />
       </div>
     </section>
   );

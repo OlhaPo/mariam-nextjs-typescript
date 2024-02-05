@@ -15,6 +15,15 @@ export async function POST(req: NextRequest) {
     imageUrls,
     status,
   } = data;
+
+  let sort_position = 1;
+  const lastProduct = await Product.findOne<ProductItem>({})
+    .sort({ sort_position: -1 })
+    .exec();
+  if (lastProduct) {
+    sort_position = (lastProduct.sort_position ?? 0) + 1;
+  }
+
   const productDoc = await Product.create({
     title_uk,
     title_en,
@@ -24,6 +33,7 @@ export async function POST(req: NextRequest) {
     collection_id,
     imageUrls,
     status: status as ProductStatus,
+    sort_position,
   });
   return NextResponse.json(productDoc);
 }
@@ -38,11 +48,15 @@ export async function GET(req: NextRequest) {
   if (id) {
     result = await Product.findById<ProductItem>(id);
   } else if (collection_id) {
-    result = await Product.find<ProductItem>({ collection_id });
+    result = await Product.find<ProductItem>({ collection_id }).sort({
+      sort_position: 1,
+    });
   } else if (status) {
-    result = await Product.find<ProductItem>({ status });
+    result = await Product.find<ProductItem>({ status }).sort({
+      sort_position: 1,
+    });
   } else {
-    result = await Product.find<ProductItem>();
+    result = await Product.find<ProductItem>().sort({ sort_position: 1 });
   }
   return NextResponse.json(result);
 }

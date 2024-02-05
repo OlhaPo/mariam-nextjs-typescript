@@ -17,12 +17,10 @@ export function CartSummary({
 
   return (
     <div className="flex flex-col">
-      <h2 className="text-left uppercase text-xl">
-        {
-          ((translations?.page as Translations)?.cart as Translations)
-            ?.cart_summary as string
-        }
-      </h2>
+      {
+        ((translations?.page as Translations)?.cart as Translations)
+          ?.cart_summary as string
+      }
       <EditCart lang={lang} translations={translations} />
       <div className="inline-block my-5">
         {
@@ -31,6 +29,7 @@ export function CartSummary({
         }
         : <span>{totalPrice()}</span> UAH{" "}
       </div>
+
       <div>
         <Link href={`/${lang}/shop`} className="btn-primary">
           {

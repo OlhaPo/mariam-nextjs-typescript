@@ -17,13 +17,14 @@ export interface ProductItem {
   price: number;
   imageUrls: string[];
   status: ProductStatus;
+  sort_position?: number;
 }
 
 export async function getProductsInStockFromDb(): Promise<ProductItem[]> {
   await mongooseConnect();
   const result = await Product.find<ProductItem>({
     status: ProductStatus.InStock,
-  });
+  }).sort({ sort_position: 1 });
   return result;
 }
 
@@ -42,6 +43,7 @@ const productSchema = new Schema<ProductItem>({
     type: Number,
     enum: Object.values(ProductStatus).filter((s) => !isNaN(Number(s))),
   },
+  sort_position: { type: Number, required: true },
 });
 
 export const Product =
