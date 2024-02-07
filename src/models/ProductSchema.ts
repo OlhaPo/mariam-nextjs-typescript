@@ -31,13 +31,13 @@ export async function getProductsInStockFromDb(): Promise<ProductItem[]> {
 const productSchema = new Schema<ProductItem>({
   title_uk: { type: String, required: true },
   title_en: { type: String, required: true },
-  description_uk: { type: String, required: true },
-  description_en: { type: String, required: true },
+  description_uk: { type: String },
+  description_en: { type: String },
   collection_id: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "CollectionItems",
   },
-  price: { type: Number, required: true },
+  price: { type: Number },
   imageUrls: [{ type: String }],
   status: {
     type: Number,
