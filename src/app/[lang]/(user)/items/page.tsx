@@ -71,7 +71,7 @@ export default function Items({ params }: { params: { lang: Locale } }) {
                 className="img-product-in-stock hover:scale-110"
               />
             </Link>
-            <h3>{getLangField(product, "title_", params.lang)}</h3>
+            {/* <h3>{getLangField(product, "title_", params.lang)}</h3> */}
             {/* <p>
               {(translations as any).productStatus[product.status.toString()]}
             </p>
