@@ -110,7 +110,9 @@ export default function ProductCard({
         <h2 className="text-left mb-5 text-[#685C52]">
           {getLangField(product, "title_", lang)}
         </h2>
-        <p>{product.price} UAH</p>
+        {product.status === ProductStatus.InStock ? (
+          <p>{product.price} UAH</p>
+        ) : null}
         <p>
           {getLabelByStatus(
             translations?.productStatus as { [key: string]: string },
