@@ -43,10 +43,10 @@ export function Navigation({
         "border border-b-slate-300": !isHome,
       })}
     >
-      <BiMenu size={30} onClick={handleNav} className="md:hidden z-[150]" />
       <div className="uppercase z-[140]">
         <NavLink href={createFullUrl("/")}>{translations?.home}</NavLink>
-      </div>{" "}
+      </div>
+      <BiMenu size={30} onClick={handleNav} className="md:hidden z-[150]" />{" "}
       {/* <div className="md:hidden">
         <CartLabelNoSSR onOpen={onOpenCart} />
       </div> */}
