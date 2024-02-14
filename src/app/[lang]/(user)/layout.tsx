@@ -33,22 +33,23 @@ export default function UserLayout({
 
   return (
     <>
-      {/* {showCart ? (
+      {showCart ? (
         <ShoppingCart
           lang={params.lang}
           onClose={handleCart}
           translations={translations}
         />
-      ) : null} */}
-      {/* <div className={showCart ? "opacity-50" : "opacity-100"}> */}
-      <div>
-        <Navigation
-          translations={translations.navigation}
-          lang={params.lang}
-          onOpenCart={handleCart}
-        />
-        <div className="mt-20 text-base md:text-lg">{children}</div>
-        <Footer lang={params.lang} translations={translations} />
+      ) : null}
+      <div className={showCart ? "opacity-50" : "opacity-100"}>
+        <div>
+          <Navigation
+            translations={translations.navigation}
+            lang={params.lang}
+            onOpenCart={handleCart}
+          />
+          <div className="mt-20 text-base md:text-lg">{children}</div>
+          <Footer lang={params.lang} translations={translations} />
+        </div>
       </div>
     </>
   );

@@ -1,6 +1,5 @@
 import { getDictionary } from "@/lib/dictionary";
 import { Locale } from "../../../../../i18n.config";
-import { ConfirmationEmail } from "@/components/confirmation-email";
 
 export default async function OrderConfirmationPage({
   params: { lang },

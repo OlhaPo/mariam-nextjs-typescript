@@ -78,7 +78,7 @@ export default function CheckoutPage({
         <CheckoutFormNoSSR onSave={placeNewOrder} translations={translations} />
       </div>
       <div>
-        <CartSummary lang={lang} translations={translations} />
+        <CartSummaryNoSSR lang={lang} translations={translations} />
       </div>
     </section>
   );

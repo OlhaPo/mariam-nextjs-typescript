@@ -11,6 +11,7 @@ module.exports = {
       "lh3.google.com",
       "lh3.googleusercontent.com",
       "drive.google.com",
+      "www.dropbox.com",
     ],
     // remotePatterns: [
     //   {

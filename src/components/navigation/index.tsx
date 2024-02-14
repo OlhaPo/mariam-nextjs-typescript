@@ -47,9 +47,9 @@ export function Navigation({
         <NavLink href={createFullUrl("/")}>{translations?.home}</NavLink>
       </div>
       <BiMenu size={30} onClick={handleNav} className="md:hidden z-[150]" />{" "}
-      {/* <div className="md:hidden">
+      <div className="md:hidden">
         <CartLabelNoSSR onOpen={onOpenCart} />
-      </div> */}
+      </div>
       {isOpenNav ? (
         <div className="w-full bg-[#948D85] fixed top-0 left-0 right-0 min-h-screen flex flex-col justify-center items-center z-[120] gap-5">
           {navLinks.map((link, i) => (
@@ -81,7 +81,7 @@ export function Navigation({
             </NavLink>
           ))}
         </div>
-        {/* <CartLabelNoSSR onOpen={onOpenCart} /> */}
+        <CartLabelNoSSR onOpen={onOpenCart} />
       </div>
     </div>
   );

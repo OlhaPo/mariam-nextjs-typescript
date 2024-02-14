@@ -103,3 +103,37 @@ h3 {
 .confirmation-page {
   @apply max-w-[1040px] mx-auto flex items-center flex-col justify-center py-20 px-10;
 }
+
+.email-h2 {
+  text-align: left;
+  color: #2b4a33;
+}
+
+.email-h3 {
+  text-align: left;
+  color: #2b4a33;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.email-img-section {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  margin-top: 20px;
+}
+
+.email-price-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.email-links {
+  display: inline;
+  padding-right: 12px;
+  color: #2b4a33;
+}
+.email-links:hover {
+  color: black;
+}

@@ -120,7 +120,7 @@ export default function ProductCard({
           )}
         </p>
         <p>{getLangField(product, "description_", lang)}</p>
-        {/* {product.status !== ProductStatus.SoldOut ? (
+        {product.status !== ProductStatus.SoldOut ? (
           <button
             className="btn-nav mt-12 md:mt-5"
             onClick={() => handleAddToCart(product)}
@@ -131,7 +131,7 @@ export default function ProductCard({
               product.status
             )}
           </button>
-        ) : null} */}
+        ) : null}
       </div>
     </div>
   );

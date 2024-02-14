@@ -5,6 +5,7 @@ import { getDictionary } from "@/lib/dictionary";
 import { getLangField } from "@/lib/dictionaryUtils";
 import { calculateSubtotal } from "@/lib/orderUtils";
 import { FACEBOOK_LINK, INSTAGRAM_LINK } from "@/constants/contacts";
+import axios from "axios";
 
 export interface ConfirmationEmailProps {
   lang: Locale;
@@ -18,60 +19,70 @@ export const ConfirmationEmail: React.FC<
   const subtotal = calculateSubtotal(
     order.items.map((item) => ({ count: item.count, product: item.product_id }))
   );
+
+  // const loadImg = async (url: string): Promise<string> => {
+  //   const imgResp = await axios.get(url, {
+  //     responseType: "arraybuffer", // Ensure response is treated as binary data
+  //   });
+  //   return Buffer.from(imgResp.data, "binary").toString("base64");
+  // };
+
   return (
-    <>
-      <h2 className="text-primary text-xl">
+    <div style={{ marginLeft: "15px", marginTop: "50px" }}>
+      <h2 className="email-h2">
         {page.confirmation_email.header} {order.first_name}!
       </h2>
       <p>
         {page.confirmation_email.order_received}{" "}
-        {page.confirmation_email.details_below}.
+        {page.confirmation_email.details_below}
       </p>
-      {order.items.map((item, index) => (
-        <div key={index} className="flex flex-row gap-8 mt-5">
-          <div>
-            <img
-              src={item.product_id.imageUrls[0]}
-              alt="Picture of handcrafted item"
-              width={250}
-              height={250}
-            />
+      {order.items.map(async (item, index) => {
+        // const imgData = await loadImg(item.product_id.imageUrls[0]);
+        return (
+          <div key={index} className="email-img-section">
+            <div>
+              <img
+                src={item.product_id.imageUrls[0]}
+                // src={`data:image/jpeg;base64,${imgData}`}
+                alt="Picture of handcrafted item"
+                width={150}
+              />
+            </div>
+            <div className="email-price-section">
+              <p>
+                {item.count} x {getLangField(item.product_id, "title_", lang)}
+              </p>
+              <p>
+                <span>{page.confirmation_email.price}:</span>{" "}
+                {item.product_id.price} UAH
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col items-start">
-            <p>
-              {item.count} x {getLangField(item.product_id, "title_", lang)}
-            </p>
-            <p>
-              {page.confirmation_email.price}: {item.product_id.price} UAH
-            </p>
-          </div>
-        </div>
-      ))}
+        );
+      })}
       <p>
         {page.confirmation_email.order_subtotal}: {subtotal} UAH
       </p>
       <div>
-        <h3>{page.confirmation_email.info_provided}:</h3>
-        <p>
-          {page.checkout_page.phone_number}:{" "}
-          <span className="text-gray">{order.phone_number}</span>
-        </p>
-        <div className="flex flex-row gap-2">
-          <p>
+        <h3 className="email-h3">{page.confirmation_email.info_provided}:</h3>
+        <ul>
+          <li>
+            {page.checkout_page.phone_number}:{" "}
+            <span className="text-gray">{order.phone_number}</span>
+          </li>
+          <li>
             <span
               dangerouslySetInnerHTML={{
                 __html: page.checkout_page.messenger,
               }}
             ></span>
             <span>: {order.messenger}</span>
-          </p>
-        </div>
-        <div>
-          <p>
+          </li>
+          <li>
             {page.checkout_page.comment}:{" "}
             <span className="text-gray">{order.comment}</span>
-          </p>
-        </div>
+          </li>
+        </ul>
       </div>
       <div>
         <p
@@ -79,7 +90,7 @@ export const ConfirmationEmail: React.FC<
             __html: page.confirmation_email.email_ending,
           }}
         ></p>
-        <div className="inline pr-3">
+        <div className="email-links">
           <a href={INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer">
             Instagram
           </a>{" "}
@@ -88,6 +99,6 @@ export const ConfirmationEmail: React.FC<
           </a>
         </div>
       </div>
-    </>
+    </div>
   );
 };
