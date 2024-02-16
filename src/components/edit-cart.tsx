@@ -15,7 +15,7 @@ export default function EditCart({
   return (
     <div className="overflow-y-auto flex-grow">
       {cart.map((product, i) => (
-        <div key={i} className="flex flex-row gap-5 mt-5">
+        <div key={i} className="flex flex-row gap-5 mt-5 first:mt-0">
           <div>
             <Image
               src={product.product.imageUrls[0]}
