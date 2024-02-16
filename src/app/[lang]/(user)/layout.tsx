@@ -40,7 +40,7 @@ export default function UserLayout({
           translations={translations}
         />
       ) : null}
-      <div className={showCart ? "opacity-50" : "opacity-100"}>
+      <div className={showCart ? "opacity-50 fixed" : "opacity-100"}>
         <div>
           <Navigation
             translations={translations.navigation}

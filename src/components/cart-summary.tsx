@@ -21,6 +21,7 @@ export function CartSummary({
         ((translations?.page as Translations)?.cart as Translations)
           ?.cart_summary as string
       }
+
       <EditCart lang={lang} translations={translations} />
       <div className="inline-block my-5">
         {

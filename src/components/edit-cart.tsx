@@ -13,9 +13,9 @@ export default function EditCart({
 }) {
   const { cart, removeFromCart, incrementItem, decrementItem } = useCartStore();
   return (
-    <>
+    <div className="overflow-y-auto flex-grow">
       {cart.map((product, i) => (
-        <div key={i} className="flex flex-row gap-5 mt-5 md:mt-10">
+        <div key={i} className="flex flex-row gap-5 mt-5">
           <div>
             <Image
               src={product.product.imageUrls[0]}
@@ -49,6 +49,6 @@ export default function EditCart({
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 }

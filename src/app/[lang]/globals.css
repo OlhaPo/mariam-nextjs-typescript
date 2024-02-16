@@ -36,7 +36,7 @@ p {
 }
 
 .cart {
-  @apply w-[80%] md:w-[54%] lg:w-[28%] bg-[#D4D4D4] absolute top-0 right-0 h-screen flex flex-col z-[1200] px-5 md:px-10 py-10 gap-10 overflow-y-scroll;
+  @apply w-[80%] md:w-[54%] lg:w-[28%] bg-[#D4D4D4] absolute top-0 right-0 h-screen flex flex-col z-[1200] px-5 md:px-10 py-10 overflow-hidden;
 }
 
 .checkout {
