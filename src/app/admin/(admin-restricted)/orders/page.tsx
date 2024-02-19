@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Table } from "@radix-ui/themes";
+import { Table, TableCell } from "@radix-ui/themes";
 import { PopulatedOrder } from "@/models/OrderSchema";
+import Image from "next/image";
 
 export default function OrdersPage() {
   const [orders, setOrders] = useState<PopulatedOrder[]>([]);
@@ -53,6 +54,12 @@ export default function OrdersPage() {
                 <Table.Cell>
                   {order.items.map((item, index) => (
                     <div key={index}>
+                      <Image
+                        src={item.product_id.imageUrls[0]}
+                        alt="Picture of handcrafted item"
+                        width={90}
+                        height={90}
+                      />
                       {item.count} x {item.product_id.title_en}
                     </div>
                   ))}
