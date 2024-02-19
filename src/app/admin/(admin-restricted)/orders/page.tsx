@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Table, TableCell } from "@radix-ui/themes";
+import { Table } from "@radix-ui/themes";
 import { PopulatedOrder } from "@/models/OrderSchema";
 import Image from "next/image";
 
@@ -18,6 +18,8 @@ export default function OrdersPage() {
         }
 
         const result = await response.json();
+        console.log(result);
+
         setOrders(result);
       } catch (error) {
         console.error(error);
@@ -49,7 +51,7 @@ export default function OrdersPage() {
             orders.map((order) => (
               <Table.Row key={order._id}>
                 <Table.Cell>
-                  {new Date(order.createdAt).toDateString()}
+                  {new Date(order.createdAt).toLocaleString("uk-ua")}
                 </Table.Cell>
                 <Table.Cell>
                   {order.items.map((item, index) => (
