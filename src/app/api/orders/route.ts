@@ -1,7 +1,6 @@
 import { Order, OrderModel, PopulatedOrder } from "@/models/OrderSchema";
 import { mongooseConnect } from "../../../../lib/mongogoose";
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer, { Transporter } from "nodemailer";
 import { Resend } from "resend";
 import { ConfirmationEmail } from "@/components/confirmation-email";
 import { Product } from "@/models/ProductSchema";

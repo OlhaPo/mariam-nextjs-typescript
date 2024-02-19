@@ -34,6 +34,7 @@ export default function OrdersPage() {
       <Table.Root className="mt-20">
         <Table.Header className="text-lg">
           <Table.Row>
+            <Table.ColumnHeaderCell>Date</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Order Details</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>First Name</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell>Last Name</Table.ColumnHeaderCell>
@@ -46,6 +47,9 @@ export default function OrdersPage() {
           {orders.length > 0 &&
             orders.map((order) => (
               <Table.Row key={order._id}>
+                <Table.Cell>
+                  {new Date(order.createdAt).toDateString()}
+                </Table.Cell>
                 <Table.Cell>
                   {order.items.map((item, index) => (
                     <div key={index}>

@@ -26,24 +26,28 @@ export interface PopulatedOrder {
   phone_number: string;
   messenger: string;
   comment: string;
+  createdAt: Date;
 }
 
-export const orderSchema = new Schema<Order>({
-  items: [
-    {
-      product_id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "ProductItems",
+export const orderSchema = new Schema<Order>(
+  {
+    items: [
+      {
+        product_id: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "ProductItems",
+        },
+        count: { type: Number },
       },
-      count: { type: Number },
-    },
-  ],
-  first_name: { type: String, required: true },
-  last_name: { type: String, required: true },
-  email: { type: String },
-  phone_number: { type: String, required: true },
-  messenger: { type: String, required: true },
-  comment: { type: String },
-});
+    ],
+    first_name: { type: String, required: true },
+    last_name: { type: String, required: true },
+    email: { type: String },
+    phone_number: { type: String, required: true },
+    messenger: { type: String, required: true },
+    comment: { type: String },
+  },
+  { timestamps: true }
+);
 
 export const OrderModel = models.Orders || model<Order>("Orders", orderSchema);
