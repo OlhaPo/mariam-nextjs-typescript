@@ -10,11 +10,14 @@
   },
   "page": {
     "about": {
-      "title": "Hi there, dearest!",
-      "description": "My name is Maryna Kambur. I&apos;m the designer and owner of the brand <span class=\"font-fredoka text-xl font-medium text-primary\">mariam crochet jewelry</span> and an artist from Kyiv, Ukraine.",
+      "title": "Hi there!",
+      "description_p_one": "My name is Maryna. In 2017, I created the brand <span class=\"font-fredoka text-xl font-medium text-primary\">mariam crochet jewelry</span>.",
+      "description_p_two": "This is my small universe that follows the philosophy of healing through beauty. It also nurtures a sense of tenderness, attention to details, and enthusiasm for handmade creations.",
+      "description_p_three": "Everything I do is object poetry. A visual dance of joy. In each piece, you can feel the beat of my heart and the trembling of my soul, which I want to share with you!",
+      "description_ending": "I am sincerely happy for every meeting, and with great love, I will create beauty for you!",
       "collections_link": "View all Collections",
-      "collections_description": "For more inspiration and examples of my works, I invite you to explore the collections. I would be honored to create something beautiful and unique just for you.",
-      "shop_description": "Thank you for stopping by my online corner. Feel free to check out the handmade jewelry and clothing pieces that are ready and waiting for buying.",
+      "collections_description": "For more inspiration and examples of my works, I invite you to explore the collections.",
+      "shop_description": "Feel free to check out the handmade jewelry and clothing pieces that are ready and waiting for buying.",
       "shop_link": "Welcome to Shop"
     },
     "collections": {
