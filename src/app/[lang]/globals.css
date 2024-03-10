@@ -104,6 +104,18 @@ h3 {
   @apply max-w-[1040px] mx-auto flex items-center flex-col justify-center py-20 px-10;
 }
 
+.confirmation-page p {
+  @apply mt-4 p-0;
+}
+
+.confirmation-page p:first-child {
+  @apply mt-0 pt-0;
+}
+
+.social-media-links {
+  @apply text-[#B86F99] hover:text-primary font-fredoka text-xl;
+}
+
 .email-h2 {
   text-align: left;
   color: #2b4a33;
