@@ -5,12 +5,15 @@ import {
   FACEBOOK_LINK,
   PHONE_NUMBER,
   EMAIL,
-} from "..//../constants/contacts";
+} from "../../constants/contacts";
+import { Translations } from "@/lib/dictionaryUtils";
 
-export function Contacts() {
+export function Contacts({ translations }: { translations: Translations }) {
   return (
     <div className="contacts-section">
-      <span className="contacts-subheader">Contacts</span>
+      <span className="contacts-subheader">
+        {(translations?.footer as Translations)?.contacts_subtitle.toString()}
+      </span>
       <div className="flex flex-row gap-4">
         <a href={INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer">
           <FaInstagram size={20} />

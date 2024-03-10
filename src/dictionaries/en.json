@@ -1,0 +1,85 @@
+{
+  "navigation": {
+    "home": "Maryna Kambur",
+    "about": "About me",
+    "shop": "Shop",
+    "contacts": "Contacts",
+    "cart": "Cart",
+    "orders": "Orders and delivery",
+    "collections": "Collections"
+  },
+  "page": {
+    "about": {
+      "title": "Hi there!",
+      "description_p_one": "My name is Maryna. In 2017, I created the brand <span class=\"font-fredoka text-xl font-medium text-primary\">mariam crochet jewelry</span>.",
+      "description_p_two": "This is my small universe that follows the philosophy of healing through beauty. It also nurtures a sense of tenderness, attention to details, and enthusiasm for handmade creations.",
+      "description_p_three": "Everything I do is object poetry, a visual dance of joy. In each piece, you can feel the beat of my heart and a particle of my of soul, that I want to share with you!",
+      "description_ending": "I am sincerely happy for every meeting, and with great love, I will create beauty for you!",
+      "collections_link": "View all Collections",
+      "collections_description": "For more inspiration and examples of my works, I invite you to explore the collections.",
+      "shop_description": "Feel free to check out the handmade jewelry and clothing pieces that are ready and waiting for buying.",
+      "shop_link": "Welcome to Shop"
+    },
+    "collections": {
+      "header": "The collections feature examples of works, inspiration, and ideas for custom product orders",
+      "breadcrumbs": "To all Collections"
+    },
+    "shop": {
+      "header": "In the shop all clothing and jewelry pieces are in stock and available for purchase",
+      "to_cart": "Add to cart"
+    },
+    "cart": {
+      "title": "Shopping Cart",
+      "confirmation_alert": "was added to the cart",
+      "already_in_cart": "is already in the cart",
+      "empty_cart": "Your cart is empty",
+      "to_shopping": "Continue shopping",
+      "remove": "Remove",
+      "total_items": "Total items",
+      "subtotal": "Subtotal",
+      "checkout": "Checkout",
+      "entity": "pcs",
+      "cart_summary": "Cart Summary"
+    },
+    "checkout_page": {
+      "title": "Checkout",
+      "first_name": "First name*",
+      "last_name": "Last name",
+      "email": "Email",
+      "phone_number": "Phone number",
+      "messenger": "Preferred contact messenger*",
+      "other_messenger": "Other (add in section for commets below)",
+      "comment": "Questions or comments",
+      "place_order": "Place order"
+    },
+    "confirmation_page": {
+      "thank_you": "Thank you for the order",
+      "paragraph_one": "I&apos;ll reach out to you as soon as possible. An email with order details has been sent to email address you provided.",
+      "paragraph_two": "Meanwhile I invite you to check my Instagram and Facebook page.",
+      "paragraph_three": "Wishing you a beautiful day!"
+    },
+    "confirmation_email": {
+      "header": "Dear",
+      "order_received": "Your order has been received.",
+      "details_below": "Order details are shown below.",
+      "info_provided": "You provided such information",
+      "price": "Price",
+      "order_subtotal": "Order subtotal",
+      "email_ending": "Thank you for the order. I&apos;ll reach out to you as soon as possible. Meanwhile I invite you to check my social media."
+    }
+  },
+  "footer": {
+    "info": "<span class=\"font-fredoka text-lg md:text-2xl text-primary\">mariam crochet jewelry</span> is a Ukrainian clothing and crocheted jewelry brand founded by designer Maryna Kambur. Handcrafted lovingly in Ukraine.",
+    "menu_subtitle": "Menu",
+    "contacts_subtitle": "Contacts"
+  },
+  "productStatus": {
+    "0": "In stock",
+    "1": "Pre-order",
+    "2": "Sold out"
+  },
+  "cartButton": {
+    "0": "Buy",
+    "1": "Pre-order"
+  }
+}

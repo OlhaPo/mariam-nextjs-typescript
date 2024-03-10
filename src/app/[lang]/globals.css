@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+.main {
+  @apply min-h-screen bg-[url('/images/background.jpg')] -mt-20 bg-cover bg-no-repeat flex flex-col justify-center items-center text-white;
+}
+
+.nav {
+  @apply w-full h-20 absolute top-0 px-10 lg:px-12 flex flex-row items-center justify-between z-[100] text-xl;
+}
+
+p {
+  @apply md:py-1 lg:py-3 text-left leading-8;
+}
+
+.btn-nav {
+  @apply border-2 border-primary rounded-md py-3 px-3 bg-primary text-white shadow-lg md:max-w-[200px] lg:max-w-[250px];
+}
+
+.checkout-btn {
+  @apply w-full border-2 border-primary rounded-md py-3 bg-primary text-white shadow-lg;
+}
+
+.collection-cover,
+.img-product-in-stock {
+  @layer shadow-secondary-900;
+  @apply my-5 rounded-md shadow-2xl hover:scale-110 cursor-pointer ease-in duration-200 text-primary object-cover;
+}
+
+.collection-navLink {
+  @apply md:basis-1/4 lg:basis-1/5;
+}
+
+.cart {
+  @apply w-[80%] md:w-[54%] lg:w-[28%] bg-[#D4D4D4] absolute top-0 right-0 h-screen flex flex-col z-[1200] px-5 md:px-10 py-10 overflow-hidden;
+}
+
+.checkout {
+  @apply w-full mx-auto px-10 py-10 md:px-20 md:py-20 grid grid-cols-1 lg:grid lg:grid-cols-2 gap-10 lg:gap-40;
+}
+
+h2 {
+  @apply text-2xl text-center;
+}
+
+h3 {
+  @apply text-center text-xl;
+}
+
+.contacts {
+  @apply max-w-full border border-t-slate-300 flex flex-wrap flex-row md:justify-around px-10 lg:px-12 py-4 md:py-8 md:text-lg lg:text-xl gap-6 lg:gap-12;
+}
+
+.contacts-section {
+  @apply flex flex-col flex-wrap gap-1 md:gap-3;
+}
+
+.contacts-subheader {
+  @apply text-primary font-medium;
+}
+
+.section-container {
+  @apply max-w-screen-xl mx-auto py-16 px-5 lg:px-12;
+}
+
+.btn-primary,
+.swal-btn-primary,
+.swal-btn-primary:hover {
+  @apply border-2 text-white bg-primary px-4 py-3;
+}
+
+.form-field {
+  @apply grid mb-6;
+}
+
+.form-input {
+  @apply border-primary border-2 rounded-md h-[35px];
+}
+
+.form-label {
+  @apply text-lg leading-[35px];
+}
+
+.swal-title {
+  @apply text-black text-lg font-light;
+}
+
+.slick-prev,
+.slick-next,
+.slick-prev:hover,
+.slick-next:hover {
+  @apply text-[#8B847D] text-[28px];
+}
+
+.slick-next {
+  @apply right-11;
+}
+
+.confirmation-page {
+  @apply max-w-[1040px] mx-auto flex items-center flex-col justify-center py-20 px-10;
+}
+
+.email-h2 {
+  text-align: left;
+  color: #2b4a33;
+}
+
+.email-h3 {
+  text-align: left;
+  color: #2b4a33;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.email-img-section {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  margin-top: 20px;
+}
+
+.email-price-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.email-links {
+  display: inline;
+  padding-right: 12px;
+  color: #2b4a33;
+}
+.email-links:hover {
+  color: black;
+}
