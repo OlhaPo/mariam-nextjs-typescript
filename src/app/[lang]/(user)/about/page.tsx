@@ -29,6 +29,7 @@ export default async function About({
               dangerouslySetInnerHTML={{ __html: page.about.description_p_one }}
             ></p>
             <p>{page.about.description_p_two}</p>
+            <p>{page.about.description_p_two}</p>
             <p>{page.about.description_p_three}</p>
           </div>
           <div>

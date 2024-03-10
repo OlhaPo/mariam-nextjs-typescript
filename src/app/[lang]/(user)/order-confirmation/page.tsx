@@ -1,5 +1,9 @@
 import { getDictionary } from "@/lib/dictionary";
 import { Locale } from "../../../../../i18n.config";
+import Image from "next/image";
+import Logo from "../../../../../public/images/mariam-logo.svg";
+import Link from "next/link";
+import { INSTAGRAM_LINK, FACEBOOK_LINK } from "@/constants/contacts";
 
 export default async function OrderConfirmationPage({
   params: { lang },
@@ -21,7 +25,28 @@ export default async function OrderConfirmationPage({
         ></p>
         <p>{page.confirmation_page.paragraph_two}</p>
         <p>{page.confirmation_page.paragraph_three}</p>
+        <div className="inline-flex gap-3 items-baseline">
+          <Link
+            href={INSTAGRAM_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-media-links"
+          >
+            Instagram
+          </Link>
+          <span>{page.confirmation_page.span}</span>
+          <Link
+            href={FACEBOOK_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-media-links"
+          >
+            Facebook
+          </Link>
+        </div>
+        <p>{page.confirmation_page.paragraph_four}</p>
       </div>
+      <Image src={Logo} alt="Logo" width={100} className="mt-10" />
     </section>
   );
 }
