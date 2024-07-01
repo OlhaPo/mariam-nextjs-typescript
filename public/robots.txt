@@ -1,1 +1,9 @@
+# *
 User-agent: *
+Allow: /
+
+# Host
+Host: https://www.mariamcorner.com.ua/
+
+# Sitemaps
+Sitemap: https://www.mariamcorner.com.ua/sitemap.xml

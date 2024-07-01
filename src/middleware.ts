@@ -22,7 +22,7 @@ export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
   // Allow requests to /robots.txt to pass through
-  if (pathname === "/robots.txt") {
+  if (pathname === "/robots.txt" || pathname === "/sitemap.xml") {
     return NextResponse.next();
   }
 
