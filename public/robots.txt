@@ -2,6 +2,8 @@
 User-agent: *
 Disallow: /admin
 Disallow: /api
+Disallow: /*/order-confirmation
+Disallow: /*/checkout
 
 # Host
 Host: https://www.mariamcorner.com.ua/
