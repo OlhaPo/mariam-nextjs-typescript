@@ -28,19 +28,6 @@ export const metadata: Metadata = {
     "українські дизайнери",
     "вязаные украшения",
   ],
-  robots: {
-    index: true,
-    follow: true,
-    nocache: false,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: false,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
 };
 
 export async function generateStaticParams() {
