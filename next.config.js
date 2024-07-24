@@ -13,18 +13,13 @@ module.exports = {
       "drive.google.com",
       "www.dropbox.com",
     ],
-    // remotePatterns: [
-    //   {
-    //     protocol: "https",
-    //     hostname: "lh3.google.com",
-    //     pathname: "/u/0/d/**",
-    //   },
-    //   {
-    //     protocol: "https",
-    //     hostname: "lh3.googleusercontent.com",
-    //     pathname: "/fife/**",
-    //   },
-    // ],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.dropbox.com",
+        pathname: "/scl/fi/**",
+      },
+    ],
   },
 };
 
