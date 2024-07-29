@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroImage from "public/images/hero.jpg";
+import HeroImage from "../../../../../public/images/hero.jpg";
 import LinkButton from "@/components/uikit/button";
 import { Locale } from "../../../../../i18n.config";
 import { getDictionary } from "@/lib/dictionary";
