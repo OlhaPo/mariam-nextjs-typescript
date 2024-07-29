@@ -41,7 +41,7 @@ export default function CheckoutPage({
       setTranslations(t);
     };
     getTranslations();
-  }, []);
+  }, [lang]);
 
   async function placeNewOrder(data: Order) {
     try {

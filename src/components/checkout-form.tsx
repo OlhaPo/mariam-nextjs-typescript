@@ -25,7 +25,7 @@ export function CheckoutForm({ onSave, translations }: CheckoutFormProps) {
     e.preventDefault();
     onSave({
       items: cart.map((c) => ({
-        product_id: c.product._id ?? "",
+        product: c.product._id ?? "",
         count: c.count,
       })),
       first_name: first_name,

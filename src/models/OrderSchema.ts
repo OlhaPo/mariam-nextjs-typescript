@@ -2,7 +2,7 @@ import mongoose, { Schema, model, models } from "mongoose";
 import { ProductItem } from "./ProductSchema";
 
 export interface OrderItem {
-  product_id: string;
+  product: string;
   count: number;
 }
 
@@ -19,7 +19,7 @@ export interface Order {
 
 export interface PopulatedOrder {
   _id: string;
-  items: { product_id: ProductItem; count: number }[];
+  items: { product: ProductItem; count: number }[];
   first_name: string;
   last_name: string;
   email: string;
@@ -33,7 +33,7 @@ export const orderSchema = new Schema<Order>(
   {
     items: [
       {
-        product_id: {
+        product: {
           type: mongoose.Schema.Types.ObjectId,
           ref: "ProductItems",
         },

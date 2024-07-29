@@ -27,7 +27,7 @@ export default function Items({ params }: { params: { lang: Locale } }) {
       setTranslations(t);
     };
     getTranslations();
-  }, []);
+  }, [params.lang]);
 
   useEffect(() => {
     const load = async () => {

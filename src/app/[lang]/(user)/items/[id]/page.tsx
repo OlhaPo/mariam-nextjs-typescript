@@ -22,7 +22,7 @@ export default function ItemPage({
       setTranslations(t);
     };
     getTranslations();
-  }, []);
+  }, [params.lang]);
   useEffect(() => {
     const loadItemData = async () => {
       const productDetailsData = await getProductById(params.id);

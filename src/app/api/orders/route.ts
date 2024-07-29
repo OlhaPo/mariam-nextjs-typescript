@@ -42,8 +42,8 @@ export async function POST(req: NextRequest) {
 
   if (orderDoc) {
     const detailedOrder: PopulatedOrder | null =
-      await OrderModel.findById<Order>(orderDoc._id).populate({
-        path: "items.product_id",
+      await OrderModel.findById<Order>(orderDoc._id).populate<PopulatedOrder>({
+        path: "items.product",
         model: Product,
       });
 
@@ -59,8 +59,9 @@ export async function POST(req: NextRequest) {
 export async function GET() {
   await mongooseConnect();
   const result = await OrderModel.find<Order>().populate({
-    path: "items.product_id",
+    path: "items.product",
     model: Product,
+    // localField: "product",
   });
   return NextResponse.json(result);
 }

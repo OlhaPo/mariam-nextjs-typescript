@@ -17,7 +17,7 @@ export const ConfirmationEmail: React.FC<
 > = async ({ order, lang }: ConfirmationEmailProps) => {
   const { page } = await getDictionary(lang);
   const subtotal = calculateSubtotal(
-    order.items.map((item) => ({ count: item.count, product: item.product_id }))
+    order.items.map((item) => ({ count: item.count, product: item.product }))
   );
 
   // const loadImg = async (url: string): Promise<string> => {
@@ -37,12 +37,11 @@ export const ConfirmationEmail: React.FC<
         {page.confirmation_email.details_below}
       </p>
       {order.items.map(async (item, index) => {
-        // const imgData = await loadImg(item.product_id.imageUrls[0]);
         return (
           <div key={index} className="email-img-section">
             <div>
               <img
-                src={item.product_id.imageUrls[0]}
+                src={item.product.imageUrls[0]}
                 // src={`data:image/jpeg;base64,${imgData}`}
                 alt="Picture of handcrafted item"
                 width={150}
@@ -50,11 +49,11 @@ export const ConfirmationEmail: React.FC<
             </div>
             <div className="email-price-section">
               <p>
-                {item.count} x {getLangField(item.product_id, "title_", lang)}
+                {item.count} x {getLangField(item.product, "title_", lang)}
               </p>
               <p>
                 <span>{page.confirmation_email.price}:</span>{" "}
-                {item.product_id.price} UAH
+                {item.product.price} UAH
               </p>
             </div>
           </div>

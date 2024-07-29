@@ -57,12 +57,12 @@ export default function OrdersPage() {
                   {order.items.map((item, index) => (
                     <div key={index}>
                       <Image
-                        src={item.product_id.imageUrls[0]}
+                        src={item.product.imageUrls[0]}
                         alt="Picture of handcrafted item"
                         width={90}
                         height={90}
                       />
-                      {item.count} x {item.product_id.title_en}
+                      {item.count} x {item.product.title_en}
                     </div>
                   ))}
                 </Table.Cell>

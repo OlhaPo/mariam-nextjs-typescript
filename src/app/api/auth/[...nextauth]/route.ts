@@ -1,7 +1,8 @@
 import NextAuth, { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import clientPromise from "../../../../../lib/mongodb";
+
+import { Adapter } from "next-auth/adapters";
 
 const authOptions: NextAuthOptions = {
   providers: [
@@ -10,10 +11,15 @@ const authOptions: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     }),
   ],
-  adapter: MongoDBAdapter(clientPromise),
+  adapter: MongoDBAdapter(clientPromise) as Adapter,
   secret: process.env.NEXTAUTH_SECRET as string,
 };
 
 const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
+function MongoDBAdapter(
+  clientPromise: Promise<import("mongodb").MongoClient>
+): import("next-auth/adapters").Adapter | undefined {
+  throw new Error("Function not implemented.");
+}

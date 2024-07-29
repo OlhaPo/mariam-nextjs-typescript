@@ -1,19 +1,23 @@
 /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   images: {
-//     domains: ["lh3.googleusercontent.com"],
-//   },
-// };
 
-module.exports = {
+const nextConfig = {
   images: {
     domains: [
-      "lh3.google.com",
       "lh3.googleusercontent.com",
-      "drive.google.com",
+      "www.mariamcorner.com.ua",
       "www.dropbox.com",
     ],
     remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        pathname: "/a/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.mariamcorner.com.ua",
+        pathname: "/**",
+      },
       {
         protocol: "https",
         hostname: "www.dropbox.com",
@@ -22,10 +26,4 @@ module.exports = {
     ],
   },
 };
-
-// module.exports = nextConfig;
-// module.exports = {
-//   images: {
-//     domains: ["drive.google.com"],
-//   },
-// };
+module.exports = nextConfig;
