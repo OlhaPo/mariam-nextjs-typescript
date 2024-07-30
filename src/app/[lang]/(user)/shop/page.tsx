@@ -25,7 +25,7 @@ export default async function Shop({
                 alt={getLangField(product, "title_", lang)}
                 width={500}
                 height={500}
-                priority
+                unoptimized={true}
                 className="img-product-in-stock hover:scale-100"
               />
             </Link>

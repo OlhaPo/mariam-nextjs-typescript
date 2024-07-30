@@ -61,6 +61,7 @@ export default function OrdersPage() {
                         alt="Picture of handcrafted item"
                         width={90}
                         height={90}
+                        unoptimized={true}
                       />
                       {item.count} x {item.product.title_en}
                     </div>
