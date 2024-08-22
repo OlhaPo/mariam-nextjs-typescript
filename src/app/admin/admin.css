@@ -6,8 +6,12 @@ body {
   @apply bg-[#FEF9F7];
 }
 
+.login-google-button {
+  @apply w-full p-4 px-5 rounded-lg text-lg text-primary border border-primary;
+}
+
 .login-button {
-  @apply bg-primary p-4 px-5 rounded-lg text-lg text-white;
+  @apply w-full bg-primary p-4 px-5 rounded-lg text-lg text-white;
 }
 
 div svg {

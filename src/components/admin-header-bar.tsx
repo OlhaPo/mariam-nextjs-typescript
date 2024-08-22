@@ -1,7 +1,6 @@
 "use client";
 
 import { useSession, signOut } from "next-auth/react";
-import Image from "next/image";
 import { BiLogOut } from "react-icons/bi";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 
@@ -21,41 +20,38 @@ export default function AdminHeaderBar() {
         admin panel
       </h1>
       <div className="inline-flex items-center gap-5">
-        <h2 className="text-base">
-          Logged in as{" "}
-          <span className="font-semibold">{session?.user?.name}</span>
-        </h2>{" "}
-        <DropdownMenu.Root>
-          <DropdownMenu.Trigger asChild>
-            <button className="outline-none">
-              {session?.user?.image && (
-                <Image
-                  src={session.user.image}
-                  alt="Admin user"
-                  width={30}
-                  height={30}
-                  className="rounded-full"
-                />
-              )}
-            </button>
-          </DropdownMenu.Trigger>
-          <DropdownMenu.Portal>
-            <DropdownMenu.Content
-              className="min-w-[150px] bg-[#9DACB7] py-5 mr-8 rounded-md"
-              sideOffset={5}
-            >
-              <DropdownMenu.Item className="leading-8 flex justify-center items-center outline-none text-lg">
-                <button
-                  onClick={() => logout()}
-                  className="inline-flex items-center gap-2"
-                >
-                  <BiLogOut />
-                  Logout
+        {session ? (
+          <>
+            <h2 className="text-base">
+              Logged in as{" "}
+            </h2>
+            <DropdownMenu.Root>
+              <DropdownMenu.Trigger asChild>
+                <button className="outline-none font-semibold">
+                  {session?.user?.name}
                 </button>
-              </DropdownMenu.Item>
-            </DropdownMenu.Content>
-          </DropdownMenu.Portal>
-        </DropdownMenu.Root>
+              </DropdownMenu.Trigger>
+              <DropdownMenu.Portal>
+                <DropdownMenu.Content
+                  className="min-w-[150px] bg-[#9DACB7] py-5 mr-8 rounded-md"
+                  sideOffset={5}
+                >
+                  <DropdownMenu.Item className="leading-8 flex justify-center items-center outline-none text-lg">
+                    <button
+                      onClick={() => logout()}
+                      className="inline-flex items-center gap-2"
+                    >
+                      <BiLogOut />
+                      Logout
+                    </button>
+                  </DropdownMenu.Item>
+                </DropdownMenu.Content>
+              </DropdownMenu.Portal>
+            </DropdownMenu.Root>
+          </>
+        ) : (
+          <p className="text-base">Not logged in</p>
+        )}
       </div>
     </div>
   );

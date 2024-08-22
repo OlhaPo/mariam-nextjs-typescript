@@ -4,6 +4,7 @@ import {
   IoDocumentTextOutline,
 } from "react-icons/io5";
 import { TfiPackage } from "react-icons/tfi";
+import { BiLogOut } from "react-icons/bi";
 
 export const adminNavLinks = [
   { href: "/admin/dashboard", title: "Dashboard", icon: IoHomeOutline },

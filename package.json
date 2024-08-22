@@ -24,6 +24,7 @@
     "@types/react-dom": "^18.2.7",
     "autoprefixer": "10.4.15",
     "axios": "^1.6.2",
+    "bcrypt": "^5.1.1",
     "clsx": "^2.0.0",
     "eslint": "8.49.0",
     "eslint-config-next": "13.5.1",
@@ -56,6 +57,7 @@
     "zustand": "^4.4.7"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/mime-types": "^2.1.4",
     "@types/multiparty": "^0.0.36",
     "@types/negotiator": "^0.6.1",

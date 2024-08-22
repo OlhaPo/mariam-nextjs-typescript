@@ -1,33 +1,27 @@
-"use client";
+import { GoogleSignInButton } from "@/components/auth-buttons";
+import { CredentialsForm } from "@/components/credentials-form";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+import { authConfig } from "../../../../lib/auth";
 
-import { useSession, signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 
-export default function Login() {
-  // get session from nextAuth
-  const { data: session } = useSession();
-  const router = useRouter();
+export default async function Login() {
+  const session = await getServerSession(authConfig);
 
-  useEffect(() => {
-    if (session) {
-      router.push("/admin/dashboard");
-    }
-  }, [session]);
-
-  if (!session) {
-    return (
-      <div className="w-full min-h-screen flex items-center">
-        <div className="text-center w-full">
-          <button
-            onClick={() => signIn("google")}
-            type="button"
-            className="login-button"
-          >
-            Login with Google
-          </button>
-        </div>
-      </div>
-    );
+  if (session) {
+    redirect("/admin/dashboard");
   }
+
+  return (
+    <div className="w-full flex flex-col items-center justify-centerpy-2">
+      <div className="flex flex-col items-center mt-10 p-10">
+        <h1 className="mt-10 mb-4 text-3xl">Sign In</h1>
+        <GoogleSignInButton />
+        <span className="text-xl text-center mt-8">
+          Or
+        </span>
+        <CredentialsForm />
+      </div>
+    </div>
+  );
 }

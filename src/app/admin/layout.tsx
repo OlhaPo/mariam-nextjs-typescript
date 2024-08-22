@@ -1,7 +1,10 @@
+"use client";
+
 import "./admin.css";
 import "@radix-ui/themes/styles.css";
-import ProvidersWrapper from "./ProvidersWrapper";
 import { Theme } from "@radix-ui/themes";
+import { SessionProvider } from "next-auth/react";
+import LoginRequiredClient from "../../../lib/hooks/loginIsRequiredClient.hook";
 
 export default function RootLayout({
   children,
@@ -9,12 +12,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ProvidersWrapper>
-      <html lang="en">
-        <body>
-          <Theme>{children}</Theme>
-        </body>
-      </html>
-    </ProvidersWrapper>
+    <html lang="en">
+      <head />
+      <body>
+        <SessionProvider>
+          <Theme>
+            <LoginRequiredClient>
+              {children}
+            </LoginRequiredClient>
+          </Theme>
+        </SessionProvider>
+      </body>
+    </html>
   );
 }
