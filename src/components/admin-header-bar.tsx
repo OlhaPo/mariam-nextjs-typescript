@@ -28,7 +28,7 @@ export default function AdminHeaderBar() {
             <DropdownMenu.Root>
               <DropdownMenu.Trigger asChild>
                 <button className="outline-none font-semibold">
-                  {session?.user?.name}
+                  {session.user?.name || 'Admin'}
                 </button>
               </DropdownMenu.Trigger>
               <DropdownMenu.Portal>

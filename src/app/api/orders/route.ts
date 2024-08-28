@@ -85,30 +85,3 @@ async function sendWithResend(orderData: PopulatedOrder, lang: Locale) {
     console.log(data);
   }
 }
-
-// async function sendWithNodemailer(to: string, first_name: string) {
-//   const transporter: Transporter = nodemailer.createTransport({
-//     host: process.env.SMTP_HOST,
-//     port: 587,
-//     secure: false, // upgrade later with STARTTLS
-//     auth: {
-//       user: process.env.SENDER_EMAIL,
-//       pass: process.env.SENDER_PASSWORD,
-//     },
-//   });
-
-//   const mailOptions = {
-//     from: process.env.SENDER_EMAIL,
-//     to,
-//     subject: "Order Confirmation for mariam crochet jewelry",
-//     html: `<p>Dear ${first_name}. Thank you for your order.</p>`,
-//   };
-
-//   try {
-//     // Send email
-//     const sendEmailInfo = await transporter.sendMail(mailOptions);
-//     console.log("Email sent: " + sendEmailInfo.response);
-//   } catch (e) {
-//     console.log("Error sending confirmation email.", e);
-//   }
-// }

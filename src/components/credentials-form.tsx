@@ -19,10 +19,11 @@ export function CredentialsForm(props: CredentialsFormProps) {
         const signInResponse = await signIn("credentials", {
             email: data.get("email"),
             password: data.get("password"),
-            redirect: false,
+            redirect: false, // Disable automatic redirection
         });
 
-        if (signInResponse && !signInResponse.error) {
+        if (signInResponse?.ok) {
+            // Explicitly redirect using router.push
             router.push("/admin/dashboard");
         } else {
             console.log("Error: ", signInResponse);

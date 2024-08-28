@@ -3,7 +3,7 @@
 import "./admin.css";
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
-import { SessionProvider } from "next-auth/react";
+import { NextAuthProvider } from "./providers";
 import LoginRequiredClient from "../../../lib/hooks/loginIsRequiredClient.hook";
 
 export default function RootLayout({
@@ -15,13 +15,13 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body>
-        <SessionProvider>
-          <Theme>
-            <LoginRequiredClient>
+        <NextAuthProvider>
+          <LoginRequiredClient>
+            <Theme>
               {children}
-            </LoginRequiredClient>
-          </Theme>
-        </SessionProvider>
+            </Theme>
+          </LoginRequiredClient>
+        </NextAuthProvider>
       </body>
     </html>
   );

@@ -18,9 +18,8 @@ export default function OrdersPage() {
         }
 
         const result = await response.json();
-        console.log(result);
-
         setOrders(result);
+
       } catch (error) {
         console.error(error);
       }
