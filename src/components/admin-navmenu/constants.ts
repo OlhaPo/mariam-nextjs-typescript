@@ -4,11 +4,27 @@ import {
   IoDocumentTextOutline,
 } from "react-icons/io5";
 import { TfiPackage } from "react-icons/tfi";
-import { BiLogOut } from "react-icons/bi";
+import { adminPanel } from "@/lib/constants";
 
 export const adminNavLinks = [
-  { href: "/admin/dashboard", title: "Dashboard", icon: IoHomeOutline },
-  { href: "/admin/products", title: "Products", icon: IoDocumentTextOutline },
-  { href: "/admin/collections", title: "Collections", icon: IoFilterOutline },
-  { href: "/admin/orders", title: "Orders", icon: TfiPackage },
+  {
+    href: "/admin/dashboard",
+    title: adminPanel.dashboard,
+    icon: IoHomeOutline,
+  },
+  {
+    href: "/admin/products",
+    title: adminPanel.products,
+    icon: IoDocumentTextOutline,
+  },
+  {
+    href: "/admin/collections",
+    title: adminPanel.сollections,
+    icon: IoFilterOutline,
+  },
+  {
+    href: "/admin/orders",
+    title: adminPanel.orders,
+    icon: TfiPackage,
+  },
 ];

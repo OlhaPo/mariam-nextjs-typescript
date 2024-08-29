@@ -1,5 +1,6 @@
 "use client";
 
+import { adminPanel } from "@/lib/constants";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -19,11 +20,10 @@ export function CredentialsForm(props: CredentialsFormProps) {
         const signInResponse = await signIn("credentials", {
             email: data.get("email"),
             password: data.get("password"),
-            redirect: false, // Disable automatic redirection
+            redirect: false,
         });
 
         if (signInResponse?.ok) {
-            // Explicitly redirect using router.push
             router.push("/admin/dashboard");
         } else {
             console.log("Error: ", signInResponse);
@@ -61,7 +61,7 @@ export function CredentialsForm(props: CredentialsFormProps) {
                 type="submit"
                 className="login-button"
             >
-                Log in
+                {adminPanel.logIn}
             </button>
         </form>
     );

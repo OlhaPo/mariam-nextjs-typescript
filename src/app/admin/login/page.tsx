@@ -1,8 +1,9 @@
-import { GoogleSignInButton } from "@/components/auth-buttons";
 import { CredentialsForm } from "@/components/credentials-form";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authConfig } from "../../../../lib/auth";
+import mariamLogo from "../../../../public/images/mariam-logo.svg";
+import Image from "next/image";
 
 
 export default async function Login() {
@@ -13,13 +14,16 @@ export default async function Login() {
   }
 
   return (
-    <div className="w-full flex flex-col items-center justify-centerpy-2">
+    <div className="w-full flex flex-col items-center justify-center py-2">
       <div className="flex flex-col items-center mt-10 p-10">
-        <h1 className="mt-10 mb-4 text-3xl">Sign In</h1>
-        <GoogleSignInButton />
-        <span className="text-xl text-center mt-8">
-          Or
-        </span>
+        <Image
+          src={mariamLogo}
+          alt="mariam logo"
+          height={64}
+          width={64}
+          priority
+          className="mt-10 mb-4"
+        />
         <CredentialsForm />
       </div>
     </div>

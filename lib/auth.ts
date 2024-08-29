@@ -1,6 +1,5 @@
-import { getServerSession, NextAuthOptions } from "next-auth";
+import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import GoogleProvider from "next-auth/providers/google";
 import { validateCredentials } from "./hooks/validateCredentials.hook";
 import clientPromise from "./mongodb";
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
@@ -8,10 +7,6 @@ import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
 export const authConfig: NextAuthOptions = {
   adapter: MongoDBAdapter(clientPromise),
   providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID as string,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
-    }),
     CredentialsProvider({
       name: "Credentials",
       credentials: {
