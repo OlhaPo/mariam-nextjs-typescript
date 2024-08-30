@@ -1,4 +1,5 @@
+import { adminPanel } from "@/lib/constants";
 
 export default function Dashboard() {
-  return <div>Dashboard</div>;
+  return <div>{adminPanel.dashboard}</div>;
 }

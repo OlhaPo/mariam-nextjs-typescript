@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Table } from "@radix-ui/themes";
 import { ProductItem } from "@/models/ProductSchema";
 import Swal from "sweetalert2";
+import { adminPanel } from "@/lib/constants";
 
 export default function ProductsPage() {
   const [products, setProducts] = useState<ProductItem[]>([]);
@@ -19,12 +20,13 @@ export default function ProductsPage() {
 
   function deleteProduct(product: ProductItem) {
     Swal.fire({
-      title: "Are you sure?",
-      text: `Do you want to delete ${product.title_en}?`,
+      title: adminPanel.swalTitle,
+      text: `${adminPanel.swalText} ${product.title_en}?`,
       showCancelButton: true,
-      cancelButtonText: "Cancel",
-      confirmButtonText: "Yes, Delete!",
+      cancelButtonText: adminPanel.swalCancelBtn,
+      confirmButtonText: adminPanel.swalConfirmBtn,
       confirmButtonColor: "#d55",
+      cancelButtonColor: "#2b4a33",
       reverseButtons: true,
     }).then(async (result) => {
       if (result.isConfirmed) {
@@ -37,22 +39,20 @@ export default function ProductsPage() {
   return (
     <div className="products-page">
       <div className="flex items-center gap-48">
-        <h1 className="page-headers">Products</h1>
+        <h1 className="page-headers">{adminPanel.products}</h1>
         <Link
           className="bg-[#9DACB7] rounded-md border px-5 py-3"
           href={"/admin/products/new"}
         >
-          Add new product
+          {adminPanel.addProduct}
         </Link>
       </div>
       <Table.Root className="mt-20">
         <Table.Header className="text-lg">
           <Table.Row>
-            <Table.ColumnHeaderCell>Title UK</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Title En</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Description Uk</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Description En</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Price</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>{adminPanel.titleUk}</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>{adminPanel.descriptionUk}</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>{adminPanel.priceUAH}</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell></Table.ColumnHeaderCell>
           </Table.Row>
         </Table.Header>
@@ -61,19 +61,17 @@ export default function ProductsPage() {
             products.map((product) => (
               <Table.Row key={product._id}>
                 <Table.Cell>{product.title_uk}</Table.Cell>
-                <Table.Cell>{product.title_en}</Table.Cell>
                 <Table.Cell>{product.description_uk}</Table.Cell>
-                <Table.Cell>{product.description_en}</Table.Cell>
                 <Table.Cell>{product.price}</Table.Cell>
                 <Table.Cell>
                   <Link href={`/admin/products/edit/${product._id}`}>
-                    <button className="edit-btn">Edit</button>
+                    <button className="edit-btn">{adminPanel.edit}</button>
                   </Link>
                   <button
                     className="delete-btn"
                     onClick={() => deleteProduct(product)}
                   >
-                    Delete
+                    {adminPanel.delete}
                   </button>
                 </Table.Cell>
               </Table.Row>

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Table } from "@radix-ui/themes";
 import { CollectionItem } from "@/models/CollectionSchema";
 import Swal from "sweetalert2";
+import { adminPanel } from "@/lib/constants";
 
 export default function CollectionsPage() {
   const [collections, setCollections] = useState<CollectionItem[]>([]);
@@ -19,12 +20,13 @@ export default function CollectionsPage() {
 
   function deleteCollection(collection: CollectionItem) {
     Swal.fire({
-      title: "Are you sure?",
-      text: `Do you want to delete ${collection.collection_name}?`,
+      title: adminPanel.swalTitle,
+      text: `${adminPanel.swalText} ${collection.collection_name}?`,
       showCancelButton: true,
-      cancelButtonText: "Cancel",
-      confirmButtonText: "Yes, Delete!",
+      cancelButtonText: adminPanel.swalCancelBtn,
+      confirmButtonText: adminPanel.swalConfirmBtn,
       confirmButtonColor: "#d55",
+      cancelButtonColor: "#2b4a33",
       reverseButtons: true,
     }).then(async (result) => {
       if (result.isConfirmed) {
@@ -38,21 +40,18 @@ export default function CollectionsPage() {
   return (
     <div className="collections-page">
       <div className="flex items-center gap-48">
-        <h1 className="page-headers">Collections</h1>
+        <h1 className="page-headers">{adminPanel.сollections}</h1>
         <Link
           className="bg-[#9DACB7] rounded-md border px-5 py-3"
           href={"/admin/collections/new"}
         >
-          Add new collection
-        </Link>
+          {adminPanel.addCollection}</Link>
       </div>
 
       <Table.Root className="mt-20">
         <Table.Header className="text-lg">
           <Table.Row>
-            <Table.ColumnHeaderCell>Title UK</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Title En</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Name</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>{adminPanel.titleUk}</Table.ColumnHeaderCell>
             <Table.ColumnHeaderCell></Table.ColumnHeaderCell>
           </Table.Row>
         </Table.Header>
@@ -61,17 +60,15 @@ export default function CollectionsPage() {
             collections.map((collection) => (
               <Table.Row key={collection._id}>
                 <Table.Cell>{collection.title_uk}</Table.Cell>
-                <Table.Cell>{collection.title_en}</Table.Cell>
-                <Table.Cell>{collection.collection_name}</Table.Cell>
                 <Table.Cell>
                   <Link href={`/admin/collections/edit/${collection._id}`}>
-                    <button className="edit-btn">Edit</button>
+                    <button className="edit-btn">{adminPanel.edit}</button>
                   </Link>
                   <button
                     className="delete-btn"
                     onClick={() => deleteCollection(collection)}
                   >
-                    Delete
+                    {adminPanel.delete}
                   </button>
                 </Table.Cell>
               </Table.Row>

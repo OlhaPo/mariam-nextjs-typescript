@@ -1,6 +1,7 @@
 "use client";
 
 import EditProductForm from "@/components/edit-product-form";
+import { adminPanel } from "@/lib/constants";
 import { ProductItem } from "@/models/ProductSchema";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -19,7 +20,7 @@ export default function NewProductPage() {
   }
   return (
     <div className="pt-3">
-      <h1 className="page-headers mb-5">New Product</h1>
+      <h1 className="page-headers mb-5">{adminPanel.newProduct}</h1>
       <EditProductForm onSave={saveProduct} />
     </div>
   );

@@ -5,6 +5,7 @@ import { ProductItem } from "@/models/ProductSchema";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { adminPanel } from "@/lib/constants";
 
 export default function EditProductPage({
   params,
@@ -41,11 +42,11 @@ export default function EditProductPage({
 
   return (
     <div className="pt-3">
-      <h1 className="page-headers mb-5">Edit Product</h1>
+      <h1 className="page-headers mb-5">{adminPanel.editProduct}</h1>
       {productInfo ? (
         <EditProductForm data={productInfo} onSave={saveData} />
       ) : (
-        <div>Product not found</div>
+        <div>{adminPanel.productNotFound}</div>
       )}
     </div>
   );

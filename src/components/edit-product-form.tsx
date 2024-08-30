@@ -4,9 +4,9 @@ import React, { useEffect, useState } from "react";
 import * as Form from "@radix-ui/react-form";
 import { ProductItem, ProductStatus } from "@/models/ProductSchema";
 import { CollectionItem } from "@/models/CollectionSchema";
-import ImportImageUrl from "./import-image-url";
 import { IoMdAdd } from "react-icons/io";
 import axios from "axios";
+import { adminPanel } from "@/lib/constants";
 
 interface ProductFormProps {
   data?: ProductItem;
@@ -14,9 +14,9 @@ interface ProductFormProps {
 }
 
 export const availabilityStatus = {
-  [ProductStatus.InStock]: "In stock",
-  [ProductStatus.PreOrder]: "Pre-order",
-  [ProductStatus.SoldOut]: "Sold out",
+  [ProductStatus.InStock]: adminPanel.inStock,
+  [ProductStatus.PreOrder]: adminPanel.preOrder,
+  [ProductStatus.SoldOut]: adminPanel.soldOut,
 };
 
 export default function EditProductForm({ data, onSave }: ProductFormProps) {
@@ -74,12 +74,12 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
     setImageUrls(urls);
   }
 
-  function addGoogleDriveImageUrl(newUrl: string, index: number) {
-    // Update the corresponding URL in the array
-    setImageUrls((prevUrls) =>
-      prevUrls.map((prevUrl, i) => (i === index ? newUrl : prevUrl))
-    );
-  }
+  // function addGoogleDriveImageUrl(newUrl: string, index: number) {
+  //   // Update the corresponding URL in the array
+  //   setImageUrls((prevUrls) =>
+  //     prevUrls.map((prevUrl, i) => (i === index ? newUrl : prevUrl))
+  //   );
+  // }
 
   function handleAddingImageUrl() {
     setImageUrls([...imageUrls, ""]);
@@ -97,13 +97,13 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
         <Form.Field className="grid mb-[10px]" name="title_uk">
           <div className="flex items-baseline justify-between">
             <Form.Label className="text-[15px] font-medium leading-[35px]">
-              Title UK
+              {adminPanel.titleUk}
             </Form.Label>
             <Form.Message
               className="text-[13px] opacity-[0.8]"
               match="valueMissing"
             >
-              The field can not be blank.
+              {adminPanel.requiredField}
             </Form.Message>
           </div>
           <Form.Control asChild>
@@ -119,13 +119,13 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
         <Form.Field className="grid mb-[10px]" name="title_en">
           <div className="flex items-baseline justify-between">
             <Form.Label className="text-[15px] font-medium leading-[35px]">
-              Title EN
+              {adminPanel.titleEn}
             </Form.Label>
             <Form.Message
               className="text-[13px] opacity-[0.8]"
               match="valueMissing"
             >
-              The field can not be blank.
+              {adminPanel.requiredField}
             </Form.Message>
           </div>
           <Form.Control asChild>
@@ -141,7 +141,7 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
         <Form.Field className="grid mb-[10px]" name="price">
           <div className="flex items-baseline justify-between">
             <Form.Label className="text-[15px] font-medium leading-[35px]">
-              Price in UAH
+              {adminPanel.priceUAH}
             </Form.Label>
             {/* <Form.Message
               className="text-[13px] opacity-[0.8]"
@@ -162,7 +162,7 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
         </Form.Field>
         <Form.Field className="grid mb-[10px]" name="description_uk">
           <Form.Label className="text-[15px] font-medium leading-[35px]">
-            Description UK
+            {adminPanel.descriptionUk}
           </Form.Label>
           <Form.Control asChild>
             <input
@@ -175,7 +175,7 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
         </Form.Field>
         <Form.Field className="grid mb-[10px]" name="description_en">
           <Form.Label className="text-[15px] font-medium leading-[35px]">
-            Description EN
+            {adminPanel.descriptionEn}
           </Form.Label>
           <Form.Control asChild>
             <input
@@ -189,20 +189,20 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
         <Form.Field className="grid mb-[10px]" name="collection">
           <div className="flex items-baseline justify-between">
             <Form.Label className="text-[15px] font-medium leading-[35px]">
-              Collection
+              {adminPanel.collectionName}
             </Form.Label>
             <Form.Message
               className="text-[13px] opacity-[0.8]"
               match="valueMissing"
             >
-              The field can not be blank.
+              {adminPanel.requiredField}
             </Form.Message>
           </div>
           <select
             value={collection_id}
             onChange={(ev) => setCollectionId(ev.target.value)}
           >
-            <option value="">Without collection</option>
+            <option value="">{adminPanel.withoutStatus}</option>
             {collections.length > 0 &&
               collections.map((c) => (
                 <option key={c._id} value={c._id}>
@@ -216,13 +216,13 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
             <Form.Field className="mb-[10px]" name={`productImage-${index}`}>
               <div className="flex items-baseline justify-between">
                 <Form.Label className="text-[15px] font-medium leading-[35px]">
-                  Image URL<span className="icon-required">*</span>
+                  {adminPanel.imageUrl}<span className="icon-required">*</span>
                 </Form.Label>
                 <Form.Message
                   className="text-[13px] opacity-[0.8]"
                   match="valueMissing"
                 >
-                  The field can not be blank.
+                  {adminPanel.requiredField}
                 </Form.Message>
               </div>
               <div className="flex flex-wrap gap-5">
@@ -240,14 +240,14 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
                     onClick={() => handleDeletingImageUrl(index)}
                     className="inline-flex gap-3 delete-btn"
                   >
-                    Delete IMG url
+                    {adminPanel.deleteImageUrl}
                   </button>
                 )}
-                <div>
+                {/* <div>
                   <ImportImageUrl
                     onAdd={(newUrl) => addGoogleDriveImageUrl(newUrl, index)}
                   />
-                </div>
+                </div> */}
               </div>
             </Form.Field>
           </div>
@@ -256,25 +256,25 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
           onClick={() => handleAddingImageUrl()}
           className="inline-flex gap-3"
         >
-          <IoMdAdd /> Add new image
+          <IoMdAdd /> {adminPanel.addImageUrl}
         </button>
         <Form.Field className="grid mb-[10px]" name="status">
           <div className="flex items-baseline justify-between">
             <Form.Label className="text-[15px] font-medium leading-[35px]">
-              Availability status
+              {adminPanel.availability}
             </Form.Label>
             <Form.Message
               className="text-[13px] opacity-[0.8]"
               match="valueMissing"
             >
-              The field can not be blank.
+              {adminPanel.requiredField}
             </Form.Message>
           </div>
           <select
             value={status}
             onChange={(ev) => setStatus(Number(ev.target.value))}
           >
-            <option value="">Without status</option>
+            <option value="">{adminPanel.withoutStatus}</option>
             {Object.entries(availabilityStatus).map(([key, value]) => (
               <option key={key} value={key}>
                 {value}
@@ -283,7 +283,7 @@ export default function EditProductForm({ data, onSave }: ProductFormProps) {
           </select>
         </Form.Field>
         <Form.Submit className="box-border w-full inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none shadow-[0_2px_10px] focus:shadow-[0_0_0_2px] focus:shadow-black focus:outline-none mt-[10px]">
-          Save
+          {adminPanel.save}
         </Form.Submit>
       </Form.Root>
     </div>

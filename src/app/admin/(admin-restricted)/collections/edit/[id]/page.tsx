@@ -5,6 +5,7 @@ import { CollectionItem } from "@/models/CollectionSchema";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { adminPanel } from "@/lib/constants";
 
 export default function EditCollectionPage({
   params,
@@ -38,11 +39,11 @@ export default function EditCollectionPage({
 
   return (
     <div className="pt-3">
-      <h1 className="page-headers mb-5">Edit Collection</h1>
+      <h1 className="page-headers mb-5">{adminPanel.editCollection}</h1>
       {collectionInfo ? (
         <EditCollectionForm data={collectionInfo} onSave={saveData} />
       ) : (
-        <div>Collection not found</div>
+        <div>{adminPanel.collectionNotFound}</div>
       )}
     </div>
   );

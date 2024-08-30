@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import * as Form from "@radix-ui/react-form";
 import { CollectionItem } from "@/models/CollectionSchema";
 import ImportImageUrl from "./import-image-url";
+import { adminPanel } from "@/lib/constants";
 
 interface CollectionsFormProps {
   data?: CollectionItem;
@@ -38,9 +39,9 @@ export default function EditCollectionForm({
     });
   }
 
-  function addGoogleDriveImageUrl(newUrl: string) {
-    setImageUrl(newUrl);
-  }
+  // function addGoogleDriveImageUrl(newUrl: string) {
+  //   setImageUrl(newUrl);
+  // }
 
   return (
     <div>
@@ -48,13 +49,13 @@ export default function EditCollectionForm({
         <Form.Field className="grid mb-[10px]" name="title_uk">
           <div className="flex items-baseline justify-between">
             <Form.Label className="text-[15px] font-medium leading-[35px]">
-              Title UK
+              {adminPanel.titleUk}
             </Form.Label>
             <Form.Message
               className="text-[13px] opacity-[0.8]"
               match="valueMissing"
             >
-              The field can not be blank.
+              {adminPanel.requiredField}
             </Form.Message>
           </div>
           <Form.Control asChild>
@@ -70,13 +71,13 @@ export default function EditCollectionForm({
         <Form.Field className="grid mb-[10px]" name="title_en">
           <div className="flex items-baseline justify-between">
             <Form.Label className="text-[15px] font-medium leading-[35px]">
-              Title EN
+              {adminPanel.titleEn}
             </Form.Label>
             <Form.Message
               className="text-[13px] opacity-[0.8]"
               match="valueMissing"
             >
-              The field can not be blank.
+              {adminPanel.requiredField}
             </Form.Message>
           </div>
           <Form.Control asChild>
@@ -92,13 +93,13 @@ export default function EditCollectionForm({
         <Form.Field className="grid mb-[10px]" name="collectionName">
           <div className="flex items-baseline justify-between">
             <Form.Label className="text-[15px] font-medium leading-[35px]">
-              Collection name
+              {adminPanel.collectionName}
             </Form.Label>
             <Form.Message
               className="text-[13px] opacity-[0.8]"
               match="valueMissing"
             >
-              The field can not be blank.
+              {adminPanel.requiredField}
             </Form.Message>
           </div>
           <Form.Control asChild>
@@ -114,14 +115,13 @@ export default function EditCollectionForm({
         <Form.Field className="mb-[10px]" name="collectionImage">
           <div className="flex items-baseline justify-between">
             <Form.Label className="text-[15px] font-medium leading-[35px]">
-              Cover image<span className="icon-required">*</span>
+              {adminPanel.coverImage}<span className="icon-required">*</span>
             </Form.Label>
-
             <Form.Message
               className="text-[13px] opacity-[0.8]"
               match="valueMissing"
             >
-              The field can not be blank.
+              {adminPanel.requiredField}
             </Form.Message>
           </div>
           <div className="flex flex-wrap gap-4">
@@ -134,11 +134,11 @@ export default function EditCollectionForm({
                 onChange={(e) => setImageUrl(e.target.value)}
               />
             </Form.Control>
-            <ImportImageUrl onAdd={addGoogleDriveImageUrl} />
+            {/* <ImportImageUrl onAdd={addGoogleDriveImageUrl} /> */}
           </div>
         </Form.Field>
         <Form.Submit className="box-border w-full inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none shadow-[0_2px_10px] focus:shadow-[0_0_0_2px] focus:shadow-black focus:outline-none mt-[10px]">
-          Save
+          {adminPanel.save}
         </Form.Submit>
       </Form.Root>
     </div>

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Table } from "@radix-ui/themes";
 import { PopulatedOrder } from "@/models/OrderSchema";
 import Image from "next/image";
+import { adminPanel } from "@/lib/constants";
 
 export default function OrdersPage() {
   const [orders, setOrders] = useState<PopulatedOrder[]>([]);
@@ -31,18 +32,18 @@ export default function OrdersPage() {
   return (
     <div className="orders-page">
       <div className="flex items-center gap-48">
-        <h1 className="page-headers">Orders</h1>
+        <h1 className="page-headers">{adminPanel.orders}</h1>
       </div>
       <Table.Root className="mt-20">
         <Table.Header className="text-lg">
           <Table.Row>
-            <Table.ColumnHeaderCell>Date</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Order Details</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>First Name</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Last Name</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Phone Number</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Messanger</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Comment</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>{adminPanel.orderDate}</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>{adminPanel.orderDetails}</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>{adminPanel.firstName}</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>{adminPanel.lastName}</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>{adminPanel.phoneNumber}</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>{adminPanel.messanger}</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>{adminPanel.commentToOrder}</Table.ColumnHeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body className="text-base">
@@ -62,7 +63,7 @@ export default function OrdersPage() {
                         height={90}
                         unoptimized={true}
                       />
-                      {item.count} x {item.product.title_en}
+                      {item.count} x {item.product.title_uk}
                     </div>
                   ))}
                 </Table.Cell>
