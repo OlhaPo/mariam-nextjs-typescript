@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Table } from "@radix-ui/themes";
 import { PopulatedOrder } from "@/models/OrderSchema";
-import Image from "next/image";
+import Link from "next/link";
 import { adminPanel } from "@/lib/constants";
 
 export default function OrdersPage() {
@@ -38,12 +38,8 @@ export default function OrdersPage() {
         <Table.Header className="text-lg">
           <Table.Row>
             <Table.ColumnHeaderCell>{adminPanel.orderDate}</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>{adminPanel.orderDetails}</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>{adminPanel.firstName}</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>{adminPanel.lastName}</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>{adminPanel.phoneNumber}</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>{adminPanel.messanger}</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>{adminPanel.commentToOrder}</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>{adminPanel.fullName}</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell></Table.ColumnHeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body className="text-base">
@@ -53,25 +49,12 @@ export default function OrdersPage() {
                 <Table.Cell>
                   {new Date(order.createdAt).toLocaleString("uk-ua")}
                 </Table.Cell>
+                <Table.Cell>{order.first_name}{" "}{order.last_name}</Table.Cell>
                 <Table.Cell>
-                  {order.items.map((item, index) => (
-                    <div key={index}>
-                      <Image
-                        src={item.product.imageUrls[0]}
-                        alt="Picture of handcrafted item"
-                        width={90}
-                        height={90}
-                        unoptimized={true}
-                      />
-                      {item.count} x {item.product.title_uk}
-                    </div>
-                  ))}
+                  <Link className="btn-primary" href={`/admin/orders/${order._id}`}>
+                    {adminPanel.orderDetails}
+                  </Link>
                 </Table.Cell>
-                <Table.Cell>{order.first_name}</Table.Cell>
-                <Table.Cell>{order.last_name}</Table.Cell>
-                <Table.Cell>{order.phone_number}</Table.Cell>
-                <Table.Cell>{order.messenger}</Table.Cell>{" "}
-                <Table.Cell>{order.comment}</Table.Cell>
               </Table.Row>
             ))}
         </Table.Body>

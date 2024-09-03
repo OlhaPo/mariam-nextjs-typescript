@@ -56,13 +56,33 @@ export async function POST(req: NextRequest) {
   return response;
 }
 
-export async function GET() {
+// export async function GET() {
+//   await mongooseConnect();
+//   const result = await OrderModel.find<Order>().populate({
+//     path: "items.product",
+//     model: Product,
+//     // localField: "product",
+//   });
+//   return NextResponse.json(result);
+// }
+
+export async function GET(req: NextRequest) {
   await mongooseConnect();
-  const result = await OrderModel.find<Order>().populate({
-    path: "items.product",
-    model: Product,
-    // localField: "product",
-  });
+
+  const id = req.nextUrl.searchParams.get("id");
+  let result;
+
+  if (id) {
+    result = await OrderModel.findById(id).populate({
+      path: "items.product",
+      model: Product,
+    });
+  } else {
+    result = await OrderModel.find().populate({
+      path: "items.product",
+      model: Product,
+    });
+  }
   return NextResponse.json(result);
 }
 

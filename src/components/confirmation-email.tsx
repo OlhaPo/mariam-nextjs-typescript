@@ -20,13 +20,6 @@ export const ConfirmationEmail: React.FC<
     order.items.map((item) => ({ count: item.count, product: item.product }))
   );
 
-  // const loadImg = async (url: string): Promise<string> => {
-  //   const imgResp = await axios.get(url, {
-  //     responseType: "arraybuffer", // Ensure response is treated as binary data
-  //   });
-  //   return Buffer.from(imgResp.data, "binary").toString("base64");
-  // };
-
   return (
     <div style={{ marginLeft: "15px", marginTop: "50px" }}>
       <h2 className="email-h2">
