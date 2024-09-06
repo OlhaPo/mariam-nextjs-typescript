@@ -22,21 +22,14 @@ const protectedRoutes = ["/api/products", "/api/orders", "/api/collections"];
 
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
-  console.log("pathname:", pathname);
-
-  // Bypass locale and auth checks for robots.txt and sitemap.xml
-  if (pathname === "/robots.txt" || pathname === "/sitemap.xml") {
-    return NextResponse.next();
-  }
 
   // Check if the route is one of the protected API routes
   const isProtectedRoute = protectedRoutes.some((route) =>
     pathname.startsWith(route)
   );
 
-  // If the route is protected, verify authentication
+  // If the route is protected, verify authentication first
   if (isProtectedRoute) {
-    // Retrieve the token using NextAuth's getToken function
     const token = await getToken({
       req: request,
       secret: process.env.NEXTAUTH_SECRET,
@@ -48,6 +41,11 @@ export async function middleware(request: NextRequest) {
     }
 
     // Allow the request to proceed if authenticated
+    return NextResponse.next();
+  }
+
+  // Bypass locale and auth checks for robots.txt and sitemap.xml
+  if (pathname === "/robots.txt" || pathname === "/sitemap.xml") {
     return NextResponse.next();
   }
 
@@ -72,6 +70,9 @@ export async function middleware(request: NextRequest) {
       )
     );
   }
+  console.log("pathname:", pathname);
+  // Allow the request to proceed if none of the conditions matched
+  return NextResponse.next();
 }
 
 // Configuration for which paths the middleware should handle
