@@ -22,6 +22,7 @@ const protectedRoutes = ["/api/products", "/api/orders", "/api/collections"];
 
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
+  console.log("pathname:", pathname);
 
   // Bypass locale and auth checks for robots.txt and sitemap.xml
   if (pathname === "/robots.txt" || pathname === "/sitemap.xml") {
@@ -63,6 +64,7 @@ export async function middleware(request: NextRequest) {
   // Redirect to the correct locale if missing
   if (pathnameIsMissingLocale) {
     const locale = getLocale(request);
+
     return NextResponse.redirect(
       new URL(
         `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
@@ -70,9 +72,6 @@ export async function middleware(request: NextRequest) {
       )
     );
   }
-
-  // Allow the request to proceed if locale is correctly set
-  return NextResponse.next();
 }
 
 // Configuration for which paths the middleware should handle
