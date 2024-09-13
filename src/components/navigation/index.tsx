@@ -34,7 +34,7 @@ export function Navigation({
     setIsOpenNav(!isOpenNav);
   };
 
-  const createFullUrl = (url: string) => `/${lang}/${url}`;
+  const createFullUrl = (url: string) => `/${lang}${url}`;
 
   return (
     <div
