@@ -18,14 +18,23 @@ function getLocale(request: NextRequest): string | undefined {
   return locale;
 }
 
-const protectedRoutes = ["/api/products", "/api/orders", "/api/collections"];
+const protectedRoutes = [
+  {
+    path: "/api/products",
+    methods: ["PUT", "DELETE", "POST"],
+  },
+  { path: "/api/orders", methods: "*" },
+  { path: "/api/collections", methods: ["PUT", "DELETE", "POST"] },
+];
 
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
   // Check if the route is one of the protected API routes
-  const isProtectedRoute = protectedRoutes.some((route) =>
-    pathname.startsWith(route)
+  const isProtectedRoute = protectedRoutes.some(
+    (route) =>
+      pathname.startsWith(route.path) &&
+      (route.methods === "*" || route.methods.includes(request.method))
   );
 
   // If the route is protected, verify authentication first
