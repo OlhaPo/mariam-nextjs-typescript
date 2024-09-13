@@ -18,12 +18,13 @@ function getLocale(request: NextRequest): string | undefined {
   return locale;
 }
 
+// List HTTP methods for protected routes or use '*' to protect all methods
 const protectedRoutes = [
   {
     path: "/api/products",
     methods: ["PUT", "DELETE", "POST"],
   },
-  { path: "/api/orders", methods: "*" },
+  { path: "/api/orders", methods: "GET" },
   { path: "/api/collections", methods: ["PUT", "DELETE", "POST"] },
 ];
 
