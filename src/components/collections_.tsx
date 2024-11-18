@@ -27,7 +27,7 @@ export default async function Collections({ lang }: { lang: Locale }) {
                 alt={getLangField(item, "title_", lang)}
                 width={300}
                 height={300}
-                unoptimized={true}
+                loading="lazy"              
               />
               <h3>{getLangField(item, "title_", lang)}</h3>
             </Link>

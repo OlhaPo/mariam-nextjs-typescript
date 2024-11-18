@@ -86,7 +86,6 @@ export default function ProductCard({
             height={500}
             width={500}
             alt={getLangField(product, "title_", lang)}
-            unoptimized={true}
           />
         </div>
       ) : (
@@ -99,7 +98,7 @@ export default function ProductCard({
                   height={500}
                   width={500}
                   alt={getLangField(product, "title_", lang)}
-                  unoptimized={true}
+                  loading="lazy"
                 />
               </div>
             ))}

@@ -22,7 +22,7 @@ export default function EditCart({
               alt="Picture of handcrafted item"
               width={150}
               height={150}
-              unoptimized={true}
+              loading="lazy"
             />
           </div>
           <div className="flex flex-col items-start">

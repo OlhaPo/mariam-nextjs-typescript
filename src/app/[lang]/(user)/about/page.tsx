@@ -20,6 +20,7 @@ export default async function About({
             height={350}
             alt="Picture of the brand owner"
             className="border-1 rounded-md mt-5 md:mt-0 h-auto"
+            loading="lazy"
           />
         </div>
         <div>

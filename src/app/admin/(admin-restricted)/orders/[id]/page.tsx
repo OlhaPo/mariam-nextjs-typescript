@@ -33,7 +33,8 @@ export default function OrderDetails({ params }: { params: { id: string } }) {
                             alt="Picture of handcrafted item"
                             width={90}
                             height={90}
-                            unoptimized={true} />
+                            loading="lazy"
+                             />
                         <p>{item.count} x {item.product.title_uk}
                         </p>
                         <p><span className="font-semibold mb-3">

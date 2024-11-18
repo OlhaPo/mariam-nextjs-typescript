@@ -38,6 +38,7 @@ export const ConfirmationEmail: React.FC<
                 // src={`data:image/jpeg;base64,${imgData}`}
                 alt="Picture of handcrafted item"
                 width={150}
+                loading="lazy"
               />
             </div>
             <div className="email-price-section">

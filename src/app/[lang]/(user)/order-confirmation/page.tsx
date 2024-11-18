@@ -46,7 +46,7 @@ export default async function OrderConfirmationPage({
         </div>
         <p>{page.confirmation_page.paragraph_four}</p>
       </div>
-      <Image src={Logo} alt="Logo" width={80} className="mt-10" />
+      <Image src={Logo} alt="Logo" width={80} className="mt-10" loading="lazy"/>
     </section>
   );
 }

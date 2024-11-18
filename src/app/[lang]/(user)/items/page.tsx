@@ -69,7 +69,7 @@ export default function Items({ params }: { params: { lang: Locale } }) {
                 width={600}
                 height={600}
                 className="img-product-in-stock hover:scale-110"
-                unoptimized={true}
+                loading="lazy"                
               />
             </Link>
             {/* <h3>{getLangField(product, "title_", params.lang)}</h3> */}
