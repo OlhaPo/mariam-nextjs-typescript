@@ -14,7 +14,7 @@
 }
 
 p {
-  @apply md:py-1 lg:py-3 text-left leading-8;
+  @apply py-1 lg:py-3 text-left leading-8;
 }
 
 .btn-nav {
