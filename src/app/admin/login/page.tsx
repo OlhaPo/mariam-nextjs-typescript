@@ -23,7 +23,6 @@ export default async function Login() {
           width={64}
           priority
           className="mt-10 mb-4"
-          loading="lazy"
         />
         <CredentialsForm />
       </div>
