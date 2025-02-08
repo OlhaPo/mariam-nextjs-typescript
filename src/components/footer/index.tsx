@@ -17,7 +17,7 @@ export function Footer({
     <footer id="contacts" className="contacts">
       <Info translations={translations} />
       <NavigationFooter lang={lang} translations={translations} />
-      <Contacts translations={translations} />
+      <Contacts />
     </footer>
   );
 }

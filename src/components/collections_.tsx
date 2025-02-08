@@ -14,9 +14,6 @@ export default async function Collections({ lang }: { lang: Locale }) {
 
   return (
     <section id="collections" className="section-container">
-      <div>
-        <h3 className="mb-5">{page.collections.header}</h3>
-      </div>
       <div className="flex flex-wrap flex-row gap-5 md:gap-12 items-center justify-center">
         {allCollections?.map((item: CollectionItem) => (
           <div className="collection-navLink" key={item._id}>

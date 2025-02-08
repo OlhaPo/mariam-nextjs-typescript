@@ -13,16 +13,15 @@
     "about": {
       "title": "Привіт!",
       "description_p_one": "Мене звати Марина. У 2017 році я створила бренд <span class=\"font-fredoka text-xl font-medium text-primary\">mariam crochet jewelry</span>, що означає — ювелірна робота гачком.",
-      "description_p_two": "Це мій невеличкий всесвіт, який сповідує філософію зцілення красою. А також виховує почуття ніжності, уваги до деталей, захоплення творами ручної роботи.",
+      "description_p_two": "Тепер це <span class=\"font-fredoka text-xl font-medium text-primary\">mariam corner</span>, мій невеличкий всесвіт, який сповідує філософію зцілення красою. А також виховує почуття ніжності, уваги до деталей, захоплення творами ручної роботи.",
       "description_p_three": "Все що я роблю — це предметна поезія, візуальний танок радості. У кожному виробі відчутний стук мого серця і частинка душі, якими я хочу ділитися!",
       "description_ending": "Я щиро рада кожній зустрічі і з великою любов’ю буду творити красу для вас!",
-      "collections_description": "Також запрошую ознайомитися з колекціями моїх робіт та знайти натхнення для замовлення виробу для себе.",
-      "collections_link": "До колекцій",
-      "shop_description": "Ласкаво прошу до перегляду прикрас та одягу, які вже є в наявності та доступні до придбання.",
-      "shop_link": "До крамнички"
+      "collections_description": "За бажанням ви можете зробити замовлення.",
+      "collections_link": "Замовлення",
+      "shop_description": "Історія робіт на згадку і для натхнення.",
+      "gallery_link": "Галерея"
     },
     "collections": {
-      "header": "Колекції представлені для натхнення та ознайомлення з творчістю",
       "breadcrumbs": "До колекцій"
     },
     "shop": {
@@ -76,9 +75,8 @@
     }
   },
   "footer": {
-    "info": "<span class=\"font-fredoka text-lg md:text-2xl text-primary\">mariam crochet jewelry</span> - український бренд одягу та в&apos;язаних прикрас, заснований дизайнером Мариною Камбур. Виготовлено з любов&apos;ю в Україні.",
-    "menu_subtitle": "Меню",
-    "contacts_subtitle": "Контакти"
+    "info": "<span class=\"font-fredoka text-lg md:text-3xl text-primary\">mariam crochet jewelry</span> — ювелірна робота гачком",
+    "quote": "<span class=\"italic\">«Руки сплітають те, що серце співає.»</span>"
   },
   "productStatus": {
     "0": "В наявності",

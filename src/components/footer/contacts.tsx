@@ -6,14 +6,10 @@ import {
   PHONE_NUMBER,
   EMAIL,
 } from "../../constants/contacts";
-import { Translations } from "@/lib/dictionaryUtils";
 
-export function Contacts({ translations }: { translations: Translations }) {
+export function Contacts() {
   return (
-    <div className="contacts-section">
-      <span className="contacts-subheader">
-        {(translations?.footer as Translations)?.contacts_subtitle.toString()}
-      </span>
+    <div className="contacts-section">      
       <div className="flex flex-row gap-4">
         <a href={INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer">
           <FaInstagram size={20} />

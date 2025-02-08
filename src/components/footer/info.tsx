@@ -8,6 +8,11 @@ export function Info({ translations }: { translations: Translations }) {
           __html: (translations.footer as Translations)?.info,
         }}
       ></p>
+      <p
+        dangerouslySetInnerHTML={{
+          __html: (translations.footer as Translations)?.quote,
+        }}
+      ></p>
     </div>
   );
 }

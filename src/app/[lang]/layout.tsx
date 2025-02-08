@@ -16,9 +16,9 @@ const noto_sans = Noto_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "mariam crochet jewelry - Maryna Kambur",
+  title: "mariam corner — Maryna Kambur",
   description:
-    "mariam crochet jewelry is a Ukrainian clothing and crocheted jewelry brand founded by designer Maryna Kambur",
+    "mariam corner – всесвіт зцілення красою. mariam сrochet jewelry – ювелірна робота гачком, бренд Марини Камбур, створений у 2017 році.",
   keywords: [
     "mariam corner",
     "mariam crochet jewelry",

@@ -12,10 +12,7 @@ export function NavigationFooter({
   translations: Translations;
 }) {
   return (
-    <div className="contacts-section">
-      <span className="contacts-subheader">
-        {(translations.footer as Translations)?.menu_subtitle.toString()}
-      </span>
+    <div className="contacts-section">      
       <NavLink href={`/${lang}/about`}>
         {(translations.navigation as Translations)?.about.toString()}
       </NavLink>
