@@ -18,6 +18,7 @@ export default async function Collections({ lang }: { lang: Locale }) {
         {allCollections?.map((item: CollectionItem) => (
           <div className="collection-navLink" key={item._id}>
             <Link href={`${lang}/items?collection=${item.collection_name}`}>
+             <h3>{getLangField(item, "title_", lang)}</h3>
               <Image
                 src={item.imageUrl}
                 className="collection-cover"
@@ -25,8 +26,7 @@ export default async function Collections({ lang }: { lang: Locale }) {
                 width={300}
                 height={300}
                 loading="lazy"              
-              />
-              <h3>{getLangField(item, "title_", lang)}</h3>
+              />             
             </Link>
           </div>
         ))}
