@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Noto_Sans, Fredoka } from "next/font/google";
 import { Locale, i18n } from "../../../i18n.config";
 import clsx from "clsx";
+// import { DefaultSeo } from "next-seo";
+// import SEO from "../../../next-seo.config";
 
 const fredoka = Fredoka({
   subsets: ["latin"],
@@ -49,6 +51,7 @@ export default function RootLayout({
       <body
         className={clsx(fredoka.variable, noto_sans.variable, "bg-secondary")}
       >
+        {/* <DefaultSeo {...SEO} /> */}
         {children}
       </body>
     </html>
