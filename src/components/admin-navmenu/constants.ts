@@ -1,7 +1,7 @@
 import {
   IoHomeOutline,
   IoFilterOutline,
-  IoDocumentTextOutline,
+  IoDocumentTextOutline,IoImageOutline
 } from "react-icons/io5";
 import { TfiPackage } from "react-icons/tfi";
 import { adminPanel } from "@/lib/constants";
@@ -21,6 +21,11 @@ export const adminNavLinks = [
     href: "/admin/collections",
     title: adminPanel.сollections,
     icon: IoFilterOutline,
+  },
+  {
+    href: "/admin/gallery",
+    title: adminPanel.gallery,
+    icon: IoImageOutline,
   },
   {
     href: "/admin/orders",

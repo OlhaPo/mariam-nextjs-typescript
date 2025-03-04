@@ -2,7 +2,7 @@
   "navigation": {
     "home": "Maryna Kambur",
     "about": "About me",
-    "shop": "Shop",
+    "gallery": "Галерея",
     "contacts": "Contacts",
     "cart": "Cart",
     "orders": "Orders and delivery",
@@ -22,11 +22,7 @@
     },
     "collections": {
       "breadcrumbs": "To all Collections"
-    },
-    "shop": {
-      "header": "In the shop all clothing and jewelry pieces are in stock and available for purchase",
-      "to_cart": "Add to cart"
-    },
+    },    
     "cart": {
       "title": "Shopping Cart",
       "confirmation_alert": "was added to the cart",

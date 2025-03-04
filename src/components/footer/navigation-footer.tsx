@@ -19,8 +19,8 @@ export function NavigationFooter({
       <NavLink href={`/${lang}/#collections`}>
         {(translations.navigation as Translations)?.collections.toString()}
       </NavLink>
-      <NavLink href={`/${lang}/shop`}>
-        {(translations.navigation as Translations)?.shop.toString()}
+      <NavLink href={`/${lang}/gallery`}>
+        {(translations.navigation as Translations)?.gallery.toString()}
       </NavLink>
       {/* <NavLink href={`/${lang}/orders`}>{navigation.orders}</NavLink> */}
     </div>
