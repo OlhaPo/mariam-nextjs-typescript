@@ -3,7 +3,7 @@ import { mongooseConnect } from "../../lib/mongogoose";
 
 
 export interface GalleryImage {
-  _id: string;  
+  _id?: string;  
   imageUrl: string;
   title: string;
   sort_position?: number;
@@ -11,7 +11,7 @@ export interface GalleryImage {
 
 export async function getGalleryImagesFromDb(): Promise<GalleryImage[]> {
   await mongooseConnect();  
-  const result = await Gallery.find().sort({ sort_position: 1 }).lean<GalleryImage[]>();
+  const result = await Gallery.find().sort({ sort_position: 1 });
   return result.map((image) => ({
     _id: image._id.toString(), 
     imageUrl: image.imageUrl, 
