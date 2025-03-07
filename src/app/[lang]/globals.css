@@ -26,9 +26,14 @@ p {
 }
 
 .collection-cover,
-.img-product-in-stock {
+.img-product {
   @layer shadow-secondary-900;
   @apply my-5 rounded-md shadow-2xl hover:scale-110 cursor-pointer ease-in duration-200 text-primary object-cover;
+}
+
+.img-product {
+  @layer shadow-secondary-900;
+  @apply rounded-md cursor-pointer object-cover;
 }
 
 .collection-navLink {

@@ -18,15 +18,15 @@ export default function Gallery({ galleryImages }: { galleryImages: GalleryImage
 
   return (
     <div className="section-container">
-      <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-10 lg:gap-8 px-10">
+      <div className="flex flex-wrap flex-row gap-5 md:gap-12">
         {galleryImages.map((image, i) => (
-          <div key={image._id} className="relative w-full h-[300px]">
+          <div key={image._id}>
             <Image
               src={image.imageUrl}
               alt={image.title}
-              width={500}
-              height={500}
-              className="cursor-pointer"
+              className="img-product hover:scale-100"
+              width={200}
+              height={200}
               loading="lazy"
               onClick={() => {
                 setIndex(i);
