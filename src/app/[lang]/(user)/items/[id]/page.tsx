@@ -39,10 +39,8 @@ export default function ItemPage({
           lang={params.lang}
           translations={translations}
         />
-      ) : (
-        <div>
-          <CircleLoader color="#2B4A33" />
-        </div>
+      ) : (      
+          <CircleLoader color="#2B4A33" />        
       )}
     </div>
   );

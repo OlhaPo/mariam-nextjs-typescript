@@ -75,8 +75,8 @@ export default function Items({ params }: { params: { lang: Locale } }) {
             {/* <h3>{getLangField(product, "title_", params.lang)}</h3> */}
             {/* <p>
               {(translations as any).productStatus[product.status.toString()]}
-            </p>
-            <p className="text-center">{product.price} UAH</p> */}
+            </p> 
+            <p className="text-center">{product.price} UAH</p>*/}
           </div>
         ))}
       </div>

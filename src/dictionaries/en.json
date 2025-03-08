@@ -2,7 +2,7 @@
   "navigation": {
     "home": "Maryna Kambur",
     "about": "About me",
-    "gallery": "Галерея",
+    "gallery": "Gallery",
     "contacts": "Contacts",
     "cart": "Cart",
     "orders": "Orders and delivery",
@@ -14,11 +14,7 @@
       "description_p_one": "My name is Maryna. In 2017, I created the brand <span class=\"font-fredoka text-xl font-medium text-primary\">mariam crochet jewelry</span>.",
       "description_p_two": "Now it's <span class=\"font-fredoka text-xl font-medium text-primary\">mariam corner</span>, my small universe that follows the philosophy of healing through beauty. It also nurtures a sense of tenderness, attention to details, and enthusiasm for handmade creations.",
       "description_p_three": "Everything I do is object poetry, a visual dance of joy. In each piece, you can feel the beat of my heart and a particle of my of soul, that I want to share with you!",
-      "description_ending": "I am sincerely happy for every meeting, and with great love, I will create beauty for you!",
-      "collections_description": "If you wish, you can place an order.",
-      "collections_link": "Order",
-      "shop_description": "A history of works for reflection and inspiration.",
-      "gallery_link": "Gallery"
+      "description_ending": "I am sincerely happy for every meeting, and with great love, I will create beauty for you!"
     },
     "collections": {
       "breadcrumbs": "To all Collections"

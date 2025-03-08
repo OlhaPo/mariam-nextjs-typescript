@@ -83,7 +83,7 @@ export default function ProductCard({
         <div>
           <Image
             src={product.imageUrls[0]}
-            height={500}
+            height={450}
             width={500}
             alt={getLangField(product, "title_", lang)}
           />
@@ -108,10 +108,8 @@ export default function ProductCard({
       <div className="flex flex-col mt-8 md:mt-0">
         <h2 className="text-left mb-5">
           {getLangField(product, "title_", lang)}
-        </h2>
-        {product.status === ProductStatus.InStock ? (
-          <p>{product.price} UAH</p>
-        ) : null}
+        </h2>        
+          <p>{product.price} UAH</p>       
         <p>
           {getLabelByStatus(
             translations?.productStatus as { [key: string]: string },
@@ -119,7 +117,7 @@ export default function ProductCard({
           )}
         </p>
         <p>{getLangField(product, "description_", lang)}</p>
-        {product.status !== ProductStatus.SoldOut ? (
+        {/* {product.status !== ProductStatus.SoldOut ? (
           <button
             className="btn-nav mt-12 md:mt-5"
             onClick={() => handleAddToCart(product)}
@@ -130,7 +128,7 @@ export default function ProductCard({
               product.status
             )}
           </button>
-        ) : null}
+        ) : null} */}
       </div>
     </div>
   );

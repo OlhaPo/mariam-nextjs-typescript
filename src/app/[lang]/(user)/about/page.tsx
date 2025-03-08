@@ -23,8 +23,7 @@ export default async function About({
             loading="lazy"
           />
         </div>
-        <div>
-          <div>
+        <div>         
             <h2 className="text-left">{page.about.title}</h2>
             <p
               dangerouslySetInnerHTML={{ __html: page.about.description_p_one }}
@@ -33,25 +32,8 @@ export default async function About({
               dangerouslySetInnerHTML={{ __html: page.about.description_p_two }}
             ></p>
             <p>{page.about.description_p_three}</p>
-          </div>          
-          <div>
-            <p>{page.about.collections_description}</p>
-            <div className="py-5 text-center md:text-left">
-              <LinkButton href={`/${lang}/#collections`}>
-                {page.about.collections_link}
-              </LinkButton>
-            </div>
+            <p>{page.about.description_ending}</p>            
           </div>
-          <div>
-            <p>{page.about.shop_description}</p>
-            <div className="py-5 text-center md:text-left">
-              <LinkButton href={`/${lang}/shop`}>
-                {page.about.gallery_link}
-              </LinkButton>
-            </div>
-          </div>
-          <p>{page.about.description_ending}</p>
-        </div>
       </div>
     </section>
   );
