@@ -18,7 +18,7 @@ export default function Gallery({ galleryImages }: { galleryImages: GalleryImage
 
   return (
     <div className="section-container">
-      <div className="flex flex-wrap flex-row gap-5 md:gap-12">
+      <div className="flex flex-wrap flex-row gap-5 md:gap-8 justify-center md:justify-normal">
         {galleryImages.map((image, i) => (
           <div key={image._id}>
             <Image
