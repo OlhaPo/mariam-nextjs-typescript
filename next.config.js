@@ -5,8 +5,8 @@ const nextConfig = {
   redirects() {
     return [
       {
-        source: "/:path*/",
-        destination: "/:path*",
+        source: "/:path*//:subpath*",
+        destination: "/:path*/:subpath*",
         permanent: true,
       },
       {
