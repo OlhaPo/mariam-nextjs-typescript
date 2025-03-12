@@ -7,6 +7,9 @@ import { useCartStore } from "@/services/cart/hooks";
 import Swal from "sweetalert2";
 import Slider from "react-slick";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import Link from "next/link";
+import { MdArrowBackIosNew } from "react-icons/md";
+import { COLLECTIONS_MAP } from "@/services/collectionsMap";
 
 export default function ProductCard({
   product,
@@ -17,7 +20,11 @@ export default function ProductCard({
   translations: Translations;
   lang: Locale;
 }) {
-  const { addToCart, isInCart } = useCartStore();
+  const { addToCart, isInCart } = useCartStore(); 
+  
+  const collectionSlug = product.collection_id 
+  ? COLLECTIONS_MAP[product.collection_id] || product.collection_id 
+  : null;
 
   function getLabelByStatus(
     dict: { [key: string]: string },
@@ -79,6 +86,15 @@ export default function ProductCard({
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-12">
+
+      <Link
+        href={`/${lang}/items?collection=${collectionSlug}`}
+        className="inline-flex items-center gap-3 pb-10 text-lg"
+      >
+        <MdArrowBackIosNew />
+        <span>{(translations as any).page?.collections?.breadcrumbs_product_card}</span>
+      </Link>
+      <h2>Hello</h2>
       {product.imageUrls.length === 1 ? (
         <div>
           <Image

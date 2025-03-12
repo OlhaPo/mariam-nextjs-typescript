@@ -50,7 +50,7 @@ export default function Items({ params }: { params: { lang: Locale } }) {
   return (
     <div className="section-container">
       <Link
-        href={`/${params.lang}/#collections`}
+        href={`/${params.lang}/items?collection=${currentCollection}`}
         className="inline-flex items-center gap-3 pb-10 text-lg"
       >
         <MdArrowBackIosNew />

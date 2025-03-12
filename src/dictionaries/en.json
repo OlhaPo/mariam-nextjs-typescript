@@ -17,7 +17,8 @@
       "description_ending": "I am sincerely happy for every meeting, and with great love, I will create beauty for you!"
     },
     "collections": {
-      "breadcrumbs": "To all Collections"
+      "breadcrumbs": "To all Collections",
+      "breadcrumbs_product_card": "To Collection"
     },    
     "cart": {
       "title": "Shopping Cart",

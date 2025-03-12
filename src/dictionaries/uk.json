@@ -18,7 +18,8 @@
       "description_ending": "Щиро рада кожній зустрічі і з великою любов’ю буду творити красу для вас!"
     },
     "collections": {
-      "breadcrumbs": "До колекцій"
+      "breadcrumbs": "До колекцій",
+      "breadcrumbs_product_card": "До колекції"
     },
     "collectionItems": {
       "dresses": "Сукні",
