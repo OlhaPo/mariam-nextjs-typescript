@@ -1,6 +1,16 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+  trailingSlash: false, 
+  redirects() {
+    return [
+      {
+        source: "/en/",
+        destination: "/en",
+        permanent: true, 
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {

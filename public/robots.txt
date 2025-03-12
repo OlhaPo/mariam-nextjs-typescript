@@ -4,6 +4,7 @@ Disallow: /admin
 Disallow: /api
 Disallow: /*/order-confirmation
 Disallow: /*/checkout
+Disallow: /_next/static/
 
 # Host
 Host: https://www.mariamcorner.com.ua/
