@@ -85,7 +85,7 @@ export default function ProductCard({
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-12">
+    <div className="">
 
       <Link
         href={`/${lang}/items?collection=${collectionSlug}`}
@@ -94,7 +94,7 @@ export default function ProductCard({
         <MdArrowBackIosNew />
         <span>{(translations as any).page?.collections?.breadcrumbs_product_card}</span>
       </Link>
-      <h2>Hello</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-12">
       {product.imageUrls.length === 1 ? (
         <div>
           <Image
@@ -145,6 +145,7 @@ export default function ProductCard({
             )}
           </button>
         ) : null} */}
+        </div>
       </div>
     </div>
   );
